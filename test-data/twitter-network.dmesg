@@ -1,0 +1,1166 @@
+<6>[  989.979370] TM :: MODULE INITIALIZATION, timestamp 1315820509665252
+<6>[  989.980010] netlink: Initializing Netlink Socket
+<6>[  989.980377] Initializing Netlink Socket successfully
+<6>[  989.981048] TM :: MODULE ENABLED
+<3>[  989.984558] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[  989.985229] in_atomic(): 1, irqs_disabled(): 0, pid: 421, name: adbd
+<4>[  989.985656] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[  989.986389] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf031cec>] (hook_local_out+0xfdc/0x17dc [ec])
+<4>[  989.987091] [<bf031cec>] (hook_local_out+0xfdc/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[  989.987792] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[  989.988189] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[  989.988891] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[  989.989593] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[  989.990295] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[  989.990692] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a31ac>] (tcp_write_xmit+0x8a0/0x9ac)
+<4>[  989.991394] [<c02a31ac>] (tcp_write_xmit+0x8a0/0x9ac) from [<c02a332c>] (__tcp_push_pending_frames+0x30/0x98)
+<4>[  989.992126] [<c02a332c>] (__tcp_push_pending_frames+0x30/0x98) from [<c0297244>] (tcp_sendmsg+0x9b8/0xaa4)
+<4>[  989.992828] [<c0297244>] (tcp_sendmsg+0x9b8/0xaa4) from [<c0235428>] (sock_aio_write+0xd8/0x10c)
+<4>[  989.993530] [<c0235428>] (sock_aio_write+0xd8/0x10c) from [<c00dbe1c>] (do_sync_write+0xb8/0x104)
+<4>[  989.994354] [<c00dbe1c>] (do_sync_write+0xb8/0x104) from [<c00dc864>] (vfs_write+0xc4/0x154)
+<4>[  989.994750] [<c00dc864>] (vfs_write+0xc4/0x154) from [<c00dc9a0>] (sys_write+0x3c/0x68)
+<4>[  989.995452] [<c00dc9a0>] (sys_write+0x3c/0x68) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[  989.996154] TM => 5555 new_burst, ack 822801964, seq 3400168017, size 78
+<6>[  989.999664] TM <= 5555 burst, ack 3836375633, seq 822801964, size 52
+<6>[  990.000152] TM <= 5555 burst, ack 3836375633, seq 822801964, size 76
+<6>[  990.033905] TM => 5555 ack_only, ack 1225455148, seq 3836375633, size 52
+<6>[  993.429718] TM <= Not a TCP packet. Protocol: 17
+<6>[  993.431030] TM <= Not a TCP packet. Protocol: 17
+<6>[  994.851074] TM => Not a TCP packet. Protocol: 17 
+<6>[  994.979492] TM <= Not a TCP packet. Protocol: 17
+<3>[  994.983428] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[  994.983978] in_atomic(): 1, irqs_disabled(): 0, pid: 868, name: AsyncTask #1
+<4>[  994.984710] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[  994.985473] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[  994.986236] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[  994.986907] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[  994.987365] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[  994.988067] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[  994.988739] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[  994.989440] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[  994.989837] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[  994.990539] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[  994.991241] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[  994.991943] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[  994.992645] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[  994.993041] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[  994.993774] TM => 36132 new_syn, ack 0, seq 2947238953, size 60
+<6>[  995.209503] TM <= 36132 burst_synack, ack 2964016169, seq 290838927, size 60
+<6>[  995.210357] TM => 36132 burst_established, ack 307616143, seq 2964016169, size 52
+<6>[  995.227142] TM => 36132 burst_request, ack 307616143, seq 2964016169, size 140
+<6>[  995.427215] TM <= 36132 burst_request, ack 145509417, seq 307616143, size 52
+<6>[  995.428436] TM <= 36132 burst, ack 145509417, seq 307616143, size 1500
+<6>[  995.429504] TM => 36132 ack_only, ack 3126516111, seq 145509417, size 52
+<6>[  995.430633] TM <= 36132 burst, ack 145509417, seq 3126516111, size 1500
+<6>[  995.431701] TM => 36132 ack_only, ack 1650514319, seq 145509417, size 52
+<6>[  995.433105] TM <= 36132 burst, ack 145509417, seq 1650514319, size 1069
+<6>[  995.433929] TM => 36132 ack_only, ack 1533335951, seq 145509417, size 52
+<6>[  995.459686] TM => 36132 ack_only, ack 1533335951, seq 145509417, size 366
+<6>[  995.666076] TM <= 36132 burst, ack 1118653481, seq 1533335951, size 99
+<6>[  995.669189] TM => Not a TCP packet. Protocol: 17 
+<6>[  995.703857] TM => 36132 ack_only, ack 2321865103, seq 1118653481, size 52
+<6>[  995.749816] TM <= Not a TCP packet. Protocol: 17
+<6>[  996.034820] TM => 36132 ack_only, ack 2321865103, seq 1118653481, size 522
+<6>[  996.293579] TM <= 36132 burst, ack 414141481, seq 2321865103, size 1300
+<6>[  996.294799] TM => 36132 ack_only, ack 1785321871, seq 414141481, size 52
+<6>[  996.535583] TM => 5555 ack_only, ack 1225455148, seq 3836375633, size 163
+<6>[  996.603302] TM <= 5555 burst, ack 1403744849, seq 1225455148, size 52
+<6>[  996.603759] TM <= 5555 burst, ack 1403744849, seq 1225455148, size 76
+<6>[  996.604370] TM => 5555 ack_only, ack 1628108332, seq 1403744849, size 52
+<6>[  996.609741] TM <= 5555 burst, ack 1403744849, seq 1628108332, size 85
+<6>[  996.610168] TM => 5555 ack_only, ack 2181756460, seq 1403744849, size 52
+<6>[  996.611511] TM => 5555 ack_only, ack 2181756460, seq 1403744849, size 76
+<6>[  996.613952] TM <= 5555 burst, ack 1806398033, seq 2181756460, size 52
+<6>[  996.614990] TM <= 5555 burst, ack 1806398033, seq 2181756460, size 90
+<6>[  996.617889] TM => 5555 ack_only, ack 2819290668, seq 1806398033, size 76
+<6>[  996.618347] TM => 5555 ack_only, ack 2819290668, seq 2209051217, size 90
+<6>[  996.620269] TM <= 5555 burst, ack 2209051217, seq 2819290668, size 52
+<6>[  996.620727] TM <= 5555 burst, ack 2846585425, seq 2819290668, size 52
+<6>[  996.621276] TM <= 5555 burst, ack 2846585425, seq 2819290668, size 95
+<6>[  996.621673] TM <= 5555 burst, ack 2846585425, seq 3540710956, size 76
+<6>[  996.622375] TM => 5555 ack_only, ack 3943364140, seq 2846585425, size 52
+<6>[  996.623565] TM => 5555 ack_only, ack 3943364140, seq 2846585425, size 76
+<6>[  996.625946] TM => 5555 ack_only, ack 3943364140, seq 3249238609, size 96
+<6>[  996.627288] TM <= 5555 burst, ack 3249238609, seq 3943364140, size 52
+<6>[  996.627746] TM <= 5555 burst, ack 3249238609, seq 3943364140, size 137
+<6>[  996.628387] TM <= 5555 burst, ack 3987436113, seq 1074525740, size 52
+<6>[  996.628814] TM <= 5555 burst, ack 3987436113, seq 1074525740, size 76
+<6>[  996.630493] TM => 5555 ack_only, ack 1477178924, seq 3987436113, size 52
+<6>[  996.632110] TM => 5555 ack_only, ack 1477178924, seq 3987436113, size 76
+<6>[  996.632385] TM => 5555 ack_only, ack 1477178924, seq 95187537, size 438
+<6>[  996.634368] TM <= 5555 burst, ack 95187537, seq 1477178924, size 52
+<6>[  996.634582] TM <= 5555 burst, ack 2276291153, seq 1477178924, size 52
+<6>[  996.634887] TM <= 5555 burst, ack 2276291153, seq 1477178924, size 76
+<6>[  996.673797] TM => 5555 ack_only, ack 1879832108, seq 2276291153, size 52
+<3>[  996.677032] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[  996.677337] in_atomic(): 1, irqs_disabled(): 0, pid: 869, name: andtweet:remote
+<4>[  996.677490] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[  996.677764] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[  996.678070] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[  996.678283] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[  996.678497] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[  996.678619] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[  996.678894] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[  996.679138] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[  996.679351] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[  996.679473] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[  996.679718] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[  996.679962] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[  996.680175] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[  996.680389] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[  996.680541] TM => 51328 new_syn, ack 0, seq 770535978, size 60
+<6>[  996.685424] TM <= 51328 burst_synack, ack 787313194, seq 4014075947, size 60
+<6>[  996.685516] TM => 51328 burst_established, ack 4030853163, seq 787313194, size 52
+<6>[  996.692657] TM => 51328 burst_request, ack 4030853163, seq 787313194, size 54
+<6>[  996.696319] TM <= 51328 burst_request, ack 820867626, seq 4030853163, size 52
+<6>[  996.708129] TM => Not a TCP packet. Protocol: 17 
+<6>[  996.708892] TM => 51328 ack_only, ack 4030853163, seq 820867626, size 54
+<6>[  996.712799] TM <= Not a TCP packet. Protocol: 17
+<6>[  996.713378] TM <= 51328 burst, ack 854422058, seq 4030853163, size 52
+<6>[  996.715118] TM <= 51328 burst, ack 854422058, seq 4030853163, size 54
+<6>[  996.717010] TM => 51328 ack_only, ack 4064407595, seq 854422058, size 52
+<6>[  996.720458] TM <= 51328 burst, ack 854422058, seq 4064407595, size 54
+<6>[  996.720611] TM => 51328 ack_only, ack 4097962027, seq 854422058, size 52
+<6>[  996.721038] TM => 51328 ack_only, ack 4097962027, seq 854422058, size 53
+<6>[  996.723449] TM <= 51328 burst, ack 871199274, seq 4097962027, size 53
+<6>[  996.727722] TM => 51328 ack_only, ack 4114739243, seq 871199274, size 53
+<6>[  996.728637] TM => 44749 new_syn, ack 0, seq 915130410, size 60
+<6>[  996.732818] TM <= 51328 burst, ack 887976490, seq 4114739243, size 53
+<6>[  996.733489] TM => 51328 ack_only, ack 4131516459, seq 887976490, size 53
+<6>[  996.736358] TM <= 51328 burst, ack 904753706, seq 4131516459, size 53
+<6>[  996.738342] TM => 51328 ack_only, ack 4148293675, seq 904753706, size 53
+<6>[  996.741241] TM <= 51328 burst, ack 921530922, seq 4148293675, size 53
+<6>[  996.742462] TM => 51328 ack_only, ack 4165070891, seq 921530922, size 53
+<6>[  996.745391] TM <= 51328 burst, ack 938308138, seq 4165070891, size 53
+<6>[  996.747894] TM => 51328 ack_only, ack 4181848107, seq 938308138, size 53
+<6>[  996.790435] TM <= 51328 burst, ack 955085354, seq 4181848107, size 52
+<6>[  996.790924] TM => 51328 ack_only, ack 4181848107, seq 955085354, size 75
+<6>[  996.793884] TM <= 51328 burst, ack 1340961322, seq 4181848107, size 52
+<6>[  996.794403] TM <= 51328 burst, ack 1340961322, seq 4181848107, size 53
+<6>[  996.833770] TM => 51328 ack_only, ack 4198625323, seq 1340961322, size 52
+<6>[  996.932769] TM <= 44749 burst_synack, ack 931907626, seq 1423818377, size 60
+<6>[  996.933227] TM => 44749 burst_established, ack 1440595593, seq 931907626, size 52
+<6>[  996.934722] TM => 44749 burst_request, ack 1440595593, seq 931907626, size 172
+<6>[  997.135406] TM <= 44749 burst_request, ack 2945173546, seq 1440595593, size 52
+<6>[  997.142333] TM <= 44749 burst, ack 2945173546, seq 1440595593, size 1500
+<6>[  997.142456] TM => 44749 ack_only, ack 4259495561, seq 2945173546, size 52
+<6>[  997.142944] TM <= 44749 burst, ack 2945173546, seq 4259495561, size 1500
+<6>[  997.143035] TM => 44749 ack_only, ack 2783493769, seq 2945173546, size 52
+<6>[  997.143432] TM <= 44749 burst, ack 2945173546, seq 2783493769, size 822
+<6>[  997.143524] TM => 44749 ack_only, ack 2817244809, seq 2945173546, size 52
+<6>[  997.233978] TM => 44749 ack_only, ack 2817244809, seq 2945173546, size 250
+<6>[  997.439727] TM <= 44749 burst, ack 1972160554, seq 2817244809, size 111
+<6>[  997.440887] TM => 44749 ack_only, ack 3807100553, seq 1972160554, size 52
+<6>[  997.521820] TM => 44749 ack_only, ack 3807100553, seq 1972160554, size 1500
+<6>[  997.522033] TM => 44749 ack_only, ack 3807100553, seq 496158762, size 497
+<6>[  997.722900] TM <= 44749 burst, ack 3667118122, seq 3807100553, size 52
+<6>[  997.760742] TM <= 44749 burst, ack 3667118122, seq 3807100553, size 1500
+<6>[  997.761840] TM => 44749 ack_only, ack 2331098761, seq 3667118122, size 52
+<6>[  997.763275] TM <= 44749 burst, ack 3667118122, seq 2331098761, size 1500
+<6>[  997.764099] TM => 44749 ack_only, ack 855096969, seq 3667118122, size 52
+<6>[  997.765594] TM <= 44749 burst, ack 3667118122, seq 855096969, size 1500
+<6>[  997.766357] TM => 44749 ack_only, ack 3673996937, seq 3667118122, size 52
+<6>[  997.767608] TM <= 44749 burst, ack 3667118122, seq 3673996937, size 192
+<6>[  997.801788] TM => 44749 ack_only, ack 1727905417, seq 3667118122, size 52
+<6>[  998.086273] TM => Not a TCP packet. Protocol: 17 
+<6>[  998.132232] TM <= Not a TCP packet. Protocol: 17
+<3>[  998.133178] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[  998.133422] in_atomic(): 1, irqs_disabled(): 0, pid: 538, name: http1
+<4>[  998.133575] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[  998.133850] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[  998.134063] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[  998.134277] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[  998.134429] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[  998.134643] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[  998.134857] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[  998.135070] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[  998.135192] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[  998.135406] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[  998.135620] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[  998.135833] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[  998.136077] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[  998.136291] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[  998.136413] TM => 35473 new_syn, ack 0, seq 3152151084, size 60
+<6>[  998.168334] TM => 38543 new_syn, ack 0, seq 3394057260, size 60
+<6>[  998.175354] TM <= 35473 burst_synack, ack 3168928300, seq 2282308016, size 60
+<6>[  998.175750] TM => 35473 burst_established, ack 2299085232, seq 3168928300, size 52
+<6>[  998.176696] TM => 35473 burst_request, ack 2299085232, seq 3168928300, size 172
+<6>[  998.182617] TM => 59795 new_syn, ack 0, seq 3845892139, size 60
+<6>[  998.202362] TM <= 38543 burst_synack, ack 3410834476, seq 1487828699, size 60
+<6>[  998.202697] TM => 38543 burst_established, ack 1504605915, seq 3410834476, size 52
+<6>[  998.206573] TM <= 35473 burst_request, ack 887292460, seq 2299085232, size 52
+<6>[  998.207275] TM <= 35473 burst, ack 887292460, seq 2299085232, size 185
+<6>[  998.207336] TM => 35473 ack_only, ack 235553200, seq 887292460, size 52
+<6>[  998.208160] TM => 35473 ack_only, ack 235553200, seq 887292460, size 99
+<6>[  998.210449] TM => 38543 burst_request, ack 1504605915, seq 3410834476, size 172
+<6>[  998.214080] TM <= 59795 burst_synack, ack 3862669355, seq 1141511044, size 60
+<6>[  998.214477] TM => 59795 burst_established, ack 1158288260, seq 3862669355, size 52
+<6>[  998.241943] TM <= 38543 burst_request, ack 1129198636, seq 1504605915, size 52
+<6>[  998.242492] TM <= 38543 burst, ack 1129198636, seq 1504605915, size 185
+<6>[  998.242828] TM => 38543 ack_only, ack 3735975643, seq 1129198636, size 52
+<6>[  998.244079] TM => 38543 ack_only, ack 3735975643, seq 1129198636, size 99
+<6>[  998.244873] TM => 59795 burst_request, ack 1158288260, seq 3862669355, size 172
+<6>[  998.256835] TM => 35473 ack_only, ack 235553200, seq 1675821612, size 890
+<6>[  998.274291] TM <= 59795 burst_request, ack 1581033515, seq 1158288260, size 52
+<6>[  998.274841] TM <= 59795 burst, ack 1581033515, seq 1158288260, size 185
+<6>[  998.275085] TM => 59795 ack_only, ack 3389657988, seq 1581033515, size 52
+<6>[  998.276306] TM => 59795 ack_only, ack 3389657988, seq 1581033515, size 99
+<6>[  998.276947] TM <= 36132 burst, ack 414141481, seq 1785321871, size 79
+<6>[  998.277191] TM => 36132 ack_only, ack 2238306703, seq 414141481, size 52
+<6>[  998.277709] TM <= 36132 burst, ack 414141481, seq 2238306703, size 52
+<6>[  998.278106] TM <= 35473 burst, ack 1675821612, seq 235553200, size 52
+<6>[  998.286804] TM <= 35473 burst, ack 2850423340, seq 235553200, size 52
+<6>[  998.287384] TM <= 35473 burst, ack 2850423340, seq 235553200, size 432
+<6>[  998.289642] TM => 38543 ack_only, ack 3735975643, seq 1917727788, size 892
+<6>[  998.313781] TM => 36132 ack_only, ack 2255083919, seq 414141481, size 52
+<6>[  998.316223] TM <= 38543 burst, ack 1917727788, seq 3735975643, size 52
+<6>[  998.321807] TM <= 38543 burst, ack 3125883948, seq 3735975643, size 52
+<6>[  998.322387] TM <= 38543 burst, ack 3125883948, seq 3735975643, size 432
+<6>[  998.323760] TM => 35473 ack_only, ack 2315993520, seq 2850423340, size 52
+<6>[  998.347534] TM <= 59795 burst, ack 2369562667, seq 3389657988, size 52
+<6>[  998.353790] TM => 38543 ack_only, ack 1521514203, seq 3125883948, size 52
+<6>[  998.402557] TM => 59795 ack_only, ack 3389657988, seq 2369562667, size 1106
+<6>[  998.432495] TM <= 59795 burst, ack 2873141291, seq 3389657988, size 52
+<6>[  998.433197] TM <= 59795 burst, ack 2873141291, seq 3389657988, size 432
+<6>[  998.463775] TM => 59795 ack_only, ack 1175196548, seq 2873141291, size 52
+<6>[  999.889953] TM => 35473 ack_only, ack 2315993520, seq 2850423340, size 1065
+<6>[  999.911041] TM => 35473 ack_only, ack 2315993520, seq 2666136108, size 79
+<6>[  999.911651] TM => 35473 ack_only, ack 2315993520, seq 3119120940, size 52
+<6>[  999.934661] TM <= 35473 burst, ack 2666136108, seq 2315993520, size 432
+<6>[  999.934753] TM => 35473 ack_only, ack 0, seq 2666136108, size 40
+<6>[  999.940673] TM <= 35473 burst, ack 3119120940, seq 101532080, size 52
+<6>[  999.940734] TM => 35473 ack_only, ack 0, seq 3119120940, size 40
+<6>[  999.941680] TM <= 35473 burst, ack 3135898156, seq 118309296, size 52
+<6>[  999.941711] TM => 35473 ack_only, ack 0, seq 3135898156, size 40
+<6>[  999.950164] TM => 44749 ack_only, ack 1727905417, seq 3667118122, size 1500
+<6>[  999.952301] TM => 44749 ack_only, ack 1727905417, seq 2191116330, size 689
+<6>[  999.952972] TM => 44749 ack_only, ack 1727905417, seq 4288399402, size 153
+<6>[ 1000.153167] TM <= 44749 burst, ack 4288399402, seq 1727905417, size 52
+<6>[ 1000.194274] TM <= 44749 burst, ack 1687996458, seq 1727905417, size 52
+<6>[ 1000.595031] TM <= 44749 burst, ack 1687996458, seq 1727905417, size 1500
+<6>[ 1000.595184] TM => 44749 ack_only, ack 235126665, seq 1687996458, size 52
+<6>[ 1000.595642] TM <= 44749 burst, ack 1687996458, seq 235126665, size 1500
+<6>[ 1000.595733] TM => 44749 ack_only, ack 3054026633, seq 1687996458, size 52
+<6>[ 1000.598632] TM <= 44749 burst, ack 1687996458, seq 3054026633, size 888
+<6>[ 1000.598724] TM => 44749 ack_only, ack 4195073929, seq 1687996458, size 52
+<6>[ 1000.798736] TM => 38543 ack_only, ack 1521514203, seq 3125883948, size 835
+<6>[ 1000.831695] TM <= 38543 burst, ack 3377738796, seq 1521514203, size 432
+<6>[ 1000.832092] TM => 38543 ack_only, ack 3601954523, seq 3377738796, size 52
+<6>[ 1000.920074] TM => 38543 ack_only, ack 3601954523, seq 3377738796, size 839
+<6>[ 1000.931396] TM => 59795 ack_only, ack 1175196548, seq 2873141291, size 995
+<6>[ 1000.952545] TM <= 38543 burst, ack 3696702508, seq 3601954523, size 432
+<6>[ 1000.952850] TM => 38543 ack_only, ack 1387493083, seq 3696702508, size 52
+<6>[ 1000.961944] TM <= 59795 burst, ack 1514448939, seq 1175196548, size 432
+<6>[ 1000.962341] TM => 59795 ack_only, ack 3255636868, seq 1514448939, size 52
+<6>[ 1001.339782] TM => 36132 ack_only, ack 2255083919, seq 414141481, size 52
+<3>[ 1002.049865] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1002.049896] in_atomic(): 1, irqs_disabled(): 0, pid: 885, name: AsyncTask #2
+<4>[ 1002.049926] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1002.049957] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1002.049987] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1002.050018] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1002.050048] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1002.050048] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1002.050079] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1002.050079] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1002.050109] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1002.050140] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1002.050170] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1002.050170] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1002.050201] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1002.050231] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1002.050231] TM => 51712 new_syn, ack 0, seq 1310942767, size 60
+<6>[ 1002.267333] TM <= 51712 burst_synack, ack 1327719983, seq 1477982120, size 60
+<6>[ 1002.268188] TM => 51712 burst_established, ack 1494759336, seq 1327719983, size 52
+<6>[ 1002.281860] TM => 51712 burst_request, ack 1494759336, seq 1327719983, size 140
+<6>[ 1002.482055] TM <= 51712 burst_request, ack 2804114991, seq 1494759336, size 52
+<6>[ 1002.483276] TM <= 51712 burst, ack 2804114991, seq 1494759336, size 1500
+<6>[ 1002.484436] TM => 51712 ack_only, ack 18757544, seq 2804114991, size 52
+<6>[ 1002.485717] TM <= 51712 burst, ack 2804114991, seq 18757544, size 1500
+<6>[ 1002.486480] TM => 51712 ack_only, ack 2837657512, seq 2804114991, size 52
+<6>[ 1002.487884] TM <= 51712 burst, ack 2804114991, seq 2837657512, size 1069
+<6>[ 1002.488616] TM => 51712 ack_only, ack 2720479144, seq 2804114991, size 52
+<6>[ 1002.512329] TM => 51712 ack_only, ack 2720479144, seq 2804114991, size 366
+<6>[ 1002.719177] TM <= 51712 burst, ack 3777259055, seq 2720479144, size 99
+<6>[ 1002.722564] TM => Not a TCP packet. Protocol: 17 
+<6>[ 1002.727539] TM <= Not a TCP packet. Protocol: 17
+<6>[ 1002.753784] TM => 51712 ack_only, ack 3509008296, seq 3777259055, size 52
+<6>[ 1002.942321] TM => 51712 ack_only, ack 3509008296, seq 3777259055, size 594
+<6>[ 1003.256652] TM <= 51712 burst, ack 4280706607, seq 3509008296, size 52
+<6>[ 1003.258117] TM <= 51712 burst, ack 4280706607, seq 3509008296, size 1323
+<6>[ 1003.258850] TM => 51712 ack_only, ack 3358341032, seq 4280706607, size 52
+<6>[ 1003.518920] TM => 51712 ack_only, ack 3358341032, seq 4280706607, size 52
+<3>[ 1003.614685] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1003.615020] in_atomic(): 1, irqs_disabled(): 0, pid: 886, name: AsyncTask #3
+<4>[ 1003.615264] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1003.615570] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1003.615692] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1003.615905] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1003.616149] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1003.616394] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1003.616516] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1003.616821] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1003.617034] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1003.617248] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1003.617462] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1003.617614] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1003.617828] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1003.618103] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1003.618316] TM => 54046 new_syn, ack 0, seq 2318960944, size 60
+<6>[ 1003.773834] TM <= 51712 burst, ack 2582063, seq 3358341032, size 52
+<6>[ 1003.821594] TM <= 54046 burst_synack, ack 2335738160, seq 2100039807, size 60
+<6>[ 1003.822753] TM => 54046 burst_established, ack 2116817023, seq 2335738160, size 52
+<6>[ 1003.845520] TM => 54046 burst_request, ack 2116817023, seq 2335738160, size 455
+<6>[ 1003.980987] batt:  53%, 3835 mV, 0 mA (0 avg), 28.6 C, 723 mAh
+<6>[ 1004.035156] TM <= 51712 burst, ack 2582063, seq 3358341032, size 52
+<6>[ 1004.035949] TM => 51712 ack_only, ack 3375118248, seq 2582063, size 52
+<6>[ 1004.046813] TM <= 54046 burst_request, ack 507152688, seq 2116817023, size 52
+<6>[ 1004.073303] TM <= 54046 burst, ack 507152688, seq 960041087, size 52
+<6>[ 1004.073822] TM => 54046 ack_only, ack 2116817023, seq 507152688, size 64
+<6>[ 1004.074035] TM <= 54046 burst, ack 507152688, seq 2116817023, size 1500
+<6>[ 1004.076416] TM <= 54046 burst, ack 507152688, seq 640815231, size 1500
+<6>[ 1004.076812] TM <= 54046 burst, ack 507152688, seq 3459715199, size 415
+<6>[ 1004.082458] TM => 54046 ack_only, ack 640815231, seq 507152688, size 64
+<6>[ 1004.084045] TM => 54046 ack_only, ack 3459715199, seq 507152688, size 64
+<6>[ 1004.084991] TM => 54046 ack_only, ack 976818303, seq 507152688, size 52
+<6>[ 1004.188598] TM => 54046 ack_only, ack 976818303, seq 507152688, size 52
+<6>[ 1004.277862] TM <= 54046 burst, ack 507152688, seq 2116817023, size 1500
+<6>[ 1004.278320] TM => 54046 ack_only, ack 976818303, seq 523929904, size 64
+<6>[ 1004.388610] TM <= 54046 burst, ack 523929904, seq 976818303, size 52
+<6>[ 1007.809143] TM => 44749 ack_only, ack 4195073929, seq 1687996458, size 89
+<6>[ 1007.811035] TM => 44749 ack_only, ack 4195073929, seq 2308753450, size 52
+<6>[ 1007.812255] TM => 38543 ack_only, ack 1387493083, seq 3696702508, size 79
+<6>[ 1007.814086] TM => 38543 ack_only, ack 1387493083, seq 4149687340, size 52
+<6>[ 1007.816375] TM => 59795 ack_only, ack 3255636868, seq 1514448939, size 79
+<6>[ 1007.817657] TM => 59795 ack_only, ack 3255636868, seq 1967433771, size 52
+<6>[ 1007.857238] TM <= 59795 burst, ack 1967433771, seq 3255636868, size 52
+<6>[ 1007.858032] TM => 59795 ack_only, ack 3272414084, seq 1984210987, size 52
+<6>[ 1007.859374] TM <= 59795 burst, ack 1984210987, seq 3272414084, size 52
+<6>[ 1007.860717] TM <= 38543 burst, ack 4149687340, seq 1387493083, size 52
+<6>[ 1007.861480] TM => 38543 ack_only, ack 1404270299, seq 4166464556, size 52
+<6>[ 1007.862762] TM <= 38543 burst, ack 4166464556, seq 1404270299, size 52
+<6>[ 1008.027221] TM <= 44749 burst, ack 2308753450, seq 4195073929, size 52
+<6>[ 1008.028594] TM <= 44749 burst, ack 2308753450, seq 4195073929, size 89
+<6>[ 1008.029388] TM => 44749 ack_only, ack 0, seq 2308753450, size 40
+<6>[ 1008.030578] TM <= 44749 burst, ack 2308753450, seq 520929161, size 52
+<6>[ 1008.031616] TM => 44749 ack_only, ack 0, seq 2308753450, size 40
+<6>[ 1008.032501] TM <= 44749 burst, ack 2325530666, seq 537706377, size 52
+<6>[ 1008.033538] TM => 44749 ack_only, ack 0, seq 2325530666, size 40
+<3>[ 1008.529296] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1008.529632] in_atomic(): 1, irqs_disabled(): 0, pid: 858, name: orcode.andtweet
+<4>[ 1008.529785] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1008.530029] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1008.530273] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1008.530487] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1008.530700] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1008.530822] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1008.531036] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1008.531280] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1008.531494] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1008.531707] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1008.531860] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1008.532073] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1008.532287] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1008.532501] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1008.532714] TM => 35636 new_syn, ack 0, seq 221096501, size 60
+<6>[ 1008.589569] TM <= 35636 burst_synack, ack 237873717, seq 2058000182, size 60
+<6>[ 1008.589965] TM => 35636 burst_established, ack 2074777398, seq 237873717, size 52
+<6>[ 1008.595947] TM => 35636 burst_request, ack 2074777398, seq 237873717, size 54
+<6>[ 1008.600311] TM <= 35636 burst_request, ack 271428149, seq 2074777398, size 52
+<6>[ 1008.602416] TM => 35636 ack_only, ack 2074777398, seq 271428149, size 54
+<6>[ 1008.607482] TM <= 35636 burst, ack 304982581, seq 2074777398, size 52
+<6>[ 1008.608825] TM <= 35636 burst, ack 304982581, seq 2074777398, size 54
+<6>[ 1008.610015] TM => 35636 ack_only, ack 2108331830, seq 304982581, size 52
+<6>[ 1008.613525] TM <= 35636 burst, ack 304982581, seq 2108331830, size 54
+<6>[ 1008.616027] TM => 35636 ack_only, ack 2141886262, seq 304982581, size 52
+<6>[ 1008.617553] TM => 35636 ack_only, ack 2141886262, seq 304982581, size 53
+<6>[ 1008.620971] TM <= 35636 burst, ack 321759797, seq 2141886262, size 53
+<6>[ 1008.623657] TM => 35636 ack_only, ack 2158663478, seq 321759797, size 53
+<6>[ 1008.629730] TM <= 35636 burst, ack 338537013, seq 2158663478, size 53
+<6>[ 1008.631622] TM => 35636 ack_only, ack 2175440694, seq 338537013, size 53
+<6>[ 1008.635864] TM <= 35636 burst, ack 355314229, seq 2175440694, size 53
+<6>[ 1008.637481] TM => 35636 ack_only, ack 2192217910, seq 355314229, size 53
+<6>[ 1008.641601] TM <= 35636 burst, ack 372091445, seq 2192217910, size 53
+<6>[ 1008.643249] TM => 35636 ack_only, ack 2208995126, seq 372091445, size 53
+<6>[ 1008.646453] TM <= 35636 burst, ack 388868661, seq 2208995126, size 53
+<6>[ 1008.651977] TM => 35636 ack_only, ack 2225772342, seq 388868661, size 53
+<6>[ 1008.695831] TM <= 35636 burst, ack 405645877, seq 2225772342, size 52
+<6>[ 1008.696838] TM => 35636 ack_only, ack 2225772342, seq 405645877, size 75
+<6>[ 1008.700439] TM <= 35636 burst, ack 791521845, seq 2225772342, size 52
+<6>[ 1008.701416] TM <= 35636 burst, ack 791521845, seq 2225772342, size 53
+<6>[ 1008.733886] TM => 35636 ack_only, ack 2242549558, seq 791521845, size 52mmc1: Starting deferred resume
+<6>[ 1008.939208] TM => 55248 new_syn, ack 0, seq 4032640822, size 60mmc1: Deferred resume completed
+<6>[ 1009.141571] TM <= 55248 burst_synack, ack 4049418038, seq 2044977871, size 60
+<6>[ 1009.141876] TM => 55248 burst_established, ack 2061755087, seq 4049418038, size 52
+<6>[ 1009.147613] TM => 55248 burst_request, ack 2061755087, seq 4049418038, size 454
+<6>[ 1009.347961] TM <= 55248 burst_request, ack 2204055350, seq 2061755087, size 52
+<6>[ 1009.361877] TM => Not a TCP packet. Protocol: 17 
+<6>[ 1009.366729] TM <= Not a TCP packet. Protocol: 17
+<6>[ 1009.368347] TM => 53422 new_syn, ack 0, seq 3693509942, size 60
+<6>[ 1009.372528] TM <= 55248 burst, ack 2204055350, seq 2061755087, size 1492
+<6>[ 1009.373626] TM => 55248 ack_only, ack 451535567, seq 2204055350, size 52
+<6>[ 1009.570892] TM <= 53422 burst_synack, ack 3710287158, seq 1473266908, size 60
+<6>[ 1009.571258] TM => 53422 burst_established, ack 1490044124, seq 3710287158, size 52
+<6>[ 1009.584350] TM => 53422 burst_request, ack 1490044124, seq 3710287158, size 458
+<6>[ 1009.785919] TM <= 53422 burst_request, ack 1932033334, seq 1490044124, size 52
+<6>[ 1009.815795] TM <= 53422 burst, ack 1932033334, seq 14042332, size 66
+<6>[ 1009.816131] TM <= 53422 burst, ack 1932033334, seq 248923356, size 52
+<6>[ 1009.817840] TM <= 53422 burst, ack 1932033334, seq 1490044124, size 1500
+<6>[ 1009.818298] TM => 53422 ack_only, ack 1490044124, seq 1932033334, size 64
+<6>[ 1009.818450] TM => 53422 ack_only, ack 1490044124, seq 1932033334, size 64
+<6>[ 1009.821014] TM => 53422 ack_only, ack 265700572, seq 1932033334, size 52
+<6>[ 1009.985717] TM => 53422 ack_only, ack 265700572, seq 1932033334, size 52
+<3>[ 1010.109649] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1010.110015] in_atomic(): 1, irqs_disabled(): 0, pid: 895, name: Thread-9
+<4>[ 1010.110321] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1010.110443] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1010.110656] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1010.110870] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1010.111114] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1010.111389] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1010.111541] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1010.111755] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1010.111968] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1010.112182] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1010.112304] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1010.112579] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1010.112823] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1010.113037] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1010.113281] TM => 58384 new_syn, ack 0, seq 2846701623, size 60
+<6>[ 1010.187133] TM <= 53422 burst, ack 1948810550, seq 265700572, size 52
+<6>[ 1010.316619] TM <= 58384 burst_synack, ack 2863478839, seq 105711202, size 60
+<6>[ 1010.317504] TM => 58384 burst_established, ack 122488418, seq 2863478839, size 52
+<6>[ 1010.355621] TM => 58384 burst_request, ack 122488418, seq 2863478839, size 466
+<6>[ 1010.559570] TM <= 58384 burst_request, ack 1219442743, seq 122488418, size 52
+<6>[ 1010.834838] TM <= 58384 burst, ack 1219442743, seq 122488418, size 1500
+<6>[ 1010.836303] TM => 58384 ack_only, ack 2941388386, seq 1219442743, size 52
+<6>[ 1010.837127] TM <= 58384 burst, ack 1219442743, seq 2941388386, size 1500
+<6>[ 1010.838195] TM => 58384 ack_only, ack 1465386594, seq 1219442743, size 52
+<6>[ 1010.839324] TM <= 58384 burst, ack 1219442743, seq 1465386594, size 1500
+<6>[ 1010.840332] TM <= 58384 burst, ack 1219442743, seq 4284286562, size 1500
+<6>[ 1010.843658] TM => 58384 ack_only, ack 4284286562, seq 1219442743, size 52
+<6>[ 1010.845031] TM => 58384 ack_only, ack 2808284770, seq 1219442743, size 52
+<6>[ 1011.043182] TM <= 58384 burst, ack 1219442743, seq 2808284770, size 1500
+<6>[ 1011.043457] TM => 58384 ack_only, ack 1332282978, seq 1219442743, size 52
+<6>[ 1011.043518] TM <= 58384 burst, ack 1219442743, seq 1332282978, size 1500
+<6>[ 1011.043792] TM <= 58384 burst, ack 1219442743, seq 4151182946, size 1500
+<6>[ 1011.044342] TM => 58384 ack_only, ack 4151182946, seq 1219442743, size 52
+<6>[ 1011.044921] TM <= 58384 burst, ack 1219442743, seq 2675181154, size 1500
+<6>[ 1011.045349] TM <= 58384 burst, ack 1219442743, seq 1199179362, size 1500
+<6>[ 1011.045776] TM <= 58384 burst, ack 1219442743, seq 4018079330, size 1500
+<6>[ 1011.046173] TM <= 58384 burst, ack 1219442743, seq 2542077538, size 1500
+<6>[ 1011.046539] TM => 58384 ack_only, ack 2675181154, seq 1219442743, size 52
+<6>[ 1011.046691] TM <= 58384 burst, ack 1219442743, seq 1066075746, size 1500
+<6>[ 1011.047668] TM <= 58384 burst, ack 1219442743, seq 3884975714, size 1500
+<6>[ 1011.048034] TM => 58384 ack_only, ack 1199179362, seq 1219442743, size 52
+<6>[ 1011.048187] TM <= 58384 burst, ack 1219442743, seq 2408973922, size 1500
+<6>[ 1011.048797] TM => 58384 ack_only, ack 4018079330, seq 1219442743, size 52
+<6>[ 1011.048950] TM <= 58384 burst, ack 1219442743, seq 932972130, size 1500
+<6>[ 1011.049316] TM => 58384 ack_only, ack 2542077538, seq 1219442743, size 52
+<6>[ 1011.049438] TM <= 58384 burst, ack 1219442743, seq 3751872098, size 1500
+<6>[ 1011.060821] TM => 58384 ack_only, ack 1066075746, seq 1219442743, size 52
+<6>[ 1011.061828] TM => 58384 ack_only, ack 3884975714, seq 1219442743, size 52
+<6>[ 1011.063049] TM => 58384 ack_only, ack 2408973922, seq 1219442743, size 52
+<6>[ 1011.064666] TM => 58384 ack_only, ack 932972130, seq 1219442743, size 52
+<6>[ 1011.065521] TM => 58384 ack_only, ack 3751872098, seq 1219442743, size 52
+<6>[ 1011.066711] TM => 58384 ack_only, ack 2275870306, seq 1219442743, size 52
+<6>[ 1011.246276] TM <= 58384 burst, ack 1219442743, seq 2275870306, size 1500
+<6>[ 1011.247650] TM => 58384 ack_only, ack 799868514, seq 1219442743, size 52
+<6>[ 1011.248779] TM <= 58384 burst, ack 1219442743, seq 799868514, size 1500
+<6>[ 1011.249877] TM <= 58384 burst, ack 1219442743, seq 3618768482, size 1500
+<6>[ 1011.251312] TM <= 58384 burst, ack 1219442743, seq 2142766690, size 1500
+<6>[ 1011.252410] TM <= 58384 burst, ack 1219442743, seq 666764898, size 1500
+<6>[ 1011.253784] TM <= 58384 burst, ack 1219442743, seq 3485664866, size 1500
+<6>[ 1011.255126] TM <= 58384 burst, ack 1219442743, seq 2009663074, size 1500
+<6>[ 1011.256134] TM <= 58384 burst, ack 1219442743, seq 533661282, size 1500
+<6>[ 1011.257415] TM <= 58384 burst, ack 1219442743, seq 3352561250, size 1500
+<6>[ 1011.258392] TM <= 58384 burst, ack 1219442743, seq 1876559458, size 1500
+<6>[ 1011.259674] TM <= 58384 burst, ack 1219442743, seq 400557666, size 1500
+<6>[ 1011.260955] TM <= 58384 burst, ack 1219442743, seq 3219457634, size 1500
+<6>[ 1011.262786] TM <= 58384 burst, ack 1219442743, seq 1743455842, size 1500
+<6>[ 1011.264251] TM <= 58384 burst, ack 1219442743, seq 267454050, size 1500
+<6>[ 1011.265380] TM <= 58384 burst, ack 1219442743, seq 3086354018, size 1500
+<6>[ 1011.266784] TM <= 58384 burst, ack 1219442743, seq 1610352226, size 1500
+<6>[ 1011.268066] TM <= 58384 burst, ack 1219442743, seq 117573474, size 1500
+<6>[ 1011.269439] TM <= 58384 burst, ack 1219442743, seq 2936473442, size 1500
+<6>[ 1011.270751] TM <= 58384 burst, ack 1219442743, seq 1460471650, size 1500
+<6>[ 1011.271820] TM <= 58384 burst, ack 1219442743, seq 4279371618, size 1500
+<6>[ 1011.274047] TM <= 58384 burst, ack 1219442743, seq 2803369826, size 1500
+<6>[ 1011.275451] TM <= 58384 burst, ack 1219442743, seq 1327368034, size 1500
+<6>[ 1011.275970] TM <= 58384 burst, ack 1219442743, seq 4146268002, size 1500
+<6>[ 1011.276275] TM => 58384 ack_only, ack 3618768482, seq 1219442743, size 52
+<6>[ 1011.276458] TM <= 58384 burst, ack 1219442743, seq 2670266210, size 1500
+<6>[ 1011.278839] TM => 58384 ack_only, ack 2142766690, seq 1219442743, size 52
+<6>[ 1011.279174] TM => 58384 ack_only, ack 666764898, seq 1219442743, size 52
+<6>[ 1011.279388] TM => 58384 ack_only, ack 3485664866, seq 1219442743, size 52
+<6>[ 1011.279632] TM => 58384 ack_only, ack 2009663074, seq 1219442743, size 52
+<6>[ 1011.281463] TM => 58384 ack_only, ack 533661282, seq 1219442743, size 52
+<6>[ 1011.281951] TM => 58384 ack_only, ack 1194264418, seq 1219442743, size 52
+<6>[ 1011.379180] TM <= 55248 burst, ack 2204055350, seq 451535567, size 52
+<6>[ 1011.413787] TM => 55248 ack_only, ack 468312783, seq 2204055350, size 52
+<6>[ 1011.463958] TM <= 58384 burst, ack 1219442743, seq 1194264418, size 1500
+<6>[ 1011.465087] TM <= 58384 burst, ack 1219442743, seq 4013164386, size 1500
+<6>[ 1011.466583] TM => 58384 ack_only, ack 2537162594, seq 1219442743, size 52
+<6>[ 1011.477722] TM <= 58384 burst, ack 1219442743, seq 2537162594, size 1500
+<6>[ 1011.479125] TM <= 58384 burst, ack 1219442743, seq 1061160802, size 1500
+<6>[ 1011.480194] TM => 58384 ack_only, ack 3880060770, seq 1219442743, size 52
+<6>[ 1011.481292] TM <= 58384 burst, ack 1219442743, seq 3880060770, size 1500
+<6>[ 1011.482757] TM <= 58384 burst, ack 1219442743, seq 2404058978, size 1500
+<6>[ 1011.483886] TM <= 58384 burst, ack 1219442743, seq 928057186, size 1500
+<6>[ 1011.485321] TM <= 58384 burst, ack 1219442743, seq 3746957154, size 1500
+<6>[ 1011.486694] TM <= 58384 burst, ack 1219442743, seq 2270955362, size 1500
+<6>[ 1011.488739] TM <= 58384 burst, ack 1219442743, seq 794953570, size 1500
+<6>[ 1011.490020] TM <= 58384 burst, ack 1219442743, seq 3613853538, size 1500
+<6>[ 1011.491027] TM <= 58384 burst, ack 1219442743, seq 2137851746, size 1500
+<6>[ 1011.492340] TM <= 58384 burst, ack 1219442743, seq 661849954, size 1500
+<6>[ 1011.493316] TM <= 58384 burst, ack 1219442743, seq 3480749922, size 1500
+<6>[ 1011.494689] TM <= 58384 burst, ack 1219442743, seq 2004748130, size 1500
+<6>[ 1011.496032] TM <= 58384 burst, ack 1219442743, seq 528746338, size 1500
+<6>[ 1011.497009] TM <= 58384 burst, ack 1219442743, seq 3347646306, size 1500
+<6>[ 1011.498260] TM <= 58384 burst, ack 1219442743, seq 1871644514, size 1500
+<6>[ 1011.499237] TM <= 58384 burst, ack 1219442743, seq 395642722, size 1500
+<6>[ 1011.500518] TM <= 58384 burst, ack 1219442743, seq 3214542690, size 1500
+<6>[ 1011.501831] TM <= 58384 burst, ack 1219442743, seq 1738540898, size 1500
+<6>[ 1011.502807] TM <= 58384 burst, ack 1219442743, seq 262539106, size 1500
+<6>[ 1011.503936] TM => 58384 ack_only, ack 3081439074, seq 1219442743, size 52
+<6>[ 1011.504974] TM <= 58384 burst, ack 1219442743, seq 3081439074, size 1500
+<6>[ 1011.506225] TM <= 58384 burst, ack 1219442743, seq 1605437282, size 1500
+<6>[ 1011.507507] TM <= 58384 burst, ack 1219442743, seq 129435490, size 1500
+<6>[ 1011.508483] TM <= 58384 burst, ack 1219442743, seq 2948335458, size 1500
+<6>[ 1011.512420] TM => 58384 ack_only, ack 1472333666, seq 1219442743, size 52
+<6>[ 1011.671142] TM <= 58384 burst, ack 1219442743, seq 1472333666, size 1500
+<6>[ 1011.672546] TM => 58384 ack_only, ack 4291233634, seq 1219442743, size 52
+<6>[ 1011.673645] TM <= 58384 burst, ack 1219442743, seq 4291233634, size 1500
+<6>[ 1011.674652] TM => 58384 ack_only, ack 2815231842, seq 1219442743, size 52
+<6>[ 1011.675781] TM <= 58384 burst, ack 1219442743, seq 2815231842, size 1500
+<6>[ 1011.676727] TM => 58384 ack_only, ack 1339230050, seq 1219442743, size 52
+<6>[ 1011.677795] TM <= 58384 burst, ack 1219442743, seq 1339230050, size 1500
+<6>[ 1011.679199] TM => 58384 ack_only, ack 4158130018, seq 1219442743, size 52
+<6>[ 1011.711517] TM <= 58384 burst, ack 1219442743, seq 4158130018, size 1500
+<6>[ 1011.712921] TM <= 58384 burst, ack 1219442743, seq 2682128226, size 1500
+<6>[ 1011.713775] TM => 58384 ack_only, ack 1206126434, seq 1219442743, size 52
+<6>[ 1011.715270] TM <= 58384 burst, ack 1219442743, seq 1206126434, size 1500
+<6>[ 1011.716705] TM <= 58384 burst, ack 1219442743, seq 4025026402, size 1500
+<6>[ 1011.717712] TM <= 58384 burst, ack 1219442743, seq 2549024610, size 1500
+<6>[ 1011.718994] TM <= 58384 burst, ack 1219442743, seq 1073022818, size 1500
+<6>[ 1011.720001] TM <= 58384 burst, ack 1219442743, seq 3891922786, size 1500
+<6>[ 1011.721343] TM <= 58384 burst, ack 1219442743, seq 2399144034, size 1500
+<6>[ 1011.722351] TM <= 58384 burst, ack 1219442743, seq 923142242, size 1500
+<6>[ 1011.723297] TM <= 58384 burst, ack 1219442743, seq 3742042210, size 1500
+<6>[ 1011.724670] TM <= 58384 burst, ack 1219442743, seq 2266040418, size 1500
+<6>[ 1011.725738] TM <= 58384 burst, ack 1219442743, seq 790038626, size 1500
+<6>[ 1011.726989] TM <= 58384 burst, ack 1219442743, seq 3608938594, size 1500
+<6>[ 1011.727966] TM <= 58384 burst, ack 1219442743, seq 2132936802, size 1500
+<6>[ 1011.729217] TM <= 58384 burst, ack 1219442743, seq 656935010, size 1500
+<6>[ 1011.730529] TM <= 58384 burst, ack 1219442743, seq 3475834978, size 1500
+<6>[ 1011.731567] TM <= 58384 burst, ack 1219442743, seq 1999833186, size 1500
+<6>[ 1011.732879] TM <= 58384 burst, ack 1219442743, seq 523831394, size 1500
+<6>[ 1011.733886] TM <= 58384 burst, ack 1219442743, seq 3342731362, size 1500
+<6>[ 1011.736175] TM <= 58384 burst, ack 1219442743, seq 1866729570, size 1500
+<6>[ 1011.737457] TM <= 58384 burst, ack 1219442743, seq 390727778, size 1500
+<6>[ 1011.738464] TM <= 58384 burst, ack 1219442743, seq 3209627746, size 1500
+<6>[ 1011.739715] TM <= 58384 burst, ack 1219442743, seq 1733625954, size 1500
+<6>[ 1011.740692] TM <= 58384 burst, ack 1219442743, seq 257624162, size 1500
+<6>[ 1011.749359] TM => 58384 ack_only, ack 3076524130, seq 1219442743, size 52
+<6>[ 1011.880615] TM <= 58384 burst, ack 1219442743, seq 3076524130, size 1500
+<6>[ 1011.881744] TM <= 58384 burst, ack 1219442743, seq 1600522338, size 1500
+<6>[ 1011.883056] TM => 58384 ack_only, ack 1600522338, seq 1219442743, size 52
+<6>[ 1011.883972] TM <= 58384 burst, ack 1219442743, seq 124520546, size 1500
+<6>[ 1011.885192] TM => 58384 ack_only, ack 124520546, seq 1219442743, size 52
+<6>[ 1011.886291] TM <= 58384 burst, ack 1219442743, seq 2943420514, size 1500
+<6>[ 1011.887603] TM => 58384 ack_only, ack 1467418722, seq 1219442743, size 52
+<6>[ 1011.942840] TM <= 58384 burst, ack 1219442743, seq 1467418722, size 1500
+<6>[ 1011.944091] TM <= 58384 burst, ack 1219442743, seq 4286318690, size 1500
+<6>[ 1011.945587] TM => 58384 ack_only, ack 2810316898, seq 1219442743, size 52
+<6>[ 1011.951751] TM <= 58384 burst, ack 1219442743, seq 2810316898, size 1500
+<6>[ 1011.952911] TM <= 58384 burst, ack 1219442743, seq 1334315106, size 1500
+<6>[ 1011.954437] TM <= 58384 burst, ack 1219442743, seq 4153215074, size 1500
+<6>[ 1011.955566] TM <= 58384 burst, ack 1219442743, seq 2677213282, size 1500
+<6>[ 1011.956848] TM <= 58384 burst, ack 1219442743, seq 1201211490, size 1500
+<6>[ 1011.957885] TM <= 58384 burst, ack 1219442743, seq 4020111458, size 1500
+<6>[ 1011.959167] TM <= 58384 burst, ack 1219442743, seq 2544109666, size 1500
+<6>[ 1011.960479] TM <= 58384 burst, ack 1219442743, seq 1068107874, size 1500
+<6>[ 1011.961486] TM <= 58384 burst, ack 1219442743, seq 3887007842, size 1500
+<6>[ 1011.962799] TM <= 58384 burst, ack 1219442743, seq 2411006050, size 1500
+<6>[ 1011.963867] TM <= 58384 burst, ack 1219442743, seq 935004258, size 1500
+<6>[ 1011.965148] TM <= 58384 burst, ack 1219442743, seq 3753904226, size 1500
+<6>[ 1011.966491] TM <= 58384 burst, ack 1219442743, seq 2277902434, size 1500
+<6>[ 1011.967437] TM <= 58384 burst, ack 1219442743, seq 801900642, size 1500
+<6>[ 1011.968719] TM <= 58384 burst, ack 1219442743, seq 3620800610, size 1500
+<6>[ 1011.969726] TM <= 58384 burst, ack 1219442743, seq 2144798818, size 1500
+<6>[ 1011.971038] TM <= 58384 burst, ack 1219442743, seq 668797026, size 1500
+<6>[ 1011.972351] TM <= 58384 burst, ack 1219442743, seq 3487696994, size 1500
+<6>[ 1011.974395] TM <= 58384 burst, ack 1219442743, seq 2011695202, size 1500
+<6>[ 1011.975433] TM => 58384 ack_only, ack 535693410, seq 1219442743, size 52
+<6>[ 1011.976440] TM <= 58384 burst, ack 1219442743, seq 535693410, size 1500
+<6>[ 1011.977722] TM <= 58384 burst, ack 1219442743, seq 3354593378, size 1500
+<6>[ 1011.978973] TM <= 58384 burst, ack 1219442743, seq 1878591586, size 1500
+<6>[ 1011.982391] TM => 58384 ack_only, ack 402589794, seq 1219442743, size 52
+<6>[ 1012.088592] TM <= 58384 burst, ack 1219442743, seq 402589794, size 1500
+<6>[ 1012.089752] TM <= 58384 burst, ack 1219442743, seq 3204712802, size 1500
+<6>[ 1012.091156] TM <= 58384 burst, ack 1219442743, seq 1728711010, size 1500
+<6>[ 1012.092254] TM <= 58384 burst, ack 1219442743, seq 252709218, size 1500
+<6>[ 1012.104095] TM => 58384 ack_only, ack 1728711010, seq 1219442743, size 52
+<6>[ 1012.105407] TM => 58384 ack_only, ack 3071609186, seq 1219442743, size 52
+<6>[ 1012.147644] TM <= 58384 burst, ack 1219442743, seq 3071609186, size 1500
+<6>[ 1012.149047] TM <= 58384 burst, ack 1219442743, seq 1595607394, size 1500
+<6>[ 1012.149841] TM => 58384 ack_only, ack 119605602, seq 1219442743, size 52
+<6>[ 1012.180999] TM <= 58384 burst, ack 1219442743, seq 119605602, size 1500
+<6>[ 1012.182403] TM <= 58384 burst, ack 1219442743, seq 2938505570, size 1500
+<6>[ 1012.183441] TM <= 58384 burst, ack 1219442743, seq 1462503778, size 1500
+<6>[ 1012.183959] TM <= 58384 burst, ack 1219442743, seq 4281403746, size 1500
+<6>[ 1012.184387] TM <= 58384 burst, ack 1219442743, seq 2805401954, size 1500
+<6>[ 1012.184844] TM <= 58384 burst, ack 1219442743, seq 1329400162, size 1500
+<6>[ 1012.187713] TM <= 58384 burst, ack 1219442743, seq 4148300130, size 1500
+<6>[ 1012.188140] TM <= 58384 burst, ack 1219442743, seq 2672298338, size 1500
+<6>[ 1012.188537] TM => 58384 ack_only, ack 1462503778, seq 1219442743, size 52
+<6>[ 1012.188659] TM <= 58384 burst, ack 1219442743, seq 1196296546, size 1500
+<6>[ 1012.191192] TM <= 58384 burst, ack 1219442743, seq 4015196514, size 1500
+<6>[ 1012.191467] TM => 58384 ack_only, ack 2805401954, seq 1219442743, size 52
+<6>[ 1012.191619] TM <= 58384 burst, ack 1219442743, seq 2539194722, size 1500
+<6>[ 1012.193847] TM <= 58384 burst, ack 1219442743, seq 1063192930, size 1500
+<6>[ 1012.194122] TM => 58384 ack_only, ack 4148300130, seq 1219442743, size 52
+<6>[ 1012.194274] TM <= 58384 burst, ack 1219442743, seq 3882092898, size 1500
+<6>[ 1012.196502] TM <= 58384 burst, ack 1219442743, seq 2406091106, size 1500
+<6>[ 1012.196838] TM <= 58384 burst, ack 1219442743, seq 930089314, size 1500
+<6>[ 1012.198364] TM <= 58384 burst, ack 1219442743, seq 3748989282, size 1500
+<6>[ 1012.198669] TM <= 58384 burst, ack 1219442743, seq 2272987490, size 1500
+<6>[ 1012.200195] TM <= 58384 burst, ack 1219442743, seq 796985698, size 1500
+<6>[ 1012.200500] TM <= 58384 burst, ack 1219442743, seq 3615885666, size 1500
+<6>[ 1012.200836] TM <= 58384 burst, ack 1219442743, seq 2139883874, size 1500
+<6>[ 1012.203002] TM <= 58384 burst, ack 1219442743, seq 663882082, size 1500
+<6>[ 1012.203338] TM <= 58384 burst, ack 1219442743, seq 3482782050, size 1500
+<6>[ 1012.211669] TM => 58384 ack_only, ack 2006780258, seq 1219442743, size 52
+<6>[ 1012.309143] TM <= 58384 burst, ack 1219442743, seq 2006780258, size 1500
+<6>[ 1012.310272] TM <= 58384 burst, ack 1219442743, seq 530778466, size 1500
+<6>[ 1012.311462] TM => 58384 ack_only, ack 3349678434, seq 1219442743, size 52
+<6>[ 1012.312286] TM <= 58384 burst, ack 1219442743, seq 3349678434, size 1500
+<6>[ 1012.313537] TM <= 58384 burst, ack 1219442743, seq 1873676642, size 1500
+<6>[ 1012.314361] TM => 58384 ack_only, ack 397674850, seq 1219442743, size 52
+<6>[ 1012.352142] TM <= 58384 burst, ack 1219442743, seq 397674850, size 1500
+<6>[ 1012.353546] TM <= 58384 burst, ack 1219442743, seq 3216574818, size 1500
+<6>[ 1012.354339] TM => 58384 ack_only, ack 1740573026, seq 1219442743, size 52
+<6>[ 1012.405212] TM <= 58384 burst, ack 1219442743, seq 1740573026, size 1500
+<6>[ 1012.406372] TM <= 58384 burst, ack 1219442743, seq 264571234, size 1500
+<6>[ 1012.407714] TM => 58384 ack_only, ack 3083471202, seq 1219442743, size 52
+<6>[ 1012.408813] TM <= 58384 burst, ack 1219442743, seq 3083471202, size 1500
+<6>[ 1012.409790] TM <= 58384 burst, ack 1219442743, seq 1607469410, size 1500
+<6>[ 1012.410827] TM => 58384 ack_only, ack 131467618, seq 1219442743, size 52
+<6>[ 1012.411804] TM <= 58384 burst, ack 1219442743, seq 131467618, size 1500
+<6>[ 1012.413085] TM <= 58384 burst, ack 1219442743, seq 2950367586, size 1500
+<6>[ 1012.414611] TM <= 58384 burst, ack 1219442743, seq 1474365794, size 1500
+<6>[ 1012.415771] TM <= 58384 burst, ack 1219442743, seq 4293265762, size 1500
+<6>[ 1012.417205] TM <= 58384 burst, ack 1219442743, seq 2817263970, size 1500
+<6>[ 1012.418212] TM <= 58384 burst, ack 1219442743, seq 1341262178, size 1500
+<6>[ 1012.419525] TM <= 58384 burst, ack 1219442743, seq 4160162146, size 1500
+<6>[ 1012.420806] TM <= 58384 burst, ack 1219442743, seq 2684160354, size 1500
+<6>[ 1012.421783] TM <= 58384 burst, ack 1219442743, seq 1191381602, size 1500
+<6>[ 1012.423034] TM <= 58384 burst, ack 1219442743, seq 4010281570, size 1500
+<6>[ 1012.424102] TM <= 58384 burst, ack 1219442743, seq 2534279778, size 1500
+<6>[ 1012.425445] TM <= 58384 burst, ack 1219442743, seq 1058277986, size 1500
+<6>[ 1012.426696] TM <= 58384 burst, ack 1219442743, seq 3877177954, size 1500
+<6>[ 1012.427673] TM <= 58384 burst, ack 1219442743, seq 2401176162, size 1500
+<6>[ 1012.428955] TM <= 58384 burst, ack 1219442743, seq 925174370, size 1500
+<6>[ 1012.429931] TM <= 58384 burst, ack 1219442743, seq 3744074338, size 1500
+<6>[ 1012.431182] TM <= 58384 burst, ack 1219442743, seq 2268072546, size 1500
+<6>[ 1012.432159] TM <= 58384 burst, ack 1219442743, seq 792070754, size 1500
+<6>[ 1012.436248] TM => 58384 ack_only, ack 3610970722, seq 1219442743, size 52
+<6>[ 1012.520843] TM <= 58384 burst, ack 1219442743, seq 3610970722, size 1500
+<6>[ 1012.521972] TM <= 58384 burst, ack 1219442743, seq 2134968930, size 1500
+<6>[ 1012.523223] TM => 58384 ack_only, ack 658967138, seq 1219442743, size 52
+<6>[ 1012.524139] TM <= 58384 burst, ack 1219442743, seq 658967138, size 1500
+<6>[ 1012.525421] TM <= 58384 burst, ack 1219442743, seq 3477867106, size 1500
+<6>[ 1012.526763] TM => 58384 ack_only, ack 2001865314, seq 1219442743, size 52
+<6>[ 1012.556640] TM <= 58384 burst, ack 1219442743, seq 2001865314, size 1500
+<6>[ 1012.558013] TM <= 58384 burst, ack 1219442743, seq 525863522, size 1500
+<6>[ 1012.558807] TM => 58384 ack_only, ack 3344763490, seq 1219442743, size 52
+<6>[ 1012.637664] TM <= 58384 burst, ack 1219442743, seq 3344763490, size 1500
+<6>[ 1012.639099] TM <= 58384 burst, ack 1219442743, seq 1868761698, size 1500
+<6>[ 1012.640075] TM => 58384 ack_only, ack 392759906, seq 1219442743, size 52
+<6>[ 1012.641204] TM <= 58384 burst, ack 1219442743, seq 392759906, size 1500
+<6>[ 1012.642181] TM <= 58384 burst, ack 1219442743, seq 3211659874, size 1500
+<6>[ 1012.643249] TM => 58384 ack_only, ack 1735658082, seq 1219442743, size 52
+<6>[ 1012.644683] TM <= 58384 burst, ack 1219442743, seq 1735658082, size 1500
+<6>[ 1012.645690] TM <= 58384 burst, ack 1219442743, seq 259656290, size 1500
+<6>[ 1012.647003] TM <= 58384 burst, ack 1219442743, seq 3078556258, size 1500
+<6>[ 1012.648010] TM <= 58384 burst, ack 1219442743, seq 1602554466, size 1500
+<6>[ 1012.649291] TM <= 58384 burst, ack 1219442743, seq 126552674, size 1500
+<6>[ 1012.650573] TM <= 58384 burst, ack 1219442743, seq 2945452642, size 1500
+<6>[ 1012.651580] TM <= 58384 burst, ack 1219442743, seq 1469450850, size 1500
+<6>[ 1012.652862] TM <= 58384 burst, ack 1219442743, seq 4288350818, size 1500
+<6>[ 1012.653869] TM <= 58384 burst, ack 1219442743, seq 2812349026, size 1500
+<6>[ 1012.655151] TM <= 58384 burst, ack 1219442743, seq 1336347234, size 1500
+<6>[ 1012.656188] TM <= 58384 burst, ack 1219442743, seq 4155247202, size 1500
+<6>[ 1012.657165] TM <= 58384 burst, ack 1219442743, seq 2679245410, size 1500
+<6>[ 1012.658447] TM <= 58384 burst, ack 1219442743, seq 1203243618, size 1500
+<6>[ 1012.659423] TM <= 58384 burst, ack 1219442743, seq 4022143586, size 1500
+<6>[ 1012.660705] TM <= 58384 burst, ack 1219442743, seq 2546141794, size 1500
+<6>[ 1012.661682] TM <= 58384 burst, ack 1219442743, seq 1070140002, size 1500
+<6>[ 1012.662963] TM <= 58384 burst, ack 1219442743, seq 3889039970, size 1500
+<6>[ 1012.664306] TM <= 58384 burst, ack 1219442743, seq 2413038178, size 1500
+<6>[ 1012.675292] TM => 58384 ack_only, ack 937036386, seq 1219442743, size 52
+<6>[ 1012.729919] TM <= 58384 burst, ack 1219442743, seq 937036386, size 1500
+<6>[ 1012.730438] TM <= 58384 burst, ack 1219442743, seq 3755936354, size 1500
+<6>[ 1012.730773] TM => 58384 ack_only, ack 2279934562, seq 1219442743, size 52
+<6>[ 1012.731292] TM <= 58384 burst, ack 1219442743, seq 2279934562, size 1500
+<6>[ 1012.731689] TM <= 58384 burst, ack 1219442743, seq 803932770, size 1500
+<6>[ 1012.732543] TM => 58384 ack_only, ack 3622832738, seq 1219442743, size 52
+<6>[ 1012.761352] TM <= 58384 burst, ack 1219442743, seq 3622832738, size 1500
+<6>[ 1012.762359] TM <= 58384 burst, ack 1219442743, seq 2146830946, size 1500
+<6>[ 1012.763061] TM => 58384 ack_only, ack 670829154, seq 1219442743, size 52
+<6>[ 1012.783386] TM <= 58384 burst, ack 1219442743, seq 670829154, size 1500
+<6>[ 1012.813812] TM => 58384 ack_only, ack 3472952162, seq 1219442743, size 52
+<6>[ 1012.866760] TM <= 58384 burst, ack 1219442743, seq 3472952162, size 1500
+<6>[ 1012.868194] TM <= 58384 burst, ack 1219442743, seq 1996950370, size 1500
+<6>[ 1012.869567] TM <= 58384 burst, ack 1219442743, seq 520948578, size 1500
+<6>[ 1012.874084] TM => 58384 ack_only, ack 520948578, seq 1219442743, size 52
+<6>[ 1012.877960] TM <= 58384 burst, ack 1219442743, seq 3339848546, size 1500
+<6>[ 1012.878753] TM => 58384 ack_only, ack 1863846754, seq 1219442743, size 52
+<6>[ 1012.880187] TM <= 58384 burst, ack 1219442743, seq 1863846754, size 1500
+<6>[ 1012.881530] TM <= 58384 burst, ack 1219442743, seq 387844962, size 1500
+<6>[ 1012.882568] TM <= 58384 burst, ack 1219442743, seq 3206744930, size 1500
+<6>[ 1012.884094] TM <= 58384 burst, ack 1219442743, seq 1730743138, size 1500
+<6>[ 1012.885131] TM <= 58384 burst, ack 1219442743, seq 254741346, size 1500
+<6>[ 1012.886444] TM <= 58384 burst, ack 1219442743, seq 3073641314, size 1500
+<6>[ 1012.887451] TM <= 58384 burst, ack 1219442743, seq 1597639522, size 1500
+<6>[ 1012.888732] TM <= 58384 burst, ack 1219442743, seq 121637730, size 1500
+<6>[ 1012.889984] TM <= 58384 burst, ack 1219442743, seq 2940537698, size 1500
+<6>[ 1012.890960] TM <= 58384 burst, ack 1219442743, seq 1464535906, size 1500
+<6>[ 1012.892211] TM <= 58384 burst, ack 1219442743, seq 4283435874, size 1500
+<6>[ 1012.893218] TM <= 58384 burst, ack 1219442743, seq 2807434082, size 1500
+<6>[ 1012.894592] TM <= 58384 burst, ack 1219442743, seq 1331432290, size 1500
+<6>[ 1012.895935] TM <= 58384 burst, ack 1219442743, seq 4150332258, size 1500
+<6>[ 1012.897003] TM <= 58384 burst, ack 1219442743, seq 2674330466, size 1500
+<6>[ 1012.898345] TM <= 58384 burst, ack 1219442743, seq 1198328674, size 1500
+<6>[ 1012.900299] TM <= 58384 burst, ack 1219442743, seq 4017228642, size 1500
+<6>[ 1012.905364] TM => 58384 ack_only, ack 2541226850, seq 1219442743, size 52
+<6>[ 1012.933166] TM <= 58384 burst, ack 1219442743, seq 2541226850, size 1500
+<6>[ 1012.933441] TM <= 58384 burst, ack 1219442743, seq 1065225058, size 1500
+<6>[ 1012.933502] TM => 58384 ack_only, ack 3884125026, seq 1219442743, size 52
+<6>[ 1012.934082] TM <= 58384 burst, ack 1219442743, seq 3884125026, size 1500
+<6>[ 1012.934356] TM <= 58384 burst, ack 1219442743, seq 2408123234, size 1500
+<6>[ 1012.936126] TM => 58384 ack_only, ack 932121442, seq 1219442743, size 52
+<6>[ 1012.964782] TM <= 58384 burst, ack 1219442743, seq 932121442, size 1500
+<6>[ 1012.965789] TM <= 58384 burst, ack 1219442743, seq 3751021410, size 1500
+<6>[ 1012.966308] TM => 58384 ack_only, ack 2275019618, seq 1219442743, size 52
+<6>[ 1013.015716] TM <= 58384 burst, ack 1219442743, seq 2275019618, size 1500
+<6>[ 1013.017120] TM <= 58384 burst, ack 1219442743, seq 799017826, size 1500
+<6>[ 1013.018249] TM => 58384 ack_only, ack 3617917794, seq 1219442743, size 52
+<6>[ 1013.077026] TM <= 58384 burst, ack 1219442743, seq 3617917794, size 1500
+<6>[ 1013.078124] TM <= 58384 burst, ack 1219442743, seq 2141916002, size 1500
+<6>[ 1013.079559] TM => 58384 ack_only, ack 665914210, seq 1219442743, size 52
+<6>[ 1013.103546] TM <= 58384 burst, ack 1219442743, seq 665914210, size 1500
+<6>[ 1013.104125] TM <= 58384 burst, ack 1219442743, seq 3484814178, size 1500
+<6>[ 1013.104644] TM => 58384 ack_only, ack 2008812386, seq 1219442743, size 52
+<6>[ 1013.108459] TM <= 58384 burst, ack 1219442743, seq 2008812386, size 1500
+<6>[ 1013.109863] TM <= 58384 burst, ack 1219442743, seq 532810594, size 1500
+<6>[ 1013.110992] TM <= 58384 burst, ack 1219442743, seq 3351710562, size 1500
+<6>[ 1013.112274] TM <= 58384 burst, ack 1219442743, seq 1875708770, size 1500
+<6>[ 1013.113555] TM <= 58384 burst, ack 1219442743, seq 399706978, size 1500
+<6>[ 1013.114807] TM <= 58384 burst, ack 1219442743, seq 3218606946, size 1500
+<6>[ 1013.116149] TM <= 58384 burst, ack 1219442743, seq 1742605154, size 1500
+<6>[ 1013.117126] TM <= 58384 burst, ack 1219442743, seq 266603362, size 1500
+<6>[ 1013.118408] TM <= 58384 burst, ack 1219442743, seq 3085503330, size 1500
+<6>[ 1013.119689] TM <= 58384 burst, ack 1219442743, seq 1609501538, size 1500
+<6>[ 1013.120666] TM <= 58384 burst, ack 1219442743, seq 133499746, size 1500
+<6>[ 1013.121978] TM <= 58384 burst, ack 1219442743, seq 2952399714, size 1500
+<6>[ 1013.122955] TM <= 58384 burst, ack 1219442743, seq 1459620962, size 1500
+<6>[ 1013.124328] TM <= 58384 burst, ack 1219442743, seq 4278520930, size 1500
+<6>[ 1013.125671] TM <= 58384 burst, ack 1219442743, seq 2802519138, size 1500
+<6>[ 1013.126647] TM <= 58384 burst, ack 1219442743, seq 1326517346, size 1500
+<6>[ 1013.127929] TM <= 58384 burst, ack 1219442743, seq 4145417314, size 1500
+<6>[ 1013.128936] TM <= 58384 burst, ack 1219442743, seq 2669415522, size 1500
+<6>[ 1013.134887] TM <= 58384 burst, ack 1219442743, seq 1193413730, size 1500
+<6>[ 1013.135986] TM => 58384 ack_only, ack 4012313698, seq 1219442743, size 52
+<6>[ 1013.137115] TM <= 58384 burst, ack 1219442743, seq 4012313698, size 1500
+<6>[ 1013.138488] TM <= 58384 burst, ack 1219442743, seq 2536311906, size 1500
+<6>[ 1013.139556] TM <= 58384 burst, ack 1219442743, seq 1060310114, size 1500
+<6>[ 1013.144195] TM => 58384 ack_only, ack 3879210082, seq 1219442743, size 52
+<6>[ 1013.168548] TM <= 58384 burst, ack 1219442743, seq 3879210082, size 1500
+<6>[ 1013.168975] TM <= 58384 burst, ack 1219442743, seq 2403208290, size 144
+<6>[ 1013.169464] TM => 58384 ack_only, ack 3963489378, seq 1219442743, size 52
+<6>[ 1013.344482] TM => 58384 ack_only, ack 3963489378, seq 1219442743, size 52
+<6>[ 1013.545837] TM <= 58384 burst, ack 1236219959, seq 3963489378, size 52
+<6>[ 1014.372863] TM => 55248 ack_only, ack 468312783, seq 2204055350, size 52
+<6>[ 1014.584808] TM <= 55248 burst, ack 2220832566, seq 468312783, size 52
+<3>[ 1024.677947] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1024.678161] in_atomic(): 1, irqs_disabled(): 0, pid: 895, name: Thread-9
+<4>[ 1024.678405] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1024.678649] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1024.678863] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1024.678985] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1024.679199] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1024.679412] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1024.679656] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1024.679779] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1024.679992] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1024.680236] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1024.680450] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1024.680664] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1024.680816] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1024.681030] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1024.681243] TM => 57959 new_syn, ack 0, seq 3796757316, size 60
+<6>[ 1024.896972] TM <= 57959 burst_synack, ack 3813534532, seq 1345071926, size 60
+<6>[ 1024.897796] TM => 57959 burst_established, ack 1361849142, seq 3813534532, size 52
+<6>[ 1024.920745] TM => 57959 burst_request, ack 1361849142, seq 3813534532, size 457
+<6>[ 1025.122161] TM <= 57959 burst_request, ack 2018503492, seq 1361849142, size 52
+<6>[ 1025.153076] TM <= 57959 burst, ack 2018503492, seq 1361849142, size 1464
+<6>[ 1025.154510] TM => 57959 ack_only, ack 3576769334, seq 2018503492, size 52
+<6>[ 1027.218719] TM <= 57959 burst, ack 2018503492, seq 3576769334, size 52
+<6>[ 1027.253845] TM => 57959 ack_only, ack 3593546550, seq 2018503492, size 52
+<6>[ 1027.384490] TM <= Not a TCP packet. Protocol: 17
+<6>[ 1027.386199] TM <= Not a TCP packet. Protocol: 17
+<3>[ 1027.830657] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1027.830871] in_atomic(): 1, irqs_disabled(): 0, pid: 906, name: Thread-23
+<4>[ 1027.831207] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1027.831329] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1027.831573] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1027.831787] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1027.832000] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1027.832214] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1027.832336] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1027.832550] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1027.832763] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1027.832977] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1027.833099] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1027.833312] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1027.833557] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1027.833831] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1027.834045] TM => 58470 new_syn, ack 0, seq 4026883143, size 60
+<6>[ 1028.047210] TM <= 58470 burst_synack, ack 4043660359, seq 2006210648, size 60
+<6>[ 1028.048370] TM => 58470 burst_established, ack 2022987864, seq 4043660359, size 52
+<6>[ 1028.064270] TM => 58470 burst_request, ack 2022987864, seq 4043660359, size 454
+<6>[ 1028.267822] TM <= 58470 burst_request, ack 2198297671, seq 2022987864, size 52
+<6>[ 1028.296874] TM <= 58470 burst, ack 2198297671, seq 832198744, size 52
+<6>[ 1028.297973] TM => 58470 ack_only, ack 2022987864, seq 2198297671, size 64
+<6>[ 1028.299102] TM <= 58470 burst, ack 2198297671, seq 2022987864, size 1395
+<6>[ 1028.300292] TM <= 58470 burst, ack 2198297671, seq 3080280152, size 174
+<6>[ 1028.301300] TM => 58470 ack_only, ack 3080280152, seq 2198297671, size 64
+<6>[ 1028.302520] TM => 58470 ack_only, ack 848975960, seq 2198297671, size 52
+<6>[ 1028.392333] TM => 58470 ack_only, ack 848975960, seq 2198297671, size 52
+<6>[ 1028.593231] TM <= 58470 burst, ack 2215074887, seq 848975960, size 52
+<6>[ 1030.791381] TM => 57959 ack_only, ack 3593546550, seq 2018503492, size 52
+<6>[ 1031.007171] TM <= 57959 burst, ack 2035280708, seq 3593546550, size 52
+<3>[ 1032.906311] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1032.906524] in_atomic(): 1, irqs_disabled(): 0, pid: 911, name: Thread-28
+<4>[ 1032.906799] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1032.907012] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1032.907226] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1032.907348] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1032.907592] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1032.907806] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1032.908020] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1032.908142] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1032.908355] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1032.908569] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1032.908782] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1032.909027] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1032.909240] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1032.909362] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1032.909576] TM => 37635 new_syn, ack 0, seq 4231478604, size 60
+<6>[ 1033.129150] TM <= 37635 burst_synack, ack 4248255820, seq 3622358727, size 60
+<6>[ 1033.130004] TM => 37635 burst_established, ack 3639135943, seq 4248255820, size 52
+<6>[ 1033.145996] TM => 37635 burst_request, ack 3639135943, seq 4248255820, size 456
+<6>[ 1033.349975] TM <= 37635 burst_request, ack 2436447564, seq 3639135943, size 52
+<6>[ 1033.370880] TM <= 37635 burst, ack 2436447564, seq 3639135943, size 1491
+<6>[ 1033.372161] TM => 37635 ack_only, ack 2012139207, seq 2436447564, size 52
+<6>[ 1035.054382] TM => 37635 ack_only, ack 2012139207, seq 2436447564, size 52
+<3>[ 1035.077880] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1035.077880] in_atomic(): 1, irqs_disabled(): 0, pid: 916, name: Thread-33
+<4>[ 1035.077941] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1035.077972] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1035.078002] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1035.078002] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1035.078033] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1035.078033] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1035.078063] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1035.078094] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1035.078124] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1035.078124] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1035.078155] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1035.078186] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1035.078247] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1035.078277] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1035.078277] TM => 50746 new_syn, ack 0, seq 1022507854, size 60
+<6>[ 1035.267211] TM <= 37635 burst, ack 2453224780, seq 2012139207, size 52
+<6>[ 1035.268035] TM => 37635 ack_only, ack 2028916423, seq 2453224780, size 52
+<6>[ 1035.283752] TM <= 50746 burst_synack, ack 1039285070, seq 2145860958, size 60
+<6>[ 1035.284851] TM => 50746 burst_established, ack 2162638174, seq 1039285070, size 52
+<6>[ 1035.300354] TM => 50746 burst_request, ack 2162638174, seq 1039285070, size 457
+<6>[ 1035.502288] TM <= 50746 burst_request, ack 3539155790, seq 2162638174, size 52
+<6>[ 1035.529846] TM <= 50746 burst, ack 3539155790, seq 686636382, size 70
+<6>[ 1035.530853] TM <= 50746 burst, ack 3539155790, seq 988626270, size 52
+<6>[ 1035.532135] TM => 50746 ack_only, ack 2162638174, seq 3539155790, size 64
+<6>[ 1035.532897] TM => 50746 ack_only, ack 2162638174, seq 3539155790, size 64
+<6>[ 1035.534057] TM <= 50746 burst, ack 3539155790, seq 2162638174, size 1500
+<6>[ 1035.535430] TM => 50746 ack_only, ack 1005403486, seq 3539155790, size 52
+<6>[ 1035.621154] TM => 50746 ack_only, ack 1005403486, seq 3539155790, size 52
+<6>[ 1035.821777] TM <= 50746 burst, ack 3555933006, seq 1005403486, size 52
+<3>[ 1037.065338] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1037.065704] in_atomic(): 1, irqs_disabled(): 0, pid: 921, name: Thread-38
+<4>[ 1037.065948] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1037.066101] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1037.066314] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1037.066528] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1037.066772] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1037.066986] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1037.067108] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1037.067321] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1037.067535] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1037.067749] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1037.067962] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1037.068084] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1037.068328] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1037.068542] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1037.068756] TM => 39252 new_syn, ack 0, seq 3587294543, size 60
+<6>[ 1037.289123] TM <= 39252 burst_synack, ack 3604071759, seq 394051877, size 60
+<6>[ 1037.290283] TM => 39252 burst_established, ack 410829093, seq 3604071759, size 52
+<6>[ 1037.306121] TM => 39252 burst_request, ack 410829093, seq 3604071759, size 451
+<6>[ 1037.507354] TM <= 39252 burst_request, ack 1708377423, seq 410829093, size 52
+<6>[ 1037.533813] TM <= 39252 burst, ack 1708377423, seq 410829093, size 1492
+<6>[ 1037.534820] TM => 39252 ack_only, ack 3095511333, seq 1708377423, size 52
+<6>[ 1039.505676] TM => 39252 ack_only, ack 3095511333, seq 1708377423, size 52
+<6>[ 1039.537109] TM <= 39252 burst, ack 1708377423, seq 3095511333, size 52
+<6>[ 1039.537384] TM => 39252 ack_only, ack 3112288549, seq 1725154639, size 52
+<3>[ 1039.547302] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1039.547607] in_atomic(): 1, irqs_disabled(): 0, pid: 926, name: Thread-43
+<4>[ 1039.547851] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1039.548065] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1039.548309] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1039.548522] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1039.548645] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1039.548858] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1039.549072] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1039.549285] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1039.549407] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1039.549621] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1039.549865] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1039.550079] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1039.550292] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1039.550415] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1039.550628] TM => 37215 new_syn, ack 0, seq 2106889810, size 60
+<6>[ 1039.717285] TM <= 39252 burst, ack 1725154639, seq 3112288549, size 52
+<6>[ 1039.757019] TM <= 37215 burst_synack, ack 2123667026, seq 3412941057, size 60
+<6>[ 1039.758148] TM => 37215 burst_established, ack 3429718273, seq 2123667026, size 52
+<6>[ 1039.774139] TM => 37215 burst_request, ack 3429718273, seq 2123667026, size 456
+<6>[ 1039.977966] TM <= 37215 burst_request, ack 311858770, seq 3429718273, size 52
+<6>[ 1040.003997] TM <= 37215 burst, ack 311858770, seq 3429718273, size 1492
+<6>[ 1040.005004] TM => 37215 ack_only, ack 1819498753, seq 311858770, size 52
+<6>[ 1042.067443] TM <= 37215 burst, ack 311858770, seq 1819498753, size 52
+<6>[ 1042.103851] TM => 37215 ack_only, ack 1836275969, seq 311858770, size 52
+<3>[ 1042.311553] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1042.311981] in_atomic(): 1, irqs_disabled(): 0, pid: 931, name: Thread-48
+<4>[ 1042.312133] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1042.312347] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1042.312591] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1042.312805] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1042.313018] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1042.313140] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1042.313354] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1042.313568] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1042.313842] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1042.314056] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1042.314178] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1042.314392] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1042.314636] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1042.314849] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1042.315063] TM => 50710 new_syn, ack 0, seq 1556204628, size 60
+<6>[ 1042.527374] TM <= 50710 burst_synack, ack 1572981844, seq 3561558627, size 60
+<6>[ 1042.528503] TM => 50710 burst_established, ack 3578335843, seq 1572981844, size 52
+<6>[ 1042.544250] TM => 50710 burst_request, ack 3578335843, seq 1572981844, size 454
+<6>[ 1042.748291] TM <= 50710 burst_request, ack 4022520916, seq 3578335843, size 52
+<6>[ 1042.770050] TM <= 50710 burst, ack 4022520916, seq 2102334051, size 70
+<6>[ 1042.771057] TM <= 50710 burst, ack 4022520916, seq 2404323939, size 52
+<6>[ 1042.772369] TM => 50710 ack_only, ack 3578335843, seq 4022520916, size 64
+<6>[ 1042.773132] TM => 50710 ack_only, ack 3578335843, seq 4022520916, size 64
+<6>[ 1042.774261] TM <= 50710 burst, ack 4022520916, seq 3578335843, size 1500
+<6>[ 1042.775878] TM => 50710 ack_only, ack 2421101155, seq 4022520916, size 52
+<6>[ 1042.899261] TM => 37215 ack_only, ack 1836275969, seq 311858770, size 52
+<6>[ 1042.931549] TM => 50710 ack_only, ack 2421101155, seq 4022520916, size 52
+<6>[ 1043.100097] TM <= 37215 burst, ack 328635986, seq 1836275969, size 52
+<6>[ 1043.131835] TM <= 50710 burst, ack 4039298132, seq 2421101155, size 52
+<3>[ 1045.096588] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1045.096832] in_atomic(): 1, irqs_disabled(): 0, pid: 936, name: Thread-53
+<4>[ 1045.097076] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1045.097320] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1045.097534] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1045.097656] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1045.097869] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1045.098083] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1045.098297] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1045.098449] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1045.098663] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1045.098876] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1045.099090] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1045.099334] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1045.099456] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1045.099670] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1045.099884] TM => 39605 new_syn, ack 0, seq 2761367128, size 60
+<6>[ 1045.316772] TM <= 39605 burst_synack, ack 2778144344, seq 1952040297, size 60
+<6>[ 1045.317901] TM => 39605 burst_established, ack 1968817513, seq 2778144344, size 52
+<6>[ 1045.341247] TM => 39605 burst_request, ack 1968817513, seq 2778144344, size 458
+<6>[ 1045.543029] TM <= 39605 burst_request, ack 999890520, seq 1968817513, size 52
+<6>[ 1045.571014] TM <= 39605 burst, ack 999890520, seq 492815721, size 74
+<6>[ 1045.572387] TM <= 39605 burst, ack 999890520, seq 861914473, size 52
+<6>[ 1045.573455] TM => 39605 ack_only, ack 1968817513, seq 999890520, size 64
+<6>[ 1045.574584] TM => 39605 ack_only, ack 1968817513, seq 999890520, size 64
+<6>[ 1045.575408] TM <= 39605 burst, ack 999890520, seq 1968817513, size 1500
+<6>[ 1045.577270] TM => 39605 ack_only, ack 878691689, seq 999890520, size 52
+<6>[ 1045.727600] TM => 39605 ack_only, ack 878691689, seq 999890520, size 52
+<6>[ 1045.928283] TM <= 39605 burst, ack 1016667736, seq 878691689, size 52
+<3>[ 1047.414947] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1047.414947] in_atomic(): 1, irqs_disabled(): 0, pid: 941, name: Thread-58
+<4>[ 1047.415008] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1047.415039] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1047.415069] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1047.415100] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1047.415100] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1047.415130] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1047.415161] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1047.415161] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1047.415191] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1047.415191] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1047.415222] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1047.415252] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1047.415283] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1047.415283] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1047.415313] TM => 58686 new_syn, ack 0, seq 3533660761, size 60
+<6>[ 1047.618377] TM <= 58686 burst_synack, ack 3550437977, seq 115644510, size 60
+<6>[ 1047.619232] TM => 58686 burst_established, ack 132421726, seq 3550437977, size 52
+<6>[ 1047.635192] TM => 58686 burst_request, ack 132421726, seq 3550437977, size 456
+<6>[ 1047.838836] TM <= 58686 burst_request, ack 1738629721, seq 132421726, size 52
+<6>[ 1047.865844] TM <= 58686 burst, ack 1738629721, seq 132421726, size 1492
+<6>[ 1047.871459] TM => 58686 ack_only, ack 2817103966, seq 1738629721, size 52
+<6>[ 1049.435668] TM => 58686 ack_only, ack 2817103966, seq 1738629721, size 52
+<3>[ 1049.448944] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1049.448944] in_atomic(): 1, irqs_disabled(): 0, pid: 946, name: Thread-63
+<4>[ 1049.449005] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1049.449035] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1049.449066] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1049.449066] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1049.449096] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1049.449127] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1049.449127] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1049.449157] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1049.449157] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1049.449188] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1049.449218] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1049.449249] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1049.449249] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1049.449279] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1049.449310] TM => 56831 new_syn, ack 0, seq 226294107, size 60
+<6>[ 1049.652038] TM <= 56831 burst_synack, ack 243071323, seq 2193310164, size 60
+<6>[ 1049.652893] TM => 56831 burst_established, ack 2210087380, seq 243071323, size 52
+<6>[ 1049.668823] TM => 56831 burst_request, ack 2210087380, seq 243071323, size 460
+<6>[ 1049.685821] TM <= 58686 burst, ack 1755406937, seq 2817103966, size 52
+<6>[ 1049.701782] TM <= 58686 burst, ack 1755406937, seq 2817103966, size 52
+<6>[ 1049.702850] TM => 58686 ack_only, ack 2833881182, seq 1755406937, size 52
+<6>[ 1049.873321] TM <= 56831 burst_request, ack 2793273691, seq 2210087380, size 52
+<6>[ 1049.899353] TM <= 56831 burst, ack 2793273691, seq 2210087380, size 1492
+<6>[ 1049.900665] TM => 56831 ack_only, ack 599867860, seq 2793273691, size 52
+<3>[ 1050.721130] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[ 1050.721466] in_atomic(): 1, irqs_disabled(): 0, pid: 951, name: Thread-68
+<4>[ 1050.721710] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[ 1050.721832] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[ 1050.722045] [<bf0314f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[ 1050.722290] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[ 1050.722503] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[ 1050.722717] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[ 1050.722839] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[ 1050.723052] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[ 1050.723266] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[ 1050.723480] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[ 1050.723602] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[ 1050.723876] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[ 1050.724121] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[ 1050.724334] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[ 1050.724548] TM => 36091 new_syn, ack 0, seq 1019630173, size 60
+<6>[ 1050.936920] TM <= 36091 burst_synack, ack 1036407389, seq 227621998, size 60
+<6>[ 1050.938079] TM => 36091 burst_established, ack 244399214, seq 1036407389, size 52
+<6>[ 1050.954956] TM => 36091 burst_request, ack 244399214, seq 1036407389, size 455
+<6>[ 1051.158569] TM <= 36091 burst_request, ack 3502723677, seq 244399214, size 52
+<6>[ 1051.187347] TM <= 36091 burst, ack 3502723677, seq 3063299182, size 69
+<6>[ 1051.188354] TM <= 36091 burst, ack 3502723677, seq 3348511854, size 52
+<6>[ 1051.189666] TM => 36091 ack_only, ack 244399214, seq 3502723677, size 64
+<6>[ 1051.190734] TM => 36091 ack_only, ack 244399214, seq 3502723677, size 64
+<6>[ 1051.191528] TM <= 36091 burst, ack 3502723677, seq 244399214, size 1500
+<6>[ 1051.193084] TM => 36091 ack_only, ack 3365289070, seq 3502723677, size 52
+<6>[ 1051.282196] TM => 36091 ack_only, ack 3365289070, seq 3502723677, size 52
+<6>[ 1051.483398] TM <= 36091 burst, ack 3519500893, seq 3365289070, size 52
+<6>[ 1052.002349] TM <= 56831 burst, ack 2793273691, seq 599867860, size 52
+<6>[ 1052.033782] TM => 56831 ack_only, ack 616645076, seq 2793273691, size 52
+<6>[ 1054.123931] batt:  53%, 3835 mV, 0 mA (0 avg), 28.6 C, 723 mAh
+<6>[ 1054.460510] TM <= 5555 burst, ack 2276291153, seq 1879832108, size 77
+<6>[ 1054.461517] TM => 5555 ack_only, ack 2299262508, seq 2276291153, size 52
+<6>[ 1054.463195] TM => 5555 ack_only, ack 2299262508, seq 2276291153, size 76
+<6>[ 1054.465240] TM => 5555 ack_only, ack 2299262508, seq 2678944337, size 77
+<6>[ 1054.466979] TM <= 5555 burst, ack 2678944337, seq 2299262508, size 52
+<6>[ 1054.468353] TM <= 5555 burst, ack 3098374737, seq 2299262508, size 52
+<6>[ 1054.469604] TM <= 5555 burst, ack 3098374737, seq 2299262508, size 76
+<6>[ 1054.503845] TM => 5555 ack_only, ack 2701915692, seq 3098374737, size 52
+<6>[ 1054.526733] TM <= 5555 burst, ack 3098374737, seq 2701915692, size 77
+<6>[ 1054.527679] TM => 5555 ack_only, ack 3121346092, seq 3098374737, size 52
+<6>[ 1054.529602] TM => 5555 ack_only, ack 3121346092, seq 3098374737, size 76
+<6>[ 1054.534118] TM <= 5555 burst, ack 3501027921, seq 3121346092, size 52
+<6>[ 1054.544555] TM => 5555 ack_only, ack 3121346092, seq 3501027921, size 77
+<6>[ 1054.547912] TM <= 5555 burst, ack 3920458321, seq 3121346092, size 52
+<6>[ 1054.548919] TM <= 5555 burst, ack 3920458321, seq 3121346092, size 76
+<6>[ 1054.583801] TM => 5555 ack_only, ack 3523999276, seq 3920458321, size 52
+<6>[ 1054.681579] TM <= 5555 burst, ack 3920458321, seq 3523999276, size 77
+<6>[ 1054.682891] TM => 5555 ack_only, ack 3943429676, seq 3920458321, size 52
+<6>[ 1054.684997] TM => 5555 ack_only, ack 3943429676, seq 3920458321, size 76
+<6>[ 1054.687774] TM <= 5555 burst, ack 28209745, seq 3943429676, size 52
+<6>[ 1054.704864] TM => 5555 ack_only, ack 3943429676, seq 28209745, size 77
+<6>[ 1054.708587] TM <= 5555 burst, ack 447640145, seq 3943429676, size 52
+<6>[ 1054.709899] TM <= 5555 burst, ack 447640145, seq 3943429676, size 76
+<6>[ 1054.743774] TM => 5555 ack_only, ack 51181100, seq 447640145, size 52
+<6>[ 1054.858764] TM <= 5555 burst, ack 447640145, seq 51181100, size 77
+<6>[ 1054.860046] TM => 5555 ack_only, ack 470611500, seq 447640145, size 52
+<6>[ 1054.861694] TM => 5555 ack_only, ack 470611500, seq 447640145, size 76
+<6>[ 1054.866668] TM <= 5555 burst, ack 850293329, seq 470611500, size 52
+<6>[ 1054.874389] TM => 5555 ack_only, ack 470611500, seq 850293329, size 77
+<6>[ 1054.879333] TM <= 5555 burst, ack 1269723729, seq 470611500, size 52
+<6>[ 1054.880310] TM <= 5555 burst, ack 1269723729, seq 470611500, size 76
+<6>[ 1054.913848] TM => 5555 ack_only, ack 873264684, seq 1269723729, size 52
+<6>[ 1055.024719] TM <= 5555 burst, ack 1269723729, seq 873264684, size 77
+<6>[ 1055.025787] TM => 5555 ack_only, ack 1292695084, seq 1269723729, size 52
+<6>[ 1055.028991] TM => 5555 ack_only, ack 1292695084, seq 1269723729, size 76
+<6>[ 1055.032379] TM <= 5555 burst, ack 1672376913, seq 1292695084, size 52
+<6>[ 1055.044525] TM => 5555 ack_only, ack 1292695084, seq 1672376913, size 77
+<6>[ 1055.048065] TM <= 5555 burst, ack 2091807313, seq 1292695084, size 52
+<6>[ 1055.049102] TM <= 5555 burst, ack 2091807313, seq 1292695084, size 76
+<6>[ 1055.083801] TM => 5555 ack_only, ack 1695348268, seq 2091807313, size 52
+<6>[ 1055.102874] TM <= 5555 burst, ack 2091807313, seq 1695348268, size 77
+<6>[ 1055.104278] TM => 5555 ack_only, ack 2114778668, seq 2091807313, size 52
+<6>[ 1055.105987] TM => 5555 ack_only, ack 2114778668, seq 2091807313, size 76
+<6>[ 1055.109893] TM <= 5555 burst, ack 2494460497, seq 2114778668, size 52
+<6>[ 1055.124542] TM => 5555 ack_only, ack 2114778668, seq 2494460497, size 77
+<6>[ 1055.127563] TM <= 5555 burst, ack 2913890897, seq 2114778668, size 52
+<6>[ 1055.128845] TM <= 5555 burst, ack 2913890897, seq 2114778668, size 76
+<6>[ 1055.163818] TM => 5555 ack_only, ack 2517431852, seq 2913890897, size 52
+<6>[ 1055.249298] TM <= 5555 burst, ack 2913890897, seq 2517431852, size 77
+<6>[ 1055.250366] TM => 5555 ack_only, ack 2936862252, seq 2913890897, size 52
+<6>[ 1055.252075] TM => 5555 ack_only, ack 2936862252, seq 2913890897, size 76
+<6>[ 1055.255340] TM <= 5555 burst, ack 3316544081, seq 2936862252, size 52
+<6>[ 1055.264495] TM => 5555 ack_only, ack 2936862252, seq 3316544081, size 77
+<6>[ 1055.267791] TM <= 5555 burst, ack 3735974481, seq 2936862252, size 52
+<6>[ 1055.268798] TM <= 5555 burst, ack 3735974481, seq 2936862252, size 76
+<6>[ 1055.303802] TM => 5555 ack_only, ack 3339515436, seq 3735974481, size 52
+<6>[ 1055.361022] TM <= 5555 burst, ack 3735974481, seq 3339515436, size 77
+<6>[ 1055.362091] TM => 5555 ack_only, ack 3758945836, seq 3735974481, size 52
+<6>[ 1055.364624] TM => 5555 ack_only, ack 3758945836, seq 3735974481, size 76
+<6>[ 1055.365783] TM => 5555 ack_only, ack 3758945836, seq 4138627665, size 77
+<6>[ 1055.370880] TM <= 5555 burst, ack 4138627665, seq 3758945836, size 52
+<6>[ 1055.371917] TM <= 5555 burst, ack 263156305, seq 3758945836, size 52
+<6>[ 1055.372863] TM <= 5555 burst, ack 263156305, seq 3758945836, size 76
+<6>[ 1055.413818] TM => 5555 ack_only, ack 4161599020, seq 263156305, size 52
+<6>[ 1055.518676] TM <= 5555 burst, ack 263156305, seq 4161599020, size 77
+<6>[ 1055.520233] TM => 5555 ack_only, ack 286127660, seq 263156305, size 52
+<6>[ 1055.521881] TM => 5555 ack_only, ack 286127660, seq 263156305, size 76
+<6>[ 1055.525970] TM <= 5555 burst, ack 665809489, seq 286127660, size 52
+<6>[ 1055.534667] TM => 5555 ack_only, ack 286127660, seq 665809489, size 78
+<6>[ 1055.538513] TM <= 5555 burst, ack 1102017105, seq 286127660, size 52
+<6>[ 1055.539825] TM <= 5555 burst, ack 1102017105, seq 286127660, size 76
+<6>[ 1055.546936] Function 'delete_all' is called, all connections are deleted
+<6>[ 1055.547973] TM :: MODULE DISABLED 
+
