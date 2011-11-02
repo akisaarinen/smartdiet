@@ -1,0 +1,4 @@
+# Configure these paths to point into your NDK installation as
+# well as Android kernel sources
+NDK_PATH=/path/to/ndk
+KERNEL_PATH=/path/to/kernel
