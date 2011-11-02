@@ -18,6 +18,8 @@ SmartDiet consists of two tools:
 * Energy analysis tool to dynamically profile the energy consumption of an
   Android program and to virualize it in a fine-grained per-method level.
 
+
+
 Authors and license
 -------------------
 
@@ -33,6 +35,11 @@ available at http://www.gnu.org/licenses/gpl-3.0.txt.
  
 TrafficMonitor kernel module is handled separately, see the
 <code>trafficmonitor</code> subdirectory for details.
+
+Example graph produced by SmartDiet
+-----------------------------------
+
+![examplegraph!](https://github.com/akisaarinen/smartdiet/raw/master/test-data/dynamic-profiling-run-simpleapp/example-graph.png)
 
 What does SmartDiet do?
 -----------------------
