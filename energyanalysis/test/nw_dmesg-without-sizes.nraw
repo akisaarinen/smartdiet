@@ -1,0 +1,221 @@
+<6>[187206.768341] TM :: MODULE INITIALIZATION, timestamp 1305119489524780
+<6>[187206.768707] netlink: Initializing Netlink Socket
+<6>[187206.769409] Initializing Netlink Socket successfully
+<6>[187206.769775] TM :: MODULE ENABLED
+<3>[187211.851867] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[187211.852111] in_atomic(): 1, irqs_disabled(): 0, pid: 1444, name: Connection
+<4>[187211.852416] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[187211.852539] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0021d8>] (hook_local_out+0x59c/0x1700 [ec])
+<4>[187211.852783] [<bf0021d8>] (hook_local_out+0x59c/0x1700 [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[187211.852996] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[187211.853210] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[187211.853424] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[187211.853546] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[187211.853759] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[187211.853973] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[187211.854187] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[187211.854431] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[187211.854553] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[187211.854766] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[187211.854980] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[187211.855194] TM => 38412 new_syn, ack 0
+<6>[187214.005096] TM <= 38412 burst_synack, ack 376808320
+<6>[187214.005920] TM => 38412 burst_established, ack 1489686700
+<6>[187214.005950]  
+<6>[187214.011810] TM => 38412 burst_request, ack 1489686700
+<6>[187214.178161] TM <= 38412 burst_request, ack 376808320
+<6>[187214.178802] TM => 38412 ack_only, ack 863347584
+<6>[187214.205017] TM <= 38412 burst, ack 863347584
+<6>[187214.227416] TM => 38412 ack_only, ack 863347584
+<6>[187214.478607] TM <= 38412 burst, ack 863347584
+<6>[187214.479522] TM => 38412 ack_only, ack 460825472
+<6>[187214.645233] TM <= 38412 burst, ack 460825472
+<6>[187214.645782] TM => 38412 ack_only, ack 460825472
+<6>[187214.825286] TM <= 38412 burst, ack 863478656
+<6>[187214.825866] TM => 38412 ack_only, ack 863478656
+<6>[187214.885803] TM => 38412 ack_only, ack 863478656
+<6>[187215.168029] TM <= 38412 burst, ack 3279397760
+<6>[187215.168670] TM => 38412 ack_only, ack 3279397760
+<6>[187215.293945] TM => 38412 ack_only, ack 3279397760
+<6>[187215.525054] TM <= 38412 burst, ack 3547833216
+<6>[187215.526275] TM => 38412 ack_only, ack 3547833216
+<6>[187215.725189] TM <= 38412 burst, ack 997761920
+<6>[187215.725769] TM => 38412 ack_only, ack 997761920
+<6>[187215.895111] TM <= 38412 burst, ack 997761920
+<6>[187215.895721] TM => 38412 ack_only, ack 997761920
+<6>[187217.054412] TM => 38412 ack_only, ack 997761920
+<6>[187217.238647] TM <= 38412 burst, ack 2541265792
+<6>[187217.239288] TM => 38412 ack_only, ack 2541265792
+<6>[187224.118347] TM => Not a TCP packet. Protocol: 17 
+<6>[187224.133758] TM => Not a TCP packet. Protocol: 17 
+<6>[187224.226715] TM => 38412 ack_only, ack 2541265792
+<6>[187226.189483] TM <= Not a TCP packet. Protocol: 17
+<3>[187226.206054] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[187226.206207] in_atomic(): 1, irqs_disabled(): 0, pid: 1447, name: Thread-425
+<4>[187226.206481] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[187226.206695] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf002420>] (hook_local_out+0x7e4/0x1700 [ec])
+<4>[187226.206848] [<bf002420>] (hook_local_out+0x7e4/0x1700 [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[187226.206970] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[187226.207183] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[187226.207397] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[187226.207611] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[187226.207733] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[187226.207946] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[187226.208160] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[187226.208557] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[187226.208770] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[187226.208892] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[187226.209106] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[187226.209350] TM => 32821 new_syn, ack 0
+<6>[187226.222320] TM <= Not a TCP packet. Protocol: 17
+<6>[187226.223571] TM => 57391 new_syn, ack 0
+<6>[187226.361999] TM <= 38412 burst, ack 3279463296
+<6>[187226.505065] TM <= 38412 burst, ack 3279463296
+<6>[187226.505615] TM => 38412 ack_only, ack 3279463296
+<6>[187226.550384] TM => 38412 ack_only, ack 3279463296
+<6>[187226.572204] TM <= 32821 burst_synack, ack 668822413
+<6>[187226.572723] TM => 32821 burst_established, ack 3173183757
+<6>[187226.572753]  
+<6>[187226.579315] TM => 32821 burst_request, ack 3173183757
+<6>[187226.609344] TM <= 57391 burst_synack, ack 1831785357
+<6>[187226.610107] TM => 57391 burst_established, ack 3691647758
+<6>[187226.610137]  
+<6>[187226.616241] TM => 57391 burst_request, ack 3691647758
+<6>[187226.772552] TM <= 38412 burst, ack 4286096256
+<6>[187226.773193] TM => 38412 ack_only, ack 4286096256
+<6>[187226.824188] TM => 38412 ack_only, ack 4286096256
+<6>[187227.452301] TM <= 32821 burst_request, ack 568355725
+<6>[187227.482299] TM <= 32821 burst, ack 568355725
+<6>[187227.483215] TM => 32821 ack_only, ack 568355725
+<6>[187227.552856] TM <= 32821 burst, ack 568355725
+<6>[187227.553802] TM => 32821 ack_only, ack 568355725
+<6>[187227.563751] TM => 32821 ack_only, ack 568355725
+<3>[187227.594909] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[187227.595581] in_atomic(): 1, irqs_disabled(): 0, pid: 1447, name: Thread-425
+<4>[187227.596313] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[187227.597045] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf002420>] (hook_local_out+0x7e4/0x1700 [ec])
+<4>[187227.597473] [<bf002420>] (hook_local_out+0x7e4/0x1700 [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[187227.598144] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[187227.598846] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[187227.599609] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[187227.600006] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[187227.600708] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[187227.601409] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[187227.602081] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[187227.602905] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[187227.603302] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[187227.604003] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[187227.604705] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[187227.605377] TM => 54924 new_syn, ack 0
+<6>[187227.752441] TM => 57391 burst_request, ack 3691647758
+<6>[187227.829467] TM <= 38412 burst, ack 1266262912
+<6>[187227.830047] TM => 38412 ack_only, ack 1266262912
+<6>[187227.874572] TM => 38412 ack_only, ack 1266262912
+<6>[187227.929443] TM <= 57391 burst, ack 1697764237
+<6>[187228.009613] TM <= 57391 burst, ack 1697764237
+<6>[187228.010437] TM => 57391 ack_only, ack 1697764237
+<6>[187228.019409] TM <= 57391 burst, ack 1697764237
+<6>[187228.021026] TM => 57391 ack_only, ack 1697764237
+<6>[187228.089508] TM <= 32821 burst, ack 585132941
+<6>[187228.119476] TM <= 54924 burst_synack, ack 2072194703
+<6>[187228.119781] TM => 54924 burst_established, ack 3681359631
+<6>[187228.119781]  
+<6>[187228.122039] TM => 54924 burst_request, ack 3681359631
+<6>[187228.549591] TM <= 38412 burst, ack 2004460416
+<6>[187228.550140] TM => 38412 ack_only, ack 2004460416
+<6>[187228.559417] TM <= 38412 burst, ack 2004460416
+<6>[187228.592437] TM => 38412 ack_only, ack 2004460416
+<6>[187228.649475] TM <= 57391 burst, ack 1697764237
+<6>[187228.769409] TM <= 57391 burst, ack 1714541453
+<6>[187228.819396] TM <= 38412 burst, ack 2004460416
+<6>[187228.820251] TM => 38412 ack_only, ack 2004460416
+<6>[187228.859466] TM <= 38412 burst, ack 2004460416
+<6>[187228.860015] TM => 38412 ack_only, ack 2004460416
+<6>[187229.159545] TM <= 38412 burst, ack 2004460416
+<6>[187229.329406] TM <= 54924 burst_request, ack 2105945743
+<6>[187229.412261] TM <= 54924 burst, ack 2105945743
+<6>[187229.412902] TM => 54924 ack_only, ack 2105945743
+<6>[187229.449554] TM <= 54924 burst, ack 2105945743
+<6>[187229.450378] TM => 54924 ack_only, ack 2105945743
+<6>[187229.479766] TM <= 54924 burst, ack 2105945743
+<6>[187229.480560] TM => 54924 ack_only, ack 2105945743
+<6>[187229.762695] TM <= 54924 burst, ack 2105945743
+<6>[187229.763275] TM => 54924 ack_only, ack 2105945743
+<6>[187229.779388] TM <= 54924 burst, ack 2105945743
+<6>[187229.780395] TM => 54924 ack_only, ack 2105945743
+<6>[187230.119628] TM <= 54924 burst, ack 2122722959
+<6>[187230.119995] TM <= 54924 burst, ack 2122722959
+<6>[187230.120300] TM => 54924 ack_only, ack 2122722959
+<6>[187230.495849] TM => 38412 ack_only, ack 2004460416
+<6>[187230.639404] TM <= 38412 burst, ack 2742657920
+<6>[187230.640258] TM => 38412 ack_only, ack 2742657920
+<6>[187231.003448] TM => 38412 ack_only, ack 2742657920
+<6>[187231.159362] TM <= 38412 burst, ack 3480855424
+<6>[187231.159942] TM => 38412 ack_only, ack 3480855424
+<6>[187231.273498] TM => 38412 ack_only, ack 3480855424
+<6>[187231.439697] TM <= 38412 burst, ack 4219052928
+<6>[187231.439880] TM => 38412 ack_only, ack 4219052928
+<6>[187232.896545] TM => 38412 ack_only, ack 4219052928
+<6>[187233.049407] TM <= 38412 burst, ack 662348672
+<6>[187233.050048] TM => 38412 ack_only, ack 662348672
+<6>[187235.294830] TM => 38412 ack_only, ack 662348672
+<6>[187235.449371] TM <= 38412 burst, ack 1400546176
+<6>[187235.450225] TM => 38412 ack_only, ack 1400546176
+<6>[187237.233703] TM => 38412 ack_only, ack 1400546176
+<6>[187237.409271] TM <= 38412 burst, ack 2138743680
+<6>[187237.410156] TM => 38412 ack_only, ack 2138743680
+<6>[187237.429351] TM <= 38412 burst, ack 2138743680
+<6>[187237.443267] TM => 38412 ack_only, ack 2138743680
+<6>[187237.469482] TM <= 38412 burst, ack 2138743680
+<6>[187237.470520] TM => 38412 ack_only, ack 2138743680
+<6>[187237.499572] TM <= 38412 burst, ack 2138743680
+<6>[187237.499816] TM => 38412 ack_only, ack 2138743680
+<6>[187237.509368] TM <= 38412 burst, ack 2138743680
+<6>[187237.509399] TM => 38412 ack_only, ack 2138743680
+<6>[187237.529479] TM <= 38412 burst, ack 2138743680
+<6>[187237.529724] TM => 38412 ack_only, ack 2138743680
+<6>[187237.539459] TM <= 38412 burst, ack 2138743680
+<6>[187237.544677] TM => 38412 ack_only, ack 2138743680
+<6>[187237.599243] TM <= 38412 burst, ack 2138743680
+<6>[187237.862670] batt: 100%, 4162 mV, -4 mA (-9 avg), 30.3 C, 1380 mAh
+<6>[187240.792175] TM => 38412 ack_only, ack 2138743680
+<6>[187242.558868] TM <= 38412 burst, ack 2876941184
+<6>[187242.559783] TM => 38412 ack_only, ack 2876941184
+<6>[187242.976165] TM <= 38412 burst, ack 58434432
+<6>[187242.977050] TM => 38412 ack_only, ack 58434432
+<6>[187243.016174] TM <= 38412 burst, ack 58434432
+<6>[187243.016723] TM => 38412 ack_only, ack 58434432
+<6>[187243.096160] TM <= 38412 burst, ack 58434432
+<6>[187243.096282] TM => 38412 ack_only, ack 58434432
+<6>[187243.136260] TM <= 38412 burst, ack 58434432
+<6>[187243.136596] TM => 38412 ack_only, ack 58434432
+<6>[187243.166229] TM <= 38412 burst, ack 58434432
+<6>[187243.166656] TM => 38412 ack_only, ack 58434432
+<6>[187246.554077] TM => 38412 ack_only, ack 58434432
+<6>[187246.888458] TM <= 38412 burst, ack 796631936
+<6>[187246.889404] TM => 38412 ack_only, ack 796631936
+<6>[187247.261535] TM => 38412 ack_only, ack 796631936
+<6>[187247.566131] TM <= 38412 burst, ack 1534829440
+<6>[187247.566711] TM => 38412 ack_only, ack 1534829440
+<6>[187247.805816] TM => 38412 ack_only, ack 1534829440
+<6>[187248.186462] TM <= 38412 burst, ack 2273026944
+<6>[187248.188873] TM => 38412 ack_only, ack 2273026944
+<6>[187248.413269] TM => 38412 ack_only, ack 2273026944
+<6>[187248.739166] TM <= 38412 burst, ack 3011224448
+<6>[187248.739715] TM => 38412 ack_only, ack 3011224448
+<6>[187249.774658] TM => 38412 ack_only, ack 3011224448
+<6>[187250.128662] TM <= 38412 burst, ack 3749421952
+<6>[187250.129577] TM => 38412 ack_only, ack 3749421952
+<6>[187250.156219] TM <= 38412 burst, ack 3749421952
+<6>[187250.163360] TM => 38412 ack_only, ack 3749421952
+<6>[187250.196166] TM <= 38412 burst, ack 3749421952
+<6>[187250.196838] TM => 38412 ack_only, ack 3749421952
+<6>[187250.206359] TM => 38412 ack_only, ack 3749421952
+<6>[187250.236541] TM <= 38412 burst, ack 3749421952
+<6>[187250.236785] TM => 38412 ack_only, ack 4219184000
+<6>[187251.738586] TM <= 38412 burst, ack 1216127872
+<6>[187251.758453] TM <= 38412 burst, ack 1216127872
+<6>[187251.759216] TM => 38412 ack_only, ack 1216127872
+<6>[187259.190917] Function 'delete_all' is called, all connections are deleted
+<6>[187259.191619] TM :: MODULE DISABLED 
+

@@ -1,0 +1,261 @@
+<6>[264454.269500] TM :: MODULE INITIALIZATION, timestamp 1306489762951962
+<6>[264454.269866] netlink: Initializing Netlink Socket
+<6>[264454.270507] Initializing Netlink Socket successfully
+<6>[264454.270874] TM :: MODULE ENABLED
+<6>[264462.283477] batt:  99%, 4157 mV, 0 mA (0 avg), 27.1 C, 1344 mAh
+<6>[264463.375823] TM => Not a TCP packet. Protocol: 17 
+<6>[264463.391387] TM <= Not a TCP packet. Protocol: 17
+<3>[264463.393585] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[264463.393707] in_atomic(): 1, irqs_disabled(): 0, pid: 2141, name: Thread-30
+<4>[264463.393920] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[264463.394165] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0372b0>] (hook_local_out+0x5a0/0x17dc [ec])
+<4>[264463.394378] [<bf0372b0>] (hook_local_out+0x5a0/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[264463.394592] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[264463.394744] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[264463.394958] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[264463.395172] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[264463.395385] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[264463.395507] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[264463.395721] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[264463.395935] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[264463.396148] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[264463.396392] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[264463.396514] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[264463.396728] TM => 32994 new_syn, ack 0, seq 1969407115, size 60
+<6>[264463.579498] TM <= 32994 burst_synack, ack 1986184331, seq 3214729656, size 60
+<6>[264463.579864] TM => 32994 burst_established, ack 3231506872, seq 1986184331, size 52
+<6>[264463.598724] TM => 32994 burst_request, ack 3231506872, seq 1986184331, size 857
+<6>[264463.783599] TM <= 32994 burst_request, ack 2607137931, seq 3231506872, size 52
+<6>[264463.816223] TM <= 32994 burst, ack 2607137931, seq 3231506872, size 1217
+<6>[264463.816741] TM <= 32994 burst, ack 2607137931, seq 1302454712, size 52
+<6>[264463.817199] TM => 32994 ack_only, ack 1302454712, seq 2607137931, size 52
+<6>[264463.849121] TM => 32994 ack_only, ack 1319231928, seq 2607137931, size 52
+<6>[264463.873809] TM => 32994 ack_only, ack 1319231928, seq 2607137931, size 52
+<6>[264464.058166] TM <= 32994 burst, ack 2623915147, seq 1319231928, size 52
+<3>[264471.574066] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[264471.574096] in_atomic(): 1, irqs_disabled(): 0, pid: 2142, name: Thread-31
+<4>[264471.574127] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[264471.574157] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[264471.574188] [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[264471.574218] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[264471.574218] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[264471.574249] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[264471.574279] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[264471.574279] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[264471.574310] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[264471.574310] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[264471.574340] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[264471.574371] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[264471.574401] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[264471.574401] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[264471.574432] TM => 45671 new_syn, ack 0, seq 3763352467, size 60
+<6>[264471.771911] TM <= 45671 burst_synack, ack 3780129683, seq 1870837434, size 60
+<6>[264471.773040] TM => 45671 burst_established, ack 1887614650, seq 3780129683, size 52
+<6>[264471.827270] TM => 45671 burst_request, ack 1887614650, seq 3780129683, size 934
+<6>[264472.779144] TM => 45671 burst_request, ack 1887614650, seq 3780129683, size 934
+<6>[264472.976715] TM <= 45671 burst, ack 1398027155, seq 1887614650, size 52
+<6>[264473.107604] TM <= 45671 burst, ack 1398027155, seq 411612858, size 1179
+<6>[264473.108917] TM <= 45671 burst, ack 1398027155, seq 2139928250, size 52
+<6>[264473.110107] TM => 45671 ack_only, ack 1887614650, seq 1398027155, size 64
+<6>[264473.111206] TM => 45671 ack_only, ack 1887614650, seq 1398027155, size 64
+<6>[264473.112304] TM <= 45671 burst, ack 1398027155, seq 1887614650, size 1500
+<6>[264473.113677] TM => 45671 ack_only, ack 2156705466, seq 1398027155, size 52
+<6>[264473.165740] TM => 45671 ack_only, ack 2156705466, seq 1398027155, size 52
+<6>[264473.350738] TM <= 45671 burst, ack 1414804371, seq 2156705466, size 52
+<3>[264477.139556] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[264477.139862] in_atomic(): 1, irqs_disabled(): 0, pid: 2144, name: Thread-32
+<4>[264477.140045] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[264477.140258] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[264477.140472] [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[264477.140686] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[264477.140930] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[264477.141052] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[264477.141265] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[264477.141479] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[264477.141693] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[264477.141815] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[264477.142028] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[264477.142272] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[264477.142486] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[264477.142700] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[264477.142913] TM => 36497 new_syn, ack 0, seq 2271291288, size 60
+<6>[264477.334899] TM <= 36497 burst_synack, ack 2288068504, seq 639362754, size 60
+<6>[264477.336059] TM => 36497 burst_established, ack 656139970, seq 2288068504, size 52
+<6>[264477.410614] TM => 36497 burst_request, ack 656139970, seq 2288068504, size 856
+<6>[264477.597991] TM <= 36497 burst_request, ack 2892244888, seq 656139970, size 52
+<6>[264477.620239] TM <= 36497 burst, ack 2892244888, seq 656139970, size 1218
+<6>[264477.621246] TM <= 36497 burst, ack 2892244888, seq 3038766786, size 52
+<6>[264477.622650] TM => 36497 ack_only, ack 3038766786, seq 2892244888, size 52
+<6>[264477.659149] TM => 36497 ack_only, ack 3055544002, seq 2892244888, size 52
+<6>[264477.704650] TM => 36497 ack_only, ack 3055544002, seq 2892244888, size 52
+<6>[264477.888427] TM <= 36497 burst, ack 2909022104, seq 3055544002, size 52
+<3>[264479.215148] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[264479.215484] in_atomic(): 1, irqs_disabled(): 0, pid: 2146, name: Thread-33
+<4>[264479.215728] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[264479.215850] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[264479.216094] [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[264479.216308] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[264479.216522] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[264479.216735] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[264479.216857] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[264479.217071] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[264479.217285] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[264479.217498] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[264479.217651] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[264479.217864] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[264479.218078] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[264479.218292] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[264479.218505] TM => 48560 new_syn, ack 0, seq 3917910170, size 60
+<6>[264479.415008] TM <= 48560 burst_synack, ack 3934687386, seq 2637162175, size 60
+<6>[264479.416137] TM => 48560 burst_established, ack 2653939391, seq 3934687386, size 52
+<6>[264479.474151] TM => 48560 burst_request, ack 2653939391, seq 3934687386, size 858
+<6>[264479.659667] TM <= 48560 burst_request, ack 277516442, seq 2653939391, size 52
+<6>[264479.685974] TM <= 48560 burst, ack 277516442, seq 2653939391, size 1218
+<6>[264479.686981] TM <= 48560 burst, ack 277516442, seq 741664447, size 52
+<6>[264479.688201] TM => 48560 ack_only, ack 741664447, seq 277516442, size 52
+<6>[264479.729156] TM => 48560 ack_only, ack 758441663, seq 277516442, size 52
+<6>[264479.791046] TM => 48560 ack_only, ack 758441663, seq 277516442, size 52
+<6>[264479.973663] TM <= 48560 burst, ack 294293658, seq 758441663, size 52
+<3>[264485.192749] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[264485.193115] in_atomic(): 1, irqs_disabled(): 0, pid: 2150, name: Thread-34
+<4>[264485.193359] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[264485.193603] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[264485.193786] [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[264485.194000] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[264485.194213] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[264485.194488] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[264485.194641] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[264485.194854] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[264485.195068] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[264485.195343] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[264485.195587] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[264485.195739] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[264485.196044] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[264485.196258] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[264485.196472] TM => 37007 new_syn, ack 0, seq 3652980640, size 60
+<6>[264485.403594] TM <= 37007 burst_synack, ack 3669757856, seq 3017125585, size 60
+<6>[264485.404785] TM => 37007 burst_established, ack 3033902801, seq 3669757856, size 52
+<6>[264485.443878] TM => 37007 burst_request, ack 3033902801, seq 3669757856, size 858
+<6>[264485.630523] TM <= 37007 burst_request, ack 12586912, seq 3033902801, size 52
+<6>[264485.649139] TM <= 37007 burst, ack 12586912, seq 3033902801, size 1218
+<6>[264485.650451] TM <= 37007 burst, ack 12586912, seq 1121627857, size 52
+<6>[264485.651611] TM => 37007 ack_only, ack 1121627857, seq 12586912, size 52
+<6>[264485.689117] TM => 37007 ack_only, ack 1138405073, seq 12586912, size 52
+<6>[264485.732513] TM => 37007 ack_only, ack 1138405073, seq 12586912, size 52
+<6>[264485.919494] TM <= 37007 burst, ack 29364128, seq 1138405073, size 52
+<3>[264487.408538] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[264487.408782] in_atomic(): 1, irqs_disabled(): 0, pid: 2152, name: Thread-35
+<4>[264487.409149] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[264487.409423] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[264487.409667] [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[264487.409790] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[264487.410034] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[264487.410308] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[264487.410522] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[264487.410644] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[264487.410858] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[264487.411163] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[264487.411376] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[264487.411621] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[264487.411773] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[264487.411987] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[264487.412231] TM => 53156 new_syn, ack 0, seq 2923932321, size 60
+<6>[264487.612487] TM <= 53156 burst_synack, ack 2940709537, seq 355822539, size 60
+<6>[264487.612823] TM => 53156 burst_established, ack 372599755, seq 2940709537, size 52
+<6>[264487.639465] TM => 53156 burst_request, ack 372599755, seq 2940709537, size 861
+<6>[264487.828063] TM <= 53156 burst_request, ack 3628772001, seq 372599755, size 52
+<6>[264487.846801] TM <= 53156 burst, ack 3628772001, seq 372599755, size 1217
+<6>[264487.848114] TM <= 53156 burst, ack 3628772001, seq 2738449355, size 52
+<6>[264487.849334] TM => 53156 ack_only, ack 2738449355, seq 3628772001, size 52
+<6>[264487.889099] TM => 53156 ack_only, ack 2755226571, seq 3628772001, size 52
+<6>[264487.922271] TM => 53156 ack_only, ack 2755226571, seq 3628772001, size 52
+<6>[264488.106353] TM <= 53156 burst, ack 3645549217, seq 2755226571, size 52
+<3>[264499.290954] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[264499.290985] in_atomic(): 1, irqs_disabled(): 0, pid: 2155, name: Thread-36
+<4>[264499.291015] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[264499.291046] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[264499.291076] [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[264499.291107] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[264499.291107] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[264499.291137] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[264499.291168] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[264499.291168] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[264499.291198] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[264499.291198] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[264499.291229] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[264499.291259] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[264499.291290] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[264499.291290] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[264499.291320] TM => 48704 new_syn, ack 0, seq 4105759148, size 60
+<6>[264499.486938] TM <= 48704 burst_synack, ack 4122536364, seq 1901421014, size 60
+<6>[264499.487792] TM => 48704 burst_established, ack 1918198230, seq 4122536364, size 52
+<6>[264499.546844] TM => 48704 burst_request, ack 1918198230, seq 4122536364, size 855
+<6>[264499.735168] TM <= 48704 burst_request, ack 415033772, seq 1918198230, size 52
+<6>[264499.755950] TM <= 48704 burst, ack 415033772, seq 1918198230, size 1218
+<6>[264499.757232] TM <= 48704 burst, ack 415033772, seq 5923286, size 52
+<6>[264499.758636] TM => 48704 ack_only, ack 5923286, seq 415033772, size 52
+<6>[264499.799102] TM => 48704 ack_only, ack 22700502, seq 415033772, size 52
+<6>[264499.831634] TM => 48704 ack_only, ack 22700502, seq 415033772, size 52
+<6>[264500.017120] TM <= 48704 burst, ack 431810988, seq 22700502, size 52
+<3>[264506.635009] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[264506.635375] in_atomic(): 1, irqs_disabled(): 0, pid: 2156, name: Thread-37
+<4>[264506.635559] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[264506.635803] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[264506.636016] [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[264506.636230] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[264506.636383] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[264506.636657] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[264506.636871] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[264506.637115] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[264506.637359] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[264506.637481] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[264506.637725] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[264506.637939] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[264506.638244] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[264506.638458] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[264506.638580] TM => 45467 new_syn, ack 0, seq 1483610548, size 60
+<6>[264506.841522] TM <= 45467 burst_synack, ack 1500387764, seq 3062196453, size 60
+<6>[264506.842681] TM => 45467 burst_established, ack 3078973669, seq 1500387764, size 52
+<6>[264506.880676] TM => 45467 burst_request, ack 3078973669, seq 1500387764, size 930
+<6>[264507.064514] TM <= 45467 burst_request, ack 3346078132, seq 3078973669, size 52
+<6>[264507.156829] TM <= 45467 burst, ack 3346078132, seq 1602971877, size 1178
+<6>[264507.157928] TM <= 45467 burst, ack 3346078132, seq 3314510053, size 52
+<6>[264507.159423] TM => 45467 ack_only, ack 3078973669, seq 3346078132, size 64
+<6>[264507.160217] TM => 45467 ack_only, ack 3078973669, seq 3346078132, size 64
+<6>[264507.161315] TM <= 45467 burst, ack 3346078132, seq 3078973669, size 1500
+<6>[264507.162902] TM => 45467 ack_only, ack 3331287269, seq 3346078132, size 52
+<6>[264507.220886] TM => 45467 ack_only, ack 3331287269, seq 3346078132, size 52
+<6>[264507.407165] TM <= 45467 burst, ack 3362855348, seq 3331287269, size 52
+<6>[264512.368713] batt:  99%, 4153 mV, -4 mA (-1 avg), 27.1 C, 1344 mAh
+<3>[264512.965545] BUG: sleeping function called from invalid context at mm/slab.c:3018
+<3>[264512.965545] in_atomic(): 1, irqs_disabled(): 0, pid: 2157, name: Thread-38
+<4>[264512.965606] [<c002eb9c>] (unwind_backtrace+0x0/0xd8) from [<c00d924c>] (kmem_cache_alloc+0x34/0x158)
+<4>[264512.965637] [<c00d924c>] (kmem_cache_alloc+0x34/0x158) from [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec])
+<4>[264512.965667] [<bf0374f8>] (hook_local_out+0x7e8/0x17dc [ec]) from [<c0266a4c>] (nf_iterate+0x54/0x98)
+<4>[264512.965667] [<c0266a4c>] (nf_iterate+0x54/0x98) from [<c0266c7c>] (nf_hook_slow+0x74/0x118)
+<4>[264512.965698] [<c0266c7c>] (nf_hook_slow+0x74/0x118) from [<c028ecf8>] (ip_output+0xc8/0xf4)
+<4>[264512.965728] [<c028ecf8>] (ip_output+0xc8/0xf4) from [<c028dc90>] (ip_local_out+0x24/0x28)
+<4>[264512.965728] [<c028dc90>] (ip_local_out+0x24/0x28) from [<c028e514>] (ip_queue_xmit+0x2e4/0x35c)
+<4>[264512.965759] [<c028e514>] (ip_queue_xmit+0x2e4/0x35c) from [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708)
+<4>[264512.965759] [<c02a0b68>] (tcp_transmit_skb+0x6ac/0x708) from [<c02a1334>] (tcp_connect+0x310/0x3dc)
+<4>[264512.965789] [<c02a1334>] (tcp_connect+0x310/0x3dc) from [<c02a727c>] (tcp_v4_connect+0x3a4/0x404)
+<4>[264512.965820] [<c02a727c>] (tcp_v4_connect+0x3a4/0x404) from [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8)
+<4>[264512.965850] [<c02fcdac>] (tcp_v6_connect+0x200/0x4d8) from [<c02b3a04>] (inet_stream_connect+0xac/0x284)
+<4>[264512.965850] [<c02b3a04>] (inet_stream_connect+0xac/0x284) from [<c02357c0>] (sys_connect+0x6c/0x90)
+<4>[264512.965881] [<c02357c0>] (sys_connect+0x6c/0x90) from [<c0029f40>] (ret_fast_syscall+0x0/0x2c)
+<6>[264512.965911] TM => 58132 new_syn, ack 0, seq 1915871929, size 60
+<6>[264513.162994] TM <= 58132 burst_synack, ack 1932649145, seq 3033041138, size 60
+<6>[264513.164154] TM => 58132 burst_established, ack 3049818354, seq 1932649145, size 52
+<6>[264513.201873] TM => 58132 burst_request, ack 3049818354, seq 1932649145, size 937
+<6>[264513.388763] TM <= 58132 burst_request, ack 3895780025, seq 3049818354, size 52
+<6>[264513.487823] TM <= 58132 burst, ack 3895780025, seq 1573816562, size 1184
+<6>[264513.488922] TM <= 58132 burst, ack 3895780025, seq 3386018034, size 52
+<6>[264513.490478] TM => 58132 ack_only, ack 3049818354, seq 3895780025, size 64
+<6>[264513.491241] TM => 58132 ack_only, ack 3049818354, seq 3895780025, size 64
+<6>[264513.492309] TM <= 58132 burst, ack 3895780025, seq 3049818354, size 1500
+<6>[264513.494018] TM => 58132 ack_only, ack 3402795250, seq 3895780025, size 52
+<6>[264513.544189] TM => 58132 ack_only, ack 3402795250, seq 3895780025, size 52
+<6>[264513.730285] TM <= 58132 burst, ack 3912557241, seq 3402795250, size 52
+<6>[264521.858032] Function 'delete_all' is called, all connections are deleted
+<6>[264521.863281] TM :: MODULE DISABLED 
+

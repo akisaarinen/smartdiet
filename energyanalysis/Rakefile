@@ -1,0 +1,45 @@
+=begin
+This file is part of SmartDiet.
+
+Copyright (C) 2011, Aki Saarinen.
+
+SmartDiet was developed in affiliation with Aalto University School 
+of Science, Department of Computer Science and Engineering. For
+more information about the department, see <http://cse.aalto.fi/>.
+
+SmartDiet is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+ 
+SmartDiet is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with SmartDiet.  If not, see <http://www.gnu.org/licenses/>.
+=end
+
+require "rubygems"
+
+full_name = "Energy profiler"
+package_name = "profiler"
+version = "0.1"
+
+require "rake/clean"
+
+require "rake/testtask"
+desc "Run tests"
+Rake::TestTask.new do |t|
+      t.test_files = FileList["test/*_test.rb"]
+        t.verbose = true
+          t.warning = true
+end
+
+desc "Search unfinished parts of source code"
+task :todo do
+      FileList["**/*.rb"].egrep /#.*(TODO|FIXME)/
+end
+
+task :default => :test
