@@ -1,0 +1,28 @@
+{ 
+    "sdkClassFilePath": "/Users/amsaarin/tmp",
+    "apps": [
+      { "name": "andtweet",
+        "appPath": "/Users/amsaarin/tkk/apps/andtweet.hg/bin",
+        "appSrcPath": "/Users/amsaarin/tkk/apps/andtweet.hg/src",
+        "libPath": "/Users/amsaarin/tkk/apps/andtweet.hg/libsrc" },
+      { "name": "zxing",
+        "appPath": "/Users/amsaarin/tkk/apps/zxing-read-only/core/build",
+        "appSrcPath": "/Users/amsaarin/tkk/apps/zxing-read-only/core/src" },
+      { "name": "slashdot",
+        "appPath": "/Users/amsaarin/tkk/apps/slashdot/bin",
+        "appSrcPath": "/Users/amsaarin/tkk/apps/slashdot/src",
+        "libPath": "/Users/amsaarin/tkk/apps/shared-lib"},
+      { "name": "k9",
+        "appPath": "/Users/amsaarin/tkk/apps/k-9/bin",
+        "appSrcPath": "/Users/amsaarin/tkk/apps/k-9/src",
+        "libPath": "/Users/amsaarin/tkk/apps/k-9/libs" },
+      { "name": "battleship",
+        "appPath": "/Users/amsaarin/tkk/apps/Android-Battleship-Client/bin",
+        "appSrcPath": "/Users/amsaarin/tkk/apps/Android-Battleship-Client/src",
+        "libPath": "/Users/amsaarin/tkk/apps/Android-Battleship-Client/libsrc" },
+      { "name": "platform-browser",
+        "appPath": "/Users/amsaarin/tkk/apps/android-source/apps-classes/Browser_intermediates",
+        "appSrcPath": "/Users/amsaarin/tkk/apps/android-source/apps-source/Browser/src",
+        "libPath": "/Users/amsaarin/tkk/apps/android-source/libraries-classes/used_sources" }
+    ]
+}
