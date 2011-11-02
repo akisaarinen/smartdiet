@@ -75,7 +75,8 @@ What do I need to use SmartDiet?
 
 * Google Nexus One development phone. To work with other phones, changes are probably required.
 * Android NDK installed in the host computer.
-* Ruby and R software installed in the host computer, tested with ruby 1.8.7 and R 2.12.1.
+* Ruby and RubyGems installed with 'faster_csv', 'rubytree' and 'json' gems. Tested with Ruby 1.8.7.
+* R software installed in the host computer, tested with R 2.12.1.
 * Android 2.2.1-r2 source code (available freely from the Internets). Needs to be patched and
   installed to the Nexus One, so that we can accurately measure the program execution flow.
 * This setup has been tested with Ubuntu Linux 11.04 host computer only.
