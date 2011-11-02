@@ -1,0 +1,716 @@
+D/dalvikvm(  335): GC_FOR_MALLOC freed 766 objects / 451216 bytes in 44ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451480 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 761 objects / 450856 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451864 bytes in 37ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451464 bytes in 50ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 451048 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451856 bytes in 49ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451360 bytes in 51ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 450944 bytes in 76ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451920 bytes in 45ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451280 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 450880 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 773 objects / 427064 bytes in 39ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 734 objects / 425080 bytes in 69ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 743 objects / 449864 bytes in 66ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 750 objects / 450352 bytes in 63ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 773 objects / 427072 bytes in 31ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 727 objects / 424824 bytes in 76ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 748 objects / 449920 bytes in 80ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 767 objects / 451072 bytes in 86ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 741 objects / 425712 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 722 objects / 424544 bytes in 30ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 761 objects / 450896 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 450856 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451856 bytes in 45ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451448 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 450992 bytes in 84ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 777 objects / 451816 bytes in 48ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451416 bytes in 60ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 451032 bytes in 75ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 773 objects / 427072 bytes in 90ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 730 objects / 424968 bytes in 42ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 756 objects / 450376 bytes in 79ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 756 objects / 450568 bytes in 84ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 770 objects / 451328 bytes in 46ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451448 bytes in 51ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 761 objects / 450808 bytes in 72ms
+D/AndroidRuntime( 1001): 
+D/AndroidRuntime( 1001): >>>>>>>>>>>>>> AndroidRuntime START <<<<<<<<<<<<<<
+D/AndroidRuntime( 1001): CheckJNI is OFF
+D/dalvikvm( 1001): creating instr width table
+D/AndroidRuntime( 1001): --- registering native functions ---
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451816 bytes in 211ms
+D/dalvikvm(  460): GC_EXPLICIT freed 80 objects / 3952 bytes in 26ms
+D/PackageParser(   88): Scanning package: /data/app/vmdl44116.tmp
+I/PackageParser(   88): fi.aalto: compat added android.permission.WRITE_EXTERNAL_STORAGE android.permission.READ_PHONE_STATE
+I/PackageManager(   88): Removing non-system package:fi.aalto
+I/Process (   88): Sending signal. PID: 988 SIG: 9
+I/ActivityManager(   88): Displayed activity fi.aalto/.MainActivity: 133429 ms (total 133429 ms)
+V/RenderScript_jni(  169): surfaceCreated
+V/RenderScript_jni(  169): surfaceChanged
+D/PackageManager(   88): Scanning package fi.aalto
+I/PackageManager(   88): /data/app/fi.aalto-1.apk changed; unpacking
+D/installd(   61): DexInv: --- BEGIN '/data/app/fi.aalto-1.apk' ---
+D/dalvikvm( 1010): creating instr width table
+D/dalvikvm( 1010): DexOpt: load 7ms, verify 18ms, opt 0ms
+D/installd(   61): DexInv: --- END '/data/app/fi.aalto-1.apk' (success) ---
+D/PackageManager(   88):   Activities: fi.aalto.MainActivity
+D/dalvikvm(   88): GC_FOR_MALLOC freed 8238 objects / 926080 bytes in 77ms
+I/installd(   61): move /data/dalvik-cache/data@app@fi.aalto-1.apk@classes.dex -> /data/dalvik-cache/data@app@fi.aalto-1.apk@classes.dex
+D/PackageManager(   88): New package installed in /data/app/fi.aalto-1.apk
+D/dalvikvm(  169): GC_EXPLICIT freed 324 objects / 12912 bytes in 58ms
+D/VoiceDialerReceiver(  239): onReceive Intent { act=android.intent.action.PACKAGE_REMOVED dat=package:fi.aalto flg=0x10000000 cmp=com.android.voicedialer/.VoiceDialerReceiver (has extras) }
+V/RecognizerEngine(  239): deleteCachedGrammarFiles /data/data/com.android.voicedialer/files/openentries.txt
+D/VoiceDialerReceiver(  239): onReceive Intent { act=android.intent.action.PACKAGE_ADDED dat=package:fi.aalto flg=0x10000000 cmp=com.android.voicedialer/.VoiceDialerReceiver (has extras) }
+V/RecognizerEngine(  239): deleteCachedGrammarFiles /data/data/com.android.voicedialer/files/openentries.txt
+D/dalvikvm(   88): GC_EXPLICIT freed 4141 objects / 253864 bytes in 112ms
+I/installd(   61): unlink /data/dalvik-cache/data@app@fi.aalto-2.apk@classes.dex
+D/AndroidRuntime( 1001): Shutting down VM
+D/dalvikvm( 1001): Debugger has detached; object registry had 1 entries
+D/AndroidRuntime( 1015): 
+D/AndroidRuntime( 1015): >>>>>>>>>>>>>> AndroidRuntime START <<<<<<<<<<<<<<
+D/AndroidRuntime( 1015): CheckJNI is OFF
+D/dalvikvm( 1015): creating instr width table
+D/AndroidRuntime( 1015): --- registering native functions ---
+D/AndroidRuntime( 1015): Shutting down VM
+D/jdwp    ( 1015): Got wake-up signal, bailing out of select
+D/dalvikvm( 1015): Debugger has detached; object registry had 1 entries
+I/AndroidRuntime( 1015): NOTE: attach of thread 'Binder Thread #3' failed
+V/RenderScript_jni(  169): surfaceDestroyed
+D/dalvikvm(  335): GC_FOR_MALLOC freed 775 objects / 451496 bytes in 173ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 451008 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 452000 bytes in 49ms
+D/dalvikvm(  460): GC_EXPLICIT freed 91 objects / 8056 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451408 bytes in 54ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 451016 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 773 objects / 427040 bytes in 39ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 700 objects / 399056 bytes in 90ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 719 objects / 448936 bytes in 55ms
+D/dalvikvm(  469): GC_EXPLICIT freed 48 objects / 2232 bytes in 53ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 775 objects / 451512 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451480 bytes in 50ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 450992 bytes in 79ms
+D/dalvikvm(  169): GC_EXPLICIT freed 877 objects / 43752 bytes in 80ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451944 bytes in 34ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451320 bytes in 53ms
+D/dalvikvm(  239): GC_EXPLICIT freed 208 objects / 12848 bytes in 53ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 451080 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451992 bytes in 44ms
+D/AndTweetService(  335): onReceive()
+D/AndTweetService(  335): ACTION_FETCH
+D/AndTweetService(  335): handleMessage what=1
+I/AndTweetService(  335): POWERPROFILER-TRIGGER at 315967170125
+D/AndTweetService(  335): Getting tweets, replies and messages.
+D/AndTweetService(  335): No other threads running so starting new broadcast for 0 listeners
+D/de.tlabs.thinkAir.lib.ExecutionController(  335): Executing class com.xorcode.andtweet.net.ConnectionOAuthlocalgetUrl locally
+D/PowerDroid-Client(  335): LOCAL class com.xorcode.andtweet.net.ConnectionOAuthlocalgetUrl
+D/PowerDroid-Profiler(  335): LOCAL class com.xorcode.andtweet.net.ConnectionOAuthlocalgetUrl
+D/PowerDroid-Client(  335): Could not read voltage: java.io.FileNotFoundException: /sys/class/power_supply/battery/batt_vol (No such file or directory)
+D/ConnectionOAuth(  335): Getting URL: http://api.twitter.com/1/statuses/mentions.json?since_id=118340413055709185&count=200
+D/ConnectionOAuth(  335): Pre-signed request: org.apache.http.client.methods.HttpGet@450c2a90
+D/ConnectionOAuth(  335): Header count: 0
+D/ConnectionOAuth(  335): Consumer key: 9Pyc7HgAQEavFyilqN6HFA, secret: 2zomIZAyRDL9TkJszaLXlKniUiEjBEIiR2IBZyZkk
+D/ConnectionOAuth(  335): Creating consumer with token: 276950343-plEi02We94ysT1AyhEYfl3O2TZ7MpxQGmjVL9bFu and secret lpQqktyoyGgBtfxDixIzZkZ6LW46DRId6MrzGSbQ
+D/ConnectionOAuth(  335): Tokens r *set*
+D/ConnectionOAuth(  335): Signed request: org.apache.http.client.methods.HttpGet@450c2a90
+D/ConnectionOAuth(  335): Header count: 1
+D/ConnectionOAuth(  335): *) 'Authorization' => 'OAuth oauth_token="276950343-plEi02We94ysT1AyhEYfl3O2TZ7MpxQGmjVL9bFu", oauth_consumer_key="9Pyc7HgAQEavFyilqN6HFA", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_timestamp="315967170", oauth_nonce="-6100121004440181580", oauth_signature="QShlbM5%2BCe6WsSrBC5h8TWBrm20%3D"'
+D/dalvikvm(  335): GC_FOR_MALLOC freed 1465 objects / 500864 bytes in 52ms
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for dun
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for hipri
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for supl
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for mms
+D/MobileDataStateTracker(   88): default Received state= CONNECTED, old= CONNECTED, reason= (unspecified), apnTypeList= *
+D/PowerDroid-Profiler(  335): Connected to other network - 8
+D/dalvikvm(  335): GC_FOR_MALLOC freed 835 objects / 431040 bytes in 29ms
+W/DefaultRequestDirector(  335): Authentication error: Unable to respond to any of these challenges: {oauth=WWW-Authenticate: OAuth realm="http://api.twitter.com"}
+W/System.err(  335): org.apache.http.client.HttpResponseException: Unauthorized
+W/System.err(  335): 	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:71)
+W/System.err(  335): 	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:59)
+W/System.err(  335): 	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:657)
+W/System.err(  335): 	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:627)
+W/System.err(  335): 	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:616)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getRequest(ConnectionOAuth.java:203)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.localgetUrl(ConnectionOAuth.java:263)
+W/System.err(  335): 	at java.lang.reflect.Method.invokeNative(Native Method)
+W/System.err(  335): 	at java.lang.reflect.Method.invoke(Method.java:521)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.executeLocally(ExecutionController.java:329)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.execute(ExecutionController.java:294)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getUrl(ConnectionOAuth.java:238)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:307)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getMentionsTimeline(ConnectionOAuth.java:330)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:138)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:602)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+W/System.err(  335): java.lang.reflect.InvocationTargetException
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.localgetUrl(ConnectionOAuth.java:263)
+W/System.err(  335): 	at java.lang.reflect.Method.invokeNative(Native Method)
+W/System.err(  335): 	at java.lang.reflect.Method.invoke(Method.java:521)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.executeLocally(ExecutionController.java:329)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.execute(ExecutionController.java:294)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getUrl(ConnectionOAuth.java:238)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:307)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getMentionsTimeline(ConnectionOAuth.java:330)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:138)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:602)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+W/System.err(  335): Caused by: com.xorcode.andtweet.net.ConnectionAuthenticationException: Unauthorized
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getRequest(ConnectionOAuth.java:213)
+W/System.err(  335): 	... 12 more
+D/PowerDroid-Client(  335): InvocationTargetException java.lang.reflect.InvocationTargetException
+W/System.err(  335): java.lang.ClassCastException: java.lang.reflect.InvocationTargetException
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getUrl(ConnectionOAuth.java:238)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:307)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getMentionsTimeline(ConnectionOAuth.java:330)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:138)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:602)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+E/ConnectionOAuth(  335): NullPointerException was caught, URL='http://api.twitter.com/1/statuses/mentions.json'
+W/System.err(  335): java.lang.NullPointerException
+W/System.err(  335): 	at org.json.JSONTokener.nextCleanInternal(JSONTokener.java:112)
+W/System.err(  335): 	at org.json.JSONTokener.nextValue(JSONTokener.java:90)
+W/System.err(  335): 	at org.json.JSONArray.<init>(JSONArray.java:87)
+W/System.err(  335): 	at org.json.JSONArray.<init>(JSONArray.java:103)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:308)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getMentionsTimeline(ConnectionOAuth.java:330)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:138)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:602)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+D/de.tlabs.thinkAir.lib.ExecutionController(  335): Executing class com.xorcode.andtweet.net.ConnectionOAuthlocalgetUrl locally
+D/PowerDroid-Client(  335): LOCAL class com.xorcode.andtweet.net.ConnectionOAuthlocalgetUrl
+D/PowerDroid-Profiler(  335): LOCAL class com.xorcode.andtweet.net.ConnectionOAuthlocalgetUrl
+D/PowerDroid-Client(  335): Could not read voltage: java.io.FileNotFoundException: /sys/class/power_supply/battery/batt_vol (No such file or directory)
+D/ConnectionOAuth(  335): Getting URL: http://api.twitter.com/1/statuses/friends_timeline.json?since_id=118340413055709185&count=200
+D/ConnectionOAuth(  335): Pre-signed request: org.apache.http.client.methods.HttpGet@4506bf10
+D/ConnectionOAuth(  335): Header count: 0
+D/ConnectionOAuth(  335): Consumer key: 9Pyc7HgAQEavFyilqN6HFA, secret: 2zomIZAyRDL9TkJszaLXlKniUiEjBEIiR2IBZyZkk
+D/ConnectionOAuth(  335): Creating consumer with token: 276950343-plEi02We94ysT1AyhEYfl3O2TZ7MpxQGmjVL9bFu and secret lpQqktyoyGgBtfxDixIzZkZ6LW46DRId6MrzGSbQ
+D/ConnectionOAuth(  335): Tokens r *set*
+D/ConnectionOAuth(  335): Signed request: org.apache.http.client.methods.HttpGet@4506bf10
+D/ConnectionOAuth(  335): Header count: 1
+D/ConnectionOAuth(  335): *) 'Authorization' => 'OAuth oauth_token="276950343-plEi02We94ysT1AyhEYfl3O2TZ7MpxQGmjVL9bFu", oauth_consumer_key="9Pyc7HgAQEavFyilqN6HFA", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_timestamp="315967172", oauth_nonce="-3377967543534041154", oauth_signature="Ul71xkA%2F9RJbKGXS%2BhJjQ96DhUY%3D"'
+D/dalvikvm(  335): GC_FOR_MALLOC freed 3083 objects / 471000 bytes in 65ms
+W/DefaultRequestDirector(  335): Authentication error: Unable to respond to any of these challenges: {oauth=WWW-Authenticate: OAuth realm="http://api.twitter.com"}
+W/System.err(  335): org.apache.http.client.HttpResponseException: Unauthorized
+W/System.err(  335): 	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:71)
+W/System.err(  335): 	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:59)
+W/System.err(  335): 	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:657)
+W/System.err(  335): 	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:627)
+W/System.err(  335): 	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:616)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getRequest(ConnectionOAuth.java:203)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.localgetUrl(ConnectionOAuth.java:263)
+W/System.err(  335): 	at java.lang.reflect.Method.invokeNative(Native Method)
+W/System.err(  335): 	at java.lang.reflect.Method.invoke(Method.java:521)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.executeLocally(ExecutionController.java:329)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.execute(ExecutionController.java:294)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getUrl(ConnectionOAuth.java:238)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:307)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getFriendsTimeline(ConnectionOAuth.java:191)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:135)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:606)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+W/System.err(  335): java.lang.reflect.InvocationTargetException
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.localgetUrl(ConnectionOAuth.java:263)
+W/System.err(  335): 	at java.lang.reflect.Method.invokeNative(Native Method)
+W/System.err(  335): 	at java.lang.reflect.Method.invoke(Method.java:521)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.executeLocally(ExecutionController.java:329)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.execute(ExecutionController.java:294)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getUrl(ConnectionOAuth.java:238)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:307)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getFriendsTimeline(ConnectionOAuth.java:191)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:135)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:606)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+W/System.err(  335): Caused by: com.xorcode.andtweet.net.ConnectionAuthenticationException: Unauthorized
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getRequest(ConnectionOAuth.java:213)
+W/System.err(  335): 	... 12 more
+D/PowerDroid-Client(  335): InvocationTargetException java.lang.reflect.InvocationTargetException
+W/System.err(  335): java.lang.ClassCastException: java.lang.reflect.InvocationTargetException
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getUrl(ConnectionOAuth.java:238)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:307)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getFriendsTimeline(ConnectionOAuth.java:191)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:135)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:606)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+E/ConnectionOAuth(  335): NullPointerException was caught, URL='http://api.twitter.com/1/statuses/friends_timeline.json'
+W/System.err(  335): java.lang.NullPointerException
+W/System.err(  335): 	at org.json.JSONTokener.nextCleanInternal(JSONTokener.java:112)
+W/System.err(  335): 	at org.json.JSONTokener.nextValue(JSONTokener.java:90)
+W/System.err(  335): 	at org.json.JSONArray.<init>(JSONArray.java:87)
+W/System.err(  335): 	at org.json.JSONArray.<init>(JSONArray.java:103)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:308)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getFriendsTimeline(ConnectionOAuth.java:191)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:135)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:606)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+D/de.tlabs.thinkAir.lib.ExecutionController(  335): Executing class com.xorcode.andtweet.net.ConnectionOAuthlocalgetUrl locally
+D/PowerDroid-Client(  335): LOCAL class com.xorcode.andtweet.net.ConnectionOAuthlocalgetUrl
+D/PowerDroid-Profiler(  335): LOCAL class com.xorcode.andtweet.net.ConnectionOAuthlocalgetUrl
+D/PowerDroid-Client(  335): Could not read voltage: java.io.FileNotFoundException: /sys/class/power_supply/battery/batt_vol (No such file or directory)
+D/ConnectionOAuth(  335): Getting URL: http://api.twitter.com/1/direct_messages.json?since_id=118340413055709185&count=200
+D/ConnectionOAuth(  335): Pre-signed request: org.apache.http.client.methods.HttpGet@450e47c0
+D/ConnectionOAuth(  335): Header count: 0
+D/ConnectionOAuth(  335): Consumer key: 9Pyc7HgAQEavFyilqN6HFA, secret: 2zomIZAyRDL9TkJszaLXlKniUiEjBEIiR2IBZyZkk
+D/ConnectionOAuth(  335): Creating consumer with token: 276950343-plEi02We94ysT1AyhEYfl3O2TZ7MpxQGmjVL9bFu and secret lpQqktyoyGgBtfxDixIzZkZ6LW46DRId6MrzGSbQ
+D/ConnectionOAuth(  335): Tokens r *set*
+D/ConnectionOAuth(  335): Signed request: org.apache.http.client.methods.HttpGet@450e47c0
+D/ConnectionOAuth(  335): Header count: 1
+D/ConnectionOAuth(  335): *) 'Authorization' => 'OAuth oauth_token="276950343-plEi02We94ysT1AyhEYfl3O2TZ7MpxQGmjVL9bFu", oauth_consumer_key="9Pyc7HgAQEavFyilqN6HFA", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_timestamp="315967173", oauth_nonce="8379265326767293062", oauth_signature="qHtx2T3W8w2v%2BAwgPOtdDQPJ5K8%3D"'
+D/dalvikvm(  335): GC_FOR_MALLOC freed 3256 objects / 529448 bytes in 60ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 859 objects / 383456 bytes in 74ms
+W/DefaultRequestDirector(  335): Authentication error: Unable to respond to any of these challenges: {oauth=WWW-Authenticate: OAuth realm="http://api.twitter.com"}
+W/System.err(  335): org.apache.http.client.HttpResponseException: Unauthorized
+W/System.err(  335): 	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:71)
+W/System.err(  335): 	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:59)
+W/System.err(  335): 	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:657)
+W/System.err(  335): 	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:627)
+W/System.err(  335): 	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:616)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getRequest(ConnectionOAuth.java:203)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.localgetUrl(ConnectionOAuth.java:263)
+W/System.err(  335): 	at java.lang.reflect.Method.invokeNative(Native Method)
+W/System.err(  335): 	at java.lang.reflect.Method.invoke(Method.java:521)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.executeLocally(ExecutionController.java:329)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.execute(ExecutionController.java:294)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getUrl(ConnectionOAuth.java:238)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:307)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getDirectMessages(ConnectionOAuth.java:183)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:141)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:613)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+W/System.err(  335): java.lang.reflect.InvocationTargetException
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.localgetUrl(ConnectionOAuth.java:263)
+W/System.err(  335): 	at java.lang.reflect.Method.invokeNative(Native Method)
+W/System.err(  335): 	at java.lang.reflect.Method.invoke(Method.java:521)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.executeLocally(ExecutionController.java:329)
+W/System.err(  335): 	at de.tlabs.thinkAir.lib.ExecutionController.execute(ExecutionController.java:294)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getUrl(ConnectionOAuth.java:238)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:307)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getDirectMessages(ConnectionOAuth.java:183)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:141)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:613)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+W/System.err(  335): Caused by: com.xorcode.andtweet.net.ConnectionAuthenticationException: Unauthorized
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getRequest(ConnectionOAuth.java:213)
+W/System.err(  335): 	... 12 more
+D/PowerDroid-Client(  335): InvocationTargetException java.lang.reflect.InvocationTargetException
+W/System.err(  335): java.lang.ClassCastException: java.lang.reflect.InvocationTargetException
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getUrl(ConnectionOAuth.java:238)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:307)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getDirectMessages(ConnectionOAuth.java:183)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:141)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:613)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+E/ConnectionOAuth(  335): NullPointerException was caught, URL='http://api.twitter.com/1/direct_messages.json'
+W/System.err(  335): java.lang.NullPointerException
+W/System.err(  335): 	at org.json.JSONTokener.nextCleanInternal(JSONTokener.java:112)
+W/System.err(  335): 	at org.json.JSONTokener.nextValue(JSONTokener.java:90)
+W/System.err(  335): 	at org.json.JSONArray.<init>(JSONArray.java:87)
+W/System.err(  335): 	at org.json.JSONArray.<init>(JSONArray.java:103)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getTimeline(ConnectionOAuth.java:308)
+W/System.err(  335): 	at com.xorcode.andtweet.net.ConnectionOAuth.getDirectMessages(ConnectionOAuth.java:183)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:141)
+W/System.err(  335): 	at com.xorcode.andtweet.data.FriendTimeline.loadTimeline(FriendTimeline.java:107)
+W/System.err(  335): 	at com.xorcode.andtweet.AndTweetService$4.run(AndTweetService.java:613)
+W/System.err(  335): 	at java.lang.Thread.run(Thread.java:1096)
+D/AndTweetService(  335): notifyNewTweets n=0; msgType=2
+D/AndTweetService(  335): Ended getting 0 tweets, 0 replies and 0 messages.
+D/AndTweetService(  335): Ending last thread so also ending broadcast.
+D/dalvikvm(  335): GC_FOR_MALLOC freed 3112 objects / 506008 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 825 objects / 405312 bytes in 71ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 667 objects / 397608 bytes in 42ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398480 bytes in 47ms
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for dun
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for hipri
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for supl
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for mms
+D/MobileDataStateTracker(   88): default Received state= CONNECTED, old= CONNECTED, reason= (unspecified), apnTypeList= *
+D/PowerDroid-Profiler(  335): Connected to UMTS network
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398280 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 708 objects / 423800 bytes in 55ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 735 objects / 425112 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 728 objects / 424960 bytes in 35ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 720 objects / 424336 bytes in 54ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 735 objects / 425160 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 732 objects / 425040 bytes in 46ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 720 objects / 424504 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 740 objects / 425544 bytes in 51ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 728 objects / 424912 bytes in 51ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 724 objects / 424968 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 744 objects / 425712 bytes in 90ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 742 objects / 425656 bytes in 43ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 718 objects / 424400 bytes in 86ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 725 objects / 424768 bytes in 53ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 726 objects / 425000 bytes in 42ms
+D/dalvikvm(  597): GC_EXPLICIT freed 2212 objects / 172456 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 727 objects / 424888 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 753 objects / 401184 bytes in 39ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 694 objects / 398960 bytes in 71ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 660 objects / 397056 bytes in 53ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 703 objects / 424008 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 716 objects / 424104 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 719 objects / 424400 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 750 objects / 401808 bytes in 40ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 687 objects / 398704 bytes in 71ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 660 objects / 397088 bytes in 55ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 706 objects / 424544 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 720 objects / 424728 bytes in 45ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 719 objects / 424376 bytes in 61ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 735 objects / 425288 bytes in 72ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 720 objects / 400096 bytes in 44ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 713 objects / 424368 bytes in 82ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 714 objects / 424096 bytes in 74ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 723 objects / 424824 bytes in 55ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 722 objects / 424600 bytes in 48ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 720 objects / 424672 bytes in 62ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 736 objects / 425240 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 725 objects / 401104 bytes in 40ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 707 objects / 424296 bytes in 74ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 713 objects / 424008 bytes in 73ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 727 objects / 425088 bytes in 51ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 734 objects / 426248 bytes in 45ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 715 objects / 424328 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 739 objects / 425288 bytes in 53ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 728 objects / 424824 bytes in 32ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 732 objects / 400760 bytes in 40ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 713 objects / 424248 bytes in 69ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 686 objects / 398104 bytes in 81ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 699 objects / 424000 bytes in 62ms
+D/dalvikvm(  340): GC_EXPLICIT freed 260 objects / 14952 bytes in 47ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 716 objects / 424160 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 715 objects / 424408 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 735 objects / 400640 bytes in 41ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 665 objects / 397488 bytes in 79ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 701 objects / 399208 bytes in 79ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 704 objects / 423832 bytes in 76ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 714 objects / 424416 bytes in 48ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 709 objects / 424024 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 733 objects / 400792 bytes in 41ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 713 objects / 399688 bytes in 46ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 613 objects / 346216 bytes in 74ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 626 objects / 397448 bytes in 67ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 664 objects / 397224 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 717 objects / 424376 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 716 objects / 375448 bytes in 91ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 620 objects / 370880 bytes in 80ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 642 objects / 398472 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 670 objects / 397544 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 675 objects / 349176 bytes in 40ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 641 objects / 396424 bytes in 80ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 653 objects / 397144 bytes in 63ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 676 objects / 397992 bytes in 54ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398304 bytes in 51ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 687 objects / 374136 bytes in 41ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 641 objects / 372048 bytes in 42ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 640 objects / 396696 bytes in 49ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 670 objects / 397768 bytes in 45ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 708 objects / 423728 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 731 objects / 425016 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 694 objects / 374480 bytes in 40ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 647 objects / 396800 bytes in 84ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 667 objects / 397688 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398344 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398280 bytes in 68ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 724 objects / 424720 bytes in 51ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 716 objects / 399976 bytes in 39ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 677 objects / 398168 bytes in 47ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 670 objects / 397896 bytes in 49ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 676 objects / 397944 bytes in 49ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398264 bytes in 50ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398360 bytes in 49ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 701 objects / 399032 bytes in 67ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 684 objects / 398920 bytes in 78ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 668 objects / 397856 bytes in 61ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 676 objects / 397984 bytes in 48ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 683 objects / 398624 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 672 objects / 349144 bytes in 40ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 646 objects / 396768 bytes in 73ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 655 objects / 398496 bytes in 44ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 670 objects / 397712 bytes in 48ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 674 objects / 373424 bytes in 40ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 663 objects / 372984 bytes in 71ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 626 objects / 397184 bytes in 47ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 674 objects / 399232 bytes in 76ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398112 bytes in 68ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 678 objects / 349056 bytes in 40ms
+E/Tethering(   88): active iface (usb0) reported as added, ignoring
+D/PowerDroid-Client(  335): Could not read voltage: java.io.FileNotFoundException: /sys/class/power_supply/battery/batt_vol (No such file or directory)
+D/PowerDroid-Profiler(  335): Battery level - 93, voltage - 4118898
+D/dalvikvm(  335): GC_FOR_MALLOC freed 721 objects / 375960 bytes in 77ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 693 objects / 423712 bytes in 50ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 718 objects / 424296 bytes in 47ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 697 objects / 399048 bytes in 46ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398272 bytes in 31ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 684 objects / 398400 bytes in 90ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 680 objects / 398312 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398352 bytes in 46ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398296 bytes in 49ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398368 bytes in 28ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 671 objects / 373144 bytes in 65ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 653 objects / 397200 bytes in 54ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 676 objects / 397912 bytes in 54ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398232 bytes in 49ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398112 bytes in 49ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 678 objects / 373568 bytes in 81ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 639 objects / 396440 bytes in 81ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 676 objects / 397944 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398320 bytes in 63ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398272 bytes in 60ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398288 bytes in 66ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 681 objects / 373760 bytes in 61ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 652 objects / 397016 bytes in 46ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 676 objects / 397904 bytes in 65ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398120 bytes in 47ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 709 objects / 427840 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 731 objects / 425152 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 716 objects / 399672 bytes in 68ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 679 objects / 402368 bytes in 48ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 703 objects / 427680 bytes in 48ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 719 objects / 424416 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 735 objects / 425224 bytes in 51ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 728 objects / 424784 bytes in 43ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 719 objects / 424432 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 746 objects / 401384 bytes in 33ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 653 objects / 372512 bytes in 73ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 659 objects / 421672 bytes in 75ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 723 objects / 424520 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 729 objects / 425320 bytes in 47ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 719 objects / 424352 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 741 objects / 401304 bytes in 43ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 692 objects / 398792 bytes in 90ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 668 objects / 397984 bytes in 66ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 694 objects / 423496 bytes in 46ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 687 objects / 373872 bytes in 41ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 647 objects / 374136 bytes in 70ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 659 objects / 421848 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 690 objects / 374040 bytes in 71ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 646 objects / 396912 bytes in 48ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 676 objects / 398040 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398304 bytes in 47ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 690 objects / 402880 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 695 objects / 374376 bytes in 40ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 611 objects / 370496 bytes in 77ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 689 objects / 423016 bytes in 50ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 722 objects / 424512 bytes in 33ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 711 objects / 374984 bytes in 41ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 666 objects / 372896 bytes in 90ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 599 objects / 395168 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 664 objects / 397328 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 682 objects / 398288 bytes in 55ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 719 objects / 399848 bytes in 41ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 665 objects / 397576 bytes in 75ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 669 objects / 373288 bytes in 75ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 644 objects / 396664 bytes in 42ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 702 objects / 423416 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 731 objects / 424960 bytes in 51ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 697 objects / 398848 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 662 objects / 323632 bytes in 73ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 731 objects / 449096 bytes in 89ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 689 objects / 398544 bytes in 78ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 714 objects / 473384 bytes in 61ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 800 objects / 476696 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 861 objects / 504160 bytes in 81ms
+I/jdwp    (   88): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  160): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  159): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  167): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  169): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  175): Ignoring second debugger -- accepting and dropping
+D/dalvikvm(  335): GC_FOR_MALLOC freed 829 objects / 478408 bytes in 59ms
+I/jdwp    (  239): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  246): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  285): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  298): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  306): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  314): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  335): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  340): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  350): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  357): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  364): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  460): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  469): Ignoring second debugger -- accepting and dropping
+I/jdwp    (  597): Ignoring second debugger -- accepting and dropping
+I/jdwp    ( 1022): Ignoring second debugger -- accepting and dropping
+D/dalvikvm(  335): GC_FOR_MALLOC freed 817 objects / 477824 bytes in 50ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 808 objects / 452624 bytes in 80ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 476568 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 812 objects / 477640 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477752 bytes in 79ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 822 objects / 494296 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 822 objects / 494256 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 792 objects / 452416 bytes in 30ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 792 objects / 427656 bytes in 45ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 729 objects / 441424 bytes in 41ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 756 objects / 450288 bytes in 71ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 798 objects / 476960 bytes in 86ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 788 objects / 451920 bytes in 75ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 735 objects / 425088 bytes in 80ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 762 objects / 475400 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 806 objects / 477152 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477880 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477904 bytes in 77ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477952 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477896 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 478016 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 478024 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 478000 bytes in 77ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477952 bytes in 60ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477896 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477808 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 792 objects / 452424 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 796 objects / 452432 bytes in 40ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 784 objects / 451800 bytes in 87ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 770 objects / 451184 bytes in 69ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 792 objects / 476680 bytes in 77ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 808 objects / 477376 bytes in 74ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 791 objects / 452736 bytes in 80ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 776 objects / 451352 bytes in 87ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 785 objects / 477264 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 827 objects / 478712 bytes in 86ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 814 objects / 477688 bytes in 60ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 823 objects / 477992 bytes in 84ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 813 objects / 477784 bytes in 57ms
+I/dalvikvm(   88): Jit: resizing JitTable from 16384 to 32768
+D/dalvikvm(  335): GC_FOR_MALLOC freed 812 objects / 477496 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477784 bytes in 71ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477720 bytes in 77ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 822 objects / 481248 bytes in 55ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477808 bytes in 60ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477896 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477880 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477792 bytes in 77ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 826 objects / 484648 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477896 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477888 bytes in 63ms
+D/dalvikvm(  159): Debugger has detached; object registry had 1 entries
+D/dalvikvm(   88): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  160): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  167): Debugger has detached; object registry had 1 entries
+D/dalvikvm( 1022): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  460): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  469): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  597): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  314): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  335): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  246): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  364): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  285): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  239): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  175): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  298): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  306): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  340): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  350): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  357): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  169): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  335): GC_FOR_MALLOC freed 819 objects / 477944 bytes in 79ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 478024 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 792 objects / 452512 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 807 objects / 477456 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477840 bytes in 30ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477832 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477824 bytes in 30ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477760 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 811 objects / 453184 bytes in 43ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 784 objects / 451856 bytes in 44ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 766 objects / 475560 bytes in 33ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 812 objects / 477440 bytes in 44ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 846 objects / 430184 bytes in 43ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 740 objects / 400896 bytes in 70ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 693 objects / 423320 bytes in 69ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 711 objects / 423936 bytes in 68ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 740 objects / 474688 bytes in 78ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 810 objects / 477256 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477856 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 818 objects / 477960 bytes in 72ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 814 objects / 477792 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 789 objects / 427736 bytes in 75ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 732 objects / 425048 bytes in 74ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 747 objects / 450032 bytes in 81ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 753 objects / 450600 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 775 objects / 451552 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 790 objects / 452232 bytes in 42ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 752 objects / 425880 bytes in 67ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 741 objects / 450104 bytes in 89ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 773 objects / 451208 bytes in 82ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 794 objects / 477104 bytes in 80ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 786 objects / 452144 bytes in 34ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451280 bytes in 50ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 450912 bytes in 71ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451864 bytes in 47ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451280 bytes in 56ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 451048 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451824 bytes in 30ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451344 bytes in 54ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 450880 bytes in 65ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451768 bytes in 69ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451240 bytes in 53ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 774 objects / 451256 bytes in 86ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 764 objects / 426608 bytes in 40ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 758 objects / 450624 bytes in 75ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 762 objects / 450776 bytes in 74ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 764 objects / 450992 bytes in 80ms
+D/dalvikvm(  159): Debugger has detached; object registry had 1 entries
+D/dalvikvm(   88): Debugger has detached; object registry had 1 entries
+D/jdwp    (  160): adbd disconnected
+D/jdwp    (   88): adbd disconnected
+D/jdwp    (  167): adbd disconnected
+D/jdwp    (  159): adbd disconnected
+D/dalvikvm(  160): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  167): Debugger has detached; object registry had 1 entries
+D/jdwp    (  169): adbd disconnected
+D/dalvikvm(  169): Debugger has detached; object registry had 1 entries
+D/dalvikvm( 1022): Debugger has detached; object registry had 1 entries
+D/jdwp    ( 1022): adbd disconnected
+D/jdwp    (  175): adbd disconnected
+D/dalvikvm(  175): Debugger has detached; object registry had 1 entries
+D/jdwp    (  239): adbd disconnected
+D/dalvikvm(  239): Debugger has detached; object registry had 1 entries
+D/jdwp    (  246): adbd disconnected
+D/dalvikvm(  246): Debugger has detached; object registry had 1 entries
+D/jdwp    (  285): adbd disconnected
+D/dalvikvm(  285): Debugger has detached; object registry had 1 entries
+D/jdwp    (  298): adbd disconnected
+D/dalvikvm(  298): Debugger has detached; object registry had 1 entries
+D/jdwp    (  306): adbd disconnected
+D/dalvikvm(  306): Debugger has detached; object registry had 1 entries
+D/jdwp    (  314): adbd disconnected
+D/dalvikvm(  314): Debugger has detached; object registry had 1 entries
+D/jdwp    (  335): adbd disconnected
+D/jdwp    (  340): adbd disconnected
+D/dalvikvm(  340): Debugger has detached; object registry had 1 entries
+D/jdwp    (  350): adbd disconnected
+D/dalvikvm(  350): Debugger has detached; object registry had 1 entries
+D/jdwp    (  357): adbd disconnected
+D/dalvikvm(  357): Debugger has detached; object registry had 1 entries
+D/jdwp    (  364): adbd disconnected
+D/dalvikvm(  364): Debugger has detached; object registry had 1 entries
+D/jdwp    (  460): adbd disconnected
+D/dalvikvm(  460): Debugger has detached; object registry had 1 entries
+D/jdwp    (  469): adbd disconnected
+D/dalvikvm(  469): Debugger has detached; object registry had 1 entries
+D/jdwp    (  597): adbd disconnected
+D/dalvikvm(  597): Debugger has detached; object registry had 1 entries
+D/dalvikvm(  335): GC_FOR_MALLOC freed 761 objects / 451024 bytes in 217ms
+D/dalvikvm(  335): Debugger has detached; object registry had 1 entries
+D/dalvikvm(   88): GC_FOR_MALLOC freed 9478 objects / 440240 bytes in 58ms
+E/Tethering(   88): active iface (usb0) reported as added, ignoring
+D/PowerDroid-Client(  335): Could not read voltage: java.io.FileNotFoundException: /sys/class/power_supply/battery/batt_vol (No such file or directory)
+D/PowerDroid-Profiler(  335): Battery level - 93, voltage - 4128670
+D/dalvikvm(  335): GC_FOR_MALLOC freed 904 objects / 457712 bytes in 50ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 799 objects / 452760 bytes in 45ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 806 objects / 452736 bytes in 88ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 760 objects / 426040 bytes in 91ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 730 objects / 449936 bytes in 104ms

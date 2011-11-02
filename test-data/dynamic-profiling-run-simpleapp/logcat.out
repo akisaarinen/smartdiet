@@ -1,0 +1,340 @@
+D/dalvikvm(  335): GC_FOR_MALLOC freed 767 objects / 426648 bytes in 72ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 758 objects / 450648 bytes in 39ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 766 objects / 450864 bytes in 75ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 748 objects / 425440 bytes in 80ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 742 objects / 450528 bytes in 36ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 766 objects / 450952 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 450952 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451816 bytes in 43ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451280 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 450912 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 773 objects / 427000 bytes in 30ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 746 objects / 425840 bytes in 42ms
+D/dalvikvm( 1022): +++ active profiler count now 1
+I/dalvikvm( 1022): TRACE STARTED: '[DDMS]' 8192KB
+I/dalvikvm( 1022): thread base id=4 0x11f5ee800679b
+D/dalvikvm(  335): GC_FOR_MALLOC freed 691 objects / 398584 bytes in 75ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 711 objects / 423792 bytes in 85ms
+I/dalvikvm( 1022): thread base id=7 0x11f5ee82cacf4
+I/dalvikvm( 1022): thread base id=1 0x11f5ee82cb3bf
+I/dalvikvm( 1022): thread base id=6 0x11f5ee82cd225
+I/dalvikvm( 1022): thread base id=8 0x11f5ee8303452
+D/dalvikvm(  335): GC_FOR_MALLOC freed 763 objects / 475696 bytes in 99ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 779 objects / 451680 bytes in 47ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451280 bytes in 54ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 450880 bytes in 59ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 452040 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 426688 bytes in 43ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 763 objects / 475448 bytes in 31ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 774 objects / 402376 bytes in 29ms
+D/PowerDroid-Profiler(  335): Connected to other network - 8
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for dun
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for hipri
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for supl
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for mms
+D/MobileDataStateTracker(   88): default Received state= CONNECTED, old= CONNECTED, reason= (unspecified), apnTypeList= *
+I/global  ( 1022): Default buffer size used in BufferedReader constructor. It would be better to be explicit if an 8k-char buffer is required.
+D/dalvikvm(  335): GC_FOR_MALLOC freed 696 objects / 423624 bytes in 49ms
+I/dalvikvm( 1022): thread base id=2 0x11f5ee8a346b9
+D/dalvikvm( 1022): GC_FOR_MALLOC freed 2636 objects / 192048 bytes in 33ms
+I/System.out( 1022): <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+I/System.out( 1022): <html xmlns="http://www.w3.org/1999/xhtml">
+I/System.out( 1022):     <head>
+I/System.out( 1022):         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+I/System.out( 1022):         <meta name="keywords" content="aki saarinen, aki, saarinen, student, computer science, developer, reaktor" />
+I/System.out( 1022):         <title>Personal homepage of Aki Saarinen</title>
+I/System.out( 1022):         <link href="style.css" rel="stylesheet" type="text/css" />
+I/System.out( 1022):     </head>
+I/System.out( 1022):     <body>
+I/System.out( 1022):         <div id="header-bar" class="grayee-gradient"></div>
+I/System.out( 1022):         <div id="title-wrapper">
+I/System.out( 1022):             <img id="title-picture" src="img/aki.jpg"/>
+I/System.out( 1022):             <h1>
+I/System.out( 1022):                 <span class="greeting">Hi there! My name is</span>
+I/System.out( 1022):                 <span class="name">
+I/System.out( 1022):                     Aki Saarinen.
+I/System.out( 1022):                     <!--<img id="handwritten-name" src="img/handwritten-name.jpg"/>-->
+I/System.out( 1022):                 </span>
+I/System.out( 1022):             </h1>
+I/System.out( 1022):         </div>
+I/System.out( 1022):         <!--
+I/System.out( 1022):         <div id="menu-wrapper">
+I/System.out( 1022):           <div>
+I/System.out( 1022):             <a href="#contact">Contact</a> |
+I/System.out( 1022):             <a href="#projects">Projects</a> |
+I/System.out( 1022):             <a href="#work">Work</a> |
+I/System.out( 1022):             <a href="#education">Education</a> |
+I/System.out( 1022):             <a href="#photos">Photos</a> |
+I/System.out( 1022):             <a href="#construction">A tribute to construction workers</a> |
+I/System.out( 1022):             <a href="#xkcd302">The truth about xkcd #302</a> |
+I/System.out( 1022):             <a href="#links">Links</a>
+I/System.out( 1022):           </div>
+I/System.out( 1022):         </div>
+I/System.out( 1022):         -->
+I/System.out( 1022):         <div id="content-wrapper">
+I/System.out( 1022):            <div class="block bottom-hr">
+I/System.out( 1022):                 <h2>About</h2>
+I/System.out( 1022):                 <div id="about" class="block-content">
+I/System.out( 1022):                     I'm Aki, a professional and hobbyist software developer from Finland. I
+I/System.out( 1022):                     <a href="https://twitter.com/#!/akisaarinen">tweet crap</a> at Twitter and
+I/System.out( 1022):                     publish <a href="http://github.com/akisaarinen/">my code at GitHub</a>. Work history can by spied at
+I/System.out( 1022):                     <a href="http://www.linkedin.com/in/akisaarinen">LinkedIn</a> or later down <a href="#work">this page</a> .
+I/System.out( 1022):                     Oh, and I might occasionally rant something at <a href="http://blog.akisaarinen.fi">my blog</a>.
+I/System.out( 1022):                     <br/><br/>
+I/System.out( 1022):                     You can contact me using:
+I/System.out( 1022):                     <ul>
+I/System.out( 1022):                       <li><span class="label">E-mail:</span> <strong><a href="mailto:fixme-firstname@akisaarinen.fi">firstname@akisaarinen.fi</a></strong> (no, not literally 'firstname')</li>
+I/System.out( 1022):                       <li><span class="label">IRC:</span> <strong>huamn</strong> @ <a href="http://www.ircnet.org">IRCNet</a>, <a href="http://www.quakenet.org">Quakenet</a> and occasionally <a href="http://freenode.net">FreeNode</a></li>
+I/System.out( 1022):                       <li><span class="label">Phone:</span> <strong>+358 40 568 0098</strong></li>
+I/System.out( 1022):                       <!-- and for real hackers: <li><span class="label">Telepathy</span></li> -->
+I/System.out( 1022):                     </ul>
+I/System.out( 1022):                 </div>
+I/System.out( 1022):             </div>
+I/System.out( 1022):             <div class="block bottom-hr">
+I/System.out( 1022):                 <h2><a id="projects"></a>Projects</h2>
+I/System.out( 1022):                 <div class="block-content">
+I/System.out( 1022):                     Here are some of my hobby projects. For more, take a look at <a href="http://github.com/akisaarinen/">akisaarinen@github</a></strong>.
+I/System.out( 1022):                     <ul class="spaced-list">
+I/System.out( 1022):                       <li><a href="http://akisaarinen.fi/gb/">Project Ghettoblaster: How we built a kick-ass portable boombox</a>. Not really a software project, but an interesting project involving DIY electronics and carpentering. Check it out :)</li>
+I/System.out( 1022):                       <li><a href="http://scala-ccf.org">CCF</a>, a library for implementing <a href="http://en.wikipedia.org/wiki/Collaborative_software">real-time collaborative software</a> in <a href="http://scala-lang.org">Scala</a>. Actively used in the software for which it was originally written for, but not much active development nowadays. Based on my <a href="#education">Master's Thesis</a> on Concurrency Control.</li>
+I/System.out( 1022):                         <li><a href="http://sourceforge.net/projects/centripetality/">Centripetality</a>, Winner of Assembly Summer 2007 Game Development Competition (See <a href="http://www.youtube.com/watch?v=V288BUJkoZs">video on YouTube</a>).</li>
+I/System.out( 1022):                       <li><a href="https://github.com/akisaarinen/lullizio">Lullizio</a>, a simple IRC bot written in Ruby. Shouts all kinds of useful and non-useful stuff to IRC channels, like Youtube video titles and Twitter status contents. In active personal use.</li>
+I/System.out( 1022):                         <li><a href="http://akisaarinen.fi/netogler/">NetOgler</a>, a distributed data gathering platform. Developed with C++ using the <a href="http://trolltech.com/products/appdev">Qt framework</a> as a summer project with <a href="http://www.aropupu.fi/">Teijo Laine</a> in 2008. Nice experiment combining Qt, networks and graph visualization, but not likely to be developed any further.</li>
+I/System.out( 1022):                         <li><a href="http://sourceforge.net/projects/poolfxp">PoolFXP</a>, a Java pool-game developed during a course in Object Oriented programming at HUT back in 2005. Uses <a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat">IRC</a> as back-end for multiplayer support, which is kind of cool. Haven't touched this since 2005.</li>
+I/System.out( 1022):                     </ul>
+I/System.out( 1022):                 </div>
+I/System.out( 1022):             </div>
+I/System.out( 1022):             <div class="block bottom-hr">
+I/System.out( 1022):                 <h2><a id="work"></a>Work</h2>
+I/System.out( 1022):                 <div class="block-content">
+I/System.out( 1022):                     <img src="img/aalto-logo.gif" alt="Aalto University" />
+I/System.out( 1022):                     <br/>
+I/System.out( 1022):                     I'm currently doing my military service as <a href="http://en.wikipedia.org/wiki/Civilian_service">civilian service</a>
+I/System.out( 1022):                     by doing research work at <a href="http://www.aalto.fi/en/">Aalto University</a>,
+I/System.out( 1022):                 <a href="http://cse.aalto.fi/">Department of Computer Science and Engineering</a>.
+I/System.out( 1022):                     I'm concentrating on analyzing the energy efficiency of <a href="http://www.android.com/">Android</a> mobile applications,
+I/System.out( 1022):                     and offloading parts of mobile applications to cloud services in order to save energy on the devices.
+I/System.out( 1022):                     <br/><br/>
+I/System.out( 1022):                     <img src="img/logo_reaktor.gif" alt="Reaktor" height="14px" />
+I/System.out( 1022):                     <br/>
+I/System.out( 1022):                     Since February 2009 I've been working as a software developer at
+I/System.out( 1022):                     <a href="http://www.reaktor.fi">Reaktor</a>, a Finnish
+I/System.out( 1022):                     software company specializing in expert IT services and effective
+I/System.out( 1022):                     software solutions. Want to get your IT project done properly?
+I/System.out( 1022):                     <a href="http://reaktor.fi/en/">Let's see if we can help!</a>
+I/System.out( 1022):                     <br/><br/>
+I/System.out( 1022):                     <img src="img/is_logo.png" height="15px" alt="Image Soft Oyt" /><br/>
+I/System.out( 1022):                     2004 through 2009 I worked as a software engineer at
+I/System.out( 1022):                     <a href="http://www.imagesoft.fi">Image Soft Oy</a>,
+I/System.out( 1022):                     a software company based in Helsinki, specializing in
+I/System.out( 1022):                     advanced industrial measurement and data acquisition systems,
+I/System.out( 1022):                     remote maintenance products and demanding signal processing
+I/System.out( 1022):                     software. Mostly C++ development for Windows and Linux.
+I/System.out( 1022):                     <br/><br/>
+I/System.out( 1022):                     You can also take a look at my <a href="http://www.linkedin.com/in/akisaarinen">LinkedIn profile</a>.
+I/System.out( 1022):                 </div>
+I/System.out( 1022):             </div>
+I/System.out( 1022):             <div class="block bottom-hr">
+I/System.out( 1022):                 <h2><a id="education"></a>Education</h2>
+I/System.out( 1022):                 <div class="block-content">
+I/System.out( 1022):                     I graduated from <a href="http://www.hut.fi">Helsinki
+I/System.out( 1022):                     University of Technology</a> (nowadays called <a href="http://www.aalto.fi/en/">Aalto University</a>), <a
+I/System.out( 1022):                     href="http://www.tkk.fi/Units/CSE/department.html">department
+I/System.out( 1022):                     of Computer Science and Engineering</a>. My major subject was <a
+I/System.out( 1022):                     href="http://www.cis.hut.fi">Computer and Information
+I/System.out( 1022):                     Science</a> and minor <a
+I/System.out( 1022):                     href="http://www.tml.tkk.fi/Studies/Telecommunications/">Telecommunications
+I/System.out( 1022):                     Software</a>.
+I/System.out( 1022):                     <br/><br/>
+I/System.out( 1022):                     I wrote my master's thesis at <a href="http://www.reaktor.fi">Reaktor</a> about concurrency control in
+I/System.out( 1022):                     <a href="http://en.wikipedia.org/wiki/Group_editor">Group Editors</a> in the context of a Product Backlog management tool. It was approved with the grade 5 (excellent). Quite interesting stuff, as a result of which the <a href="http://scala-ccf.org">CCF project</a> was born.
+I/System.out( 1022):                     <br/><br/>
+I/System.out( 1022):                     &raquo; <a href="thesis/thesis-final-20090924.pdf">
+I/System.out( 1022):                         Concurrency Control in Group Editors: Case Study in a Product Backlog Tool (PDF)
+I/System.out( 1022):                         </a>
+I/System.out( 1022):                     </ul>
+I/System.out( 1022):                 </div>
+I/System.out( 1022):             </div>
+I/System.out( 1022):             <div class="block bottom-hr">
+I/System.out( 1022):                 <h2><a id="photos"></a>Photos</h2>
+I/System.out( 1022):                 <div class="block-content">
+I/System.out( 1022):                     <table class="phototable">
+I/System.out( 1022):                         <tr>
+I/System.out( 1022):                             <td colspan="1">
+I/System.out( 1022):                                 <img src="img/midsummer11.jpg" alt="Midsummer 11" /><br/>
+I/System.out( 1022):                                 With homemade <br/>
+I/System.out( 1022):                     Boombox at a lake.<br/>
+I/System.out( 1022):                                 (midsummer 2011)
+I/System.out( 1022):                             </td>
+I/System.out( 1022):                             <td colspan="2" valign="top">
+I/System.out( 1022):                                 <img src="img/potatomachine.jpg" alt="Potato machine" /><br/>
+I/System.out( 1022):                                 Group portrait from the potato fields of <a href="http://en.wikipedia.org/wiki/Nauvo">Nauvo</a>.<br/>
+I/System.out( 1022):                                 Awesome.<br/>
+I/System.out( 1022):                                 (midsummer 2010)
+I/System.out( 1022):                             </td>
+I/System.out( 1022):                         </tr>
+I/System.out( 1022):                         <tr>
+I/System.out( 1022):                             <td>
+I/System.out( 1022):                                 <img src="img/petanque.jpg" alt="Petanque" /><br/>
+I/System.out( 1022):                                 A tough game of <br/>
+I/System.out( 1022):                                 pétanque with style<br/>
+I/System.out( 1022):                                 (midsummer 2009)
+I/System.out( 1022):                             </td>
+I/System.out( 1022):                             <td>
+I/System.out( 1022):                                 <img src="img/flying.jpg" alt="Flying, kinda" /><br/>
+I/System.out( 1022):                                 Flying!<br/>(midsummer 2008)
+I/System.out( 1022):                             </td>
+I/System.out( 1022):                             <td>
+I/System.out( 1022):                                 <img src="img/surfing.jpg" alt="Surfing 2007" /><br/>
+I/System.out( 1022):                                 Hardcore surfing<br/>(midsummer 2007)
+I/System.out( 1022):                             </td>
+I/System.out( 1022):                         </tr>
+I/System.out( 1022):                         <tr>
+I/System.out( 1022):                             <td>
+I/System.out( 1022):                                 <img src="img/platform.jpg" alt="A few years old picture of me" /><br/>
+I/System.out( 1022):                                 Business on the beach<br/>(midsummer 2006)
+I/System.out( 1022):                             </td>
+I/System.out( 1022):                         </tr>
+I/System.out( 1022):                     </table>
+I/System.out( 1022):                     Yeah, I like midsummers! It seems to be getting wilder each year...<br><i>Update in 2011</i>: Nope, now it's no longer getting wilder. Seems like we're getting old.
+I/System.out( 1022):                 </div>
+I/System.out( 1022):             </div>
+I/System.out( 1022):             <div class="block bottom-hr">
+I/System.out( 1022):                 <h2><a id="construction"></a>Jack the worker</h2>
+I/System.out( 1022):                 <div class="block-content">
+I/System.out( 1022):                     <img src="img/underconstruction.gif" alt="Under construction" align="left" style="padding-right: 10px"/>
+I/System.out( 1022):                     As a tribute to all the hard-working guys who digged those neverending holes to the home pages of 1990s, I want to let one of those heroes keep on working on my site. <br/><br/>Go Jack, go! You can do it!
+I/System.out( 1022):                     For more of these working class heroes, <a href="http://www.textfiles.com/underconstruction/">check out this site</a>.
+I/System.out( 1022):                 </div>
+I/System.out( 1022):             </div>
+I/System.out( 1022):             <div class="block bottom-hr">
+I/System.out( 1022):                 <h2><a id="xkcd302"></a>xkcd #302</h2>
+I/System.out( 1022):                 <div class="block-content">
+I/System.out( 1022):                     I know you all want to know this, so here it goes, a reply from
+I/System.out( 1022):                     <a href="http://en.wikipedia.org/wiki/Randall_Munroe">Randall Munroe</a>
+I/System.out( 1022):                     about <a href="http://www.xkcd.com/302/">xkcd #302</a>
+I/System.out( 1022):                     being a reference to a <a href="http://www.imdb.com/title/tt0108778/">
+I/System.out( 1022):                     Friends</a> episode.
+I/System.out( 1022): <pre>
+I/System.out( 1022): From: Randall Munroe &lt;press@xkcd.com&gt;
+I/System.out( 1022): Date: Wed, Dec 31, 2008 at 2:33 PM
+I/System.out( 1022): Subject: Re: Is xkcd #302 (Names) referencing to the TV show Friends?
+I/System.out( 1022): To: Aki Saarinen &lt;XXX@akisaarinen.fi&gt;
+I/System.out( 1022): On Wed, Dec 31, 2008 at 4:44 AM, Aki Saarinen &lt;XXX@akisaarinen.fi&gt; wrote:
+I/System.out( 1022): &gt; Hello,
+I/System.out( 1022): &gt;
+I/System.out( 1022): &gt; I was left wondering whether xkcd http://xkcd.com/302/ (Names), is
+I/System.out( 1022): &gt; referencing the popular TV show Friends by using the name Rachel in the
+I/System.out( 1022): &gt; altar (as you might know, Ross failed at the altar by saying Rachel instead
+I/System.out( 1022): &gt; of Emily in the Friends season 4 episode 24).
+I/System.out( 1022): &gt;
+I/System.out( 1022): &gt; I'm a fan of the Friends, so I can't help but think that this is yet another
+I/System.out( 1022): &gt; ingenious reference in the xkcd series. But it might just be a coincidence,
+I/System.out( 1022): &gt; too... I can't rest until I know the truth, so if you have the time to
+I/System.out( 1022): &gt; answer this, I'd be really pleased!  :)
+I/System.out( 1022): &gt;
+I/System.out( 1022): &gt; Sincerely,
+I/System.out( 1022): &gt; Aki Saarinen
+I/System.out( 1022): You can rest -- sadly, it's not a reference.  I am pretty unfamiliar
+I/System.out( 1022): with Friends.  I think I've seen about one episode, total.  It's a big
+I/System.out( 1022): gap in my pop-culture knowledge.  It's just based on my own
+I/System.out( 1022): embarrassing experience (suitably exaggerated)  :)
+I/System.out( 1022): Best,
+I/System.out( 1022): Randall
+I/System.out( 1022): </pre>
+I/System.out( 1022):                     I was of course a little bit disappointed that it was not referencing
+I/System.out( 1022):                     Friends but really big thanks to Randall for replying! Finally, I
+I/System.out( 1022):                     can rest.
+I/System.out( 1022):                 </div>
+I/System.out( 1022):             </div>
+I/System.out( 1022):             <div class="block">
+I/System.out( 1022):                 <h2><a id="links"></a>Friends</h2>
+I/System.out( 1022):                 <div class="block-content">
+I/System.out( 1022):                     Some friends of mine:
+I/System.out( 1022):                     <ul>
+I/System.out( 1022):                         <li><a href="http://www.aropupu.fi">Teijo Laine</a> - Homepage</li>
+I/System.out( 1022):                         <li><a href="http://www.mnd.fi">Henri Tuomola</a> - Homepage</li>
+I/System.out( 1022):                         <li><a href="http://www.bobs.fi/oiva/">Oiva Eskola</a> - Personal blog (in Finnish)</li>
+I/System.out( 1022):                         <li><a href="http://www.ollihuotari.com">Olli Huotari</a> - Homepage</li>
+I/System.out( 1022):                         <li><a href="http://juho.vaha-herttua.fi">Juho V&auml;h&auml;-Herttua</a> - Homepage</li>
+I/System.out( 1022):                         <li><a href="http://www.pyppe.fi">Pyry Lahti</a> - Homepage and the world's best <a href="http://www.pyppe.fi/blogi">blog</a> in Finnish.</li>
+I/System.out( 1022):                         <li><a href="http://www.terolaitinen.fi">Tero Laitinen</a> - Homepage</li>
+I/System.out( 1022):                     </ul>
+I/System.out( 1022):             </div>
+I/System.out( 1022):         </div>
+I/System.out( 1022): <!-- Abandoned, for now ;) No, the links don't work either, don't bother! -->
+I/System.out( 1022): <!--
+I/System.out( 1022):         <h2><img src="img/blog.png" alt="" /> <a id="blog">Blog</a></h2>
+I/System.out( 1022):         <div class="info">
+I/System.out( 1022):             <b>January 2008</b>: As a fashion aware(yea, right) nerd I decided to put up a blog. It's written in Finnish
+I/System.out( 1022):             so all of you may not need to bother. You can visit it in <a
+I/System.out( 1022):                 href="blog/">http://akisaarinen.fi/blog/</a>, but be warned: so far there's
+I/System.out( 1022):             not really any content. Because the language I'm most comfortable with is
+I/System.out( 1022):             Finnish, it's probably the language I want to express myself when in urgent
+I/System.out( 1022):             need to tell the world about something. 
+I/System.out( 1022):             <br/><br/>
+I/System.out( 1022):             <b>Update in December 2008</b>: seems like the blog is still empty, even though quite
+I/System.out( 1022):             a lot has happened since I started it... Hmm... Maybe this concept
+I/System.out( 1022):             needs some re-thinking. :)
+I/System.out( 1022):         </div>
+I/System.out( 1022): -->
+I/System.out( 1022):     </div>
+I/System.out( 1022):     <div id="copyright-wrapper">
+I/System.out( 1022):         <div class="copyright">
+I/System.out( 1022):             HTML and CSS &copy; 2008-2011, Aki Saarinen.
+I/System.out( 1022):             <!-- no icons in use right now -->
+I/System.out( 1022):             <!-- Icons used in this site are &copy; <a href="http://tango.freedesktop.org">Tango Desktop Project</a>, licenced under <a href="http://creativecommons.org/licenses/by-sa/2.5/">CC by-sa 2.5</a>. <br/> -->
+I/System.out( 1022):             Fonts by <a href="http://dharmatype.com/">Dharma Type</a> and <a href="http://www.theleagueofmoveabletype.com/">The League of Moveable Type</a>.</br>
+I/System.out( 1022):             This page was last modified 2011-09-25 21:03 UTC +0300. Hosted by <a href="http://kapsi.fi">Kapsi</a>.
+I/System.out( 1022):         </div>
+I/System.out( 1022):             </div>
+I/System.out( 1022):     </div>
+I/System.out( 1022):     <!-- Google analytics -->
+I/System.out( 1022):     <script type="text/javascript">
+I/System.out( 1022):         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+I/System.out( 1022):         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+I/System.out( 1022):     </script>
+I/System.out( 1022):     <script type="text/javascript">
+I/System.out( 1022):         var pageTracker = _gat._getTracker("UA-3420513-1");
+I/System.out( 1022):         pageTracker._initData();
+I/System.out( 1022):         pageTracker._trackPageview();
+I/System.out( 1022):     </script>
+I/System.out( 1022): <!-- For convenience these are here too. Why are you looking at the source anyway? :) -->
+I/System.out( 1022): <!--
+I/System.out( 1022):         <p>
+I/System.out( 1022):             <a href="http://validator.w3.org/check?uri=referer">
+I/System.out( 1022):                 <img style="border:0;width:88px;height:31px" src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" />
+I/System.out( 1022):             </a>
+I/System.out( 1022):             <a href="http://jigsaw.w3.org/css-validator/">
+I/System.out( 1022):                <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+I/System.out( 1022):             </a>
+I/System.out( 1022):         </p>
+I/System.out( 1022): -->
+I/System.out( 1022):     </body>
+I/System.out( 1022): </html>
+D/dalvikvm(  335): GC_FOR_MALLOC freed 730 objects / 449696 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 775 objects / 451592 bytes in 31ms
+D/dalvikvm( 1022): +++ active profiler count now 0
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451392 bytes in 55ms
+I/dalvikvm( 1022): TRACE STOPPED: writing 52339 records
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 450984 bytes in 60ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 781 objects / 451888 bytes in 68ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451296 bytes in 52ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 767 objects / 452144 bytes in 69ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 780 objects / 451832 bytes in 71ms
+D/PowerDroid-Profiler(  335): Connected to UMTS network
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for dun
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for hipri
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for supl
+D/MobileDataStateTracker(   88): replacing old mInterfaceName (rmnet0) with rmnet0 for mms
+D/MobileDataStateTracker(   88): default Received state= CONNECTED, old= CONNECTED, reason= (unspecified), apnTypeList= *
+D/dalvikvm(  335): GC_FOR_MALLOC freed 772 objects / 451288 bytes in 57ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 766 objects / 452120 bytes in 58ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 782 objects / 453096 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 765 objects / 426584 bytes in 43ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 741 objects / 450024 bytes in 29ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 797 objects / 427728 bytes in 42ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 668 objects / 373296 bytes in 91ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 701 objects / 423664 bytes in 85ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 739 objects / 449936 bytes in 45ms
+D/dalvikvm(  335): GC_FOR_MALLOC freed 766 objects / 451080 bytes in 52ms
