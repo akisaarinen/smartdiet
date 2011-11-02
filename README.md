@@ -440,4 +440,6 @@ You can e.g. trigger some network requests from the application by pushing some 
 * If you did physical measurements with Monsoon, stop recording and export data
   from Monsoon Power Monitor to pt4 file format and put resulting file as
   <code>power.pt4</code> under <code>DIR</code> (with the other files).
+* Run <code>process-smartdiet-dynamic-measurement.sh DIR</code> to process
+  the measurements and produce graphs of the results.
 
