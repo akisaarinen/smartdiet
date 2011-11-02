@@ -404,8 +404,26 @@ Before doing anything, check the following:
 * Synchronize clocks between machines and phones. This is *important* because
   data is matched based on timestamps. NTP synchronization is preferred.
 
+Testing out with sample data
+----------------------------
+
+There are profiling results of an example application available in
+<code>test-data/dynamic-profiling-run-simpleapp</code>. You can run
+the tools for this test data with the following command in
+smartdiet toolkit root dir:
+
+<pre>
+$ export ANDROID_SDK=/path/to/your/android_sdk
+$ ./process-smartdiet-dynamic-measurements.sh test-data/dynamic-profiling-run-simpleapp/
+</pre>
+
+Then check for <code>test-data/dynamic-profiling-run-simpleapp/</code> 
+directory for results.
+
 Profiling an application
 ------------------------
+
+Here's the guide how to dynamically profile your own application using SmartDiet.
 
 ### 1) Before measurements
 
