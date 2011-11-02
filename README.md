@@ -397,6 +397,7 @@ After the phone is bundled with our customized version of Android, you can
 start dynamic profiling.
 
 Before doing anything, check the following:
+
 * The phone is rooted.
 * You have compiled and installed the patched Android to the phone.
 * You have access to the patched and compiled SDK (you'll need DDMS from there).
