@@ -332,10 +332,9 @@ print_analysis <- function(base_name) {
   N <- read_network_trace(base_name, start_time)
   analyze(M, A, N, base_name, start_time)
 }
-
-#print_analysis(1305119492322, 'cb')
-#print_analysis(1305200027360, 'k9')
-print_analysis('simple1')
-
-
-#print_analysis(1305111437479, 'at30s-network', 'at30s')
+x <- commandArgs(trailingOnly = TRUE)
+filename <- x[1]
+cat ("Analyzing from file ")
+cat (filename)
+cat ("\n")
+print_analysis(filename)
