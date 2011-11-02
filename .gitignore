@@ -1,0 +1,15 @@
+.classpath
+.idea
+.idea_modules
+.project
+.scala_dependencies
+.settings
+target/*
+project/boot
+project/plugins/project
+project/plugins/target
+project/target
+energyanalysis/test.dot
+files/ec.ko
+_site/
+trafficmonitor/_site
