@@ -87,9 +87,9 @@ work only with the model-based estimates if you want.
 
 Acknowledgements
 ----------------
-Special thanks to Matti Siekkinen, Yu Xiao, Matti Kemppainen and Antti
-Ylä-Jääski and the whole Department of Computer Science and Engineering in
-Aalto University School of Science.
+Special thanks to Matti Siekkinen, Yu Xiao, Jukka Nurminen, Matti Kemppainen
+and Antti Ylä-Jääski and the whole Department of Computer Science and
+Engineering in Aalto University School of Science.
 
 Setting up constraint analysis tool
 ===================================
