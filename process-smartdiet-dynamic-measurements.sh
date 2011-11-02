@@ -1,6 +1,7 @@
 #!/bin/bash
-SCRIPT_DIR=`dirname $0`
-SRC_DIR="${SCRIPT_DIR}/../src"
+BASE_DIR=`dirname $0`
+SCRIPT_DIR="${BASE_DIR}/energyanalysis/scripts"
+SRC_DIR="${BASE_DIR}/energyanalysis/src"
 
 # Colors
 DULL=0
