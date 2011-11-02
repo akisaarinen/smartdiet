@@ -1,8 +1,7 @@
 /* 
  * This file is part of TrafficMonitor.
  * 
- * Copyright (C) 2011, Aalto University School of Science and the 
- *                     original authors.
+ * Copyright (C) 2011, Ahmad Nazir, Mohammad Hoque, Wei Li and Aki Saarinen.
  * 
  * TrafficMonitor is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
