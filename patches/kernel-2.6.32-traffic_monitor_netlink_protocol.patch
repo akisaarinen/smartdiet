@@ -1,0 +1,24 @@
+From f77d8a653c282ebfbdf2667c21e3001510cbf104 Mon Sep 17 00:00:00 2001
+From: Aki Saarinen <aki.saarinen@aalto.fi>
+Date: Wed, 27 Apr 2011 09:57:51 +0300
+Subject: [PATCH] Add traffic monitor protocol
+
+---
+ include/linux/netlink.h |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/include/linux/netlink.h b/include/linux/netlink.h
+index ab5d312..6baeaaa 100644
+--- a/include/linux/netlink.h
++++ b/include/linux/netlink.h
+@@ -24,6 +24,7 @@
+ /* leave room for NETLINK_DM (DM Events) */
+ #define NETLINK_SCSITRANSPORT	18	/* SCSI Transports */
+ #define NETLINK_ECRYPTFS	19
++#define NETLINK_TRAFFICMONITOR 20 /* Traffic monitor protocol */
+ 
+ #define MAX_LINKS 32		
+ 
+-- 
+1.7.4.1
+

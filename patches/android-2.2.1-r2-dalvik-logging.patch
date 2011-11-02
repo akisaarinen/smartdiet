@@ -1,0 +1,111 @@
+From 027133a55c0e74be185a3eb24aff4c71e025910a Mon Sep 17 00:00:00 2001
+From: Aki Saarinen <aki.saarinen@aalto.fi>
+Date: Tue, 6 Sep 2011 13:33:35 +0300
+Subject: [PATCH] Log more clock-related variables and increase buffer size
+
+Change-Id: I7970b8799fd47d8cfbba0e21f990fcb534dfe73b
+---
+ vm/Profile.c                      |   30 +++++++++++++++++++++++++-----
+ vm/native/dalvik_system_VMDebug.c |    3 ++-
+ 2 files changed, 27 insertions(+), 6 deletions(-)
+
+diff --git a/vm/Profile.c b/vm/Profile.c
+index b079988..e72af54 100644
+--- a/vm/Profile.c
++++ b/vm/Profile.c
+@@ -87,7 +87,7 @@ static inline u8 getTimeInUsec()
+  */
+ static inline u8 getClock()
+ {
+-#if defined(HAVE_POSIX_CLOCKS)
++#if defined(ANDROID_USE_THREADCPU_CLOCK)
+     struct timespec tm;
+ 
+     clock_gettime(CLOCK_THREAD_CPUTIME_ID, &tm);
+@@ -252,6 +252,20 @@ static void resetCpuClockBase(void)
+ }
+ 
+ /*
++ * Dump the thread clock base list to the specified file
++ */
++static void dumpThreadClockBaseList(FILE* fp)
++{
++    Thread* thread;
++
++    dvmLockThreadList(NULL);
++    for (thread = gDvm.threadList; thread != NULL; thread = thread->next) {
++        fprintf(fp, "thread-clock-base-%d=%llu\n", thread->threadId, thread->cpuClockBase);
++    }
++    dvmUnlockThreadList();
++}
++
++/*
+  * Dump the thread list to the specified file.
+  */
+ static void dumpThreadList(FILE* fp)
+@@ -491,6 +505,7 @@ bool dvmIsMethodTraceActive(void)
+ void dvmMethodTraceStop(void)
+ {
+     MethodTraceState* state = &gDvm.methodTrace;
++    u8 stopWhen;
+     u8 elapsed;
+ 
+     /*
+@@ -509,7 +524,8 @@ void dvmMethodTraceStop(void)
+     }
+ 
+     /* compute elapsed time */
+-    elapsed = getTimeInUsec() - state->startWhen;
++    stopWhen = getTimeInUsec();
++    elapsed = stopWhen - state->startWhen;
+ 
+     /*
+      * Globally disable it, and allow other threads to notice.  We want
+@@ -600,7 +616,7 @@ void dvmMethodTraceStop(void)
+     fprintf(state->traceFile, "%d\n", TRACE_VERSION);
+     fprintf(state->traceFile, "data-file-overflow=%s\n",
+         state->overflow ? "true" : "false");
+-#if defined(HAVE_POSIX_CLOCKS)
++#if defined(ANDROID_USE_THREADCPU_CLOCK)
+     fprintf(state->traceFile, "clock=thread-cpu\n");
+ #else
+     fprintf(state->traceFile, "clock=global\n");
+@@ -618,6 +634,10 @@ void dvmMethodTraceStop(void)
+         fprintf(state->traceFile, "gc-count=%d\n",
+             gDvm.allocProf.gcCount);
+     }
++    fprintf(state->traceFile, "profiling-start-time=%llu\n", state->startWhen);
++    fprintf(state->traceFile, "profiling-stop-time=%llu\n", stopWhen);
++    dumpThreadClockBaseList(state->traceFile);
++
+     fprintf(state->traceFile, "%cthreads\n", TOKEN_CHAR);
+     dumpThreadList(state->traceFile);
+     fprintf(state->traceFile, "%cmethods\n", TOKEN_CHAR);
+@@ -682,8 +702,8 @@ void dvmMethodTraceAdd(Thread* self, const Method* method, int action)
+     if (!self->cpuClockBaseSet) {
+         self->cpuClockBase = getClock();
+         self->cpuClockBaseSet = true;
+-        //LOGI("thread base id=%d 0x%llx\n",
+-        //    self->threadId, self->cpuClockBase);
++        LOGI("thread base id=%d 0x%llx\n",
++            self->threadId, self->cpuClockBase);
+     }
+ 
+     /*
+diff --git a/vm/native/dalvik_system_VMDebug.c b/vm/native/dalvik_system_VMDebug.c
+index 34398d0..03a16e9 100644
+--- a/vm/native/dalvik_system_VMDebug.c
++++ b/vm/native/dalvik_system_VMDebug.c
+@@ -331,7 +331,8 @@ static void Dalvik_dalvik_system_VMDebug_startMethodTracingNative(const u4* args
+ 
+     if (bufferSize == 0) {
+         // Default to 8MB per the documentation.
+-        bufferSize = 8 * 1024 * 1024;
++        //bufferSize = 8 * 1024 * 1024;
++        bufferSize = 128 * 1024 * 1024;
+     }
+ 
+     if (bufferSize < 1024) {
+-- 
+1.7.4.1
+

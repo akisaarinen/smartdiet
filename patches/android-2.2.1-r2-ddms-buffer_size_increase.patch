@@ -1,0 +1,34 @@
+From d7d0deb4bb30fcf259fa0a222c10904fd1681d5f Mon Sep 17 00:00:00 2001
+From: Aki Saarinen <aki.saarinen@aalto.fi>
+Date: Tue, 6 Sep 2011 13:40:59 +0300
+Subject: [PATCH] Increase default buffer size in ddms java application
+
+Change-Id: I482c0ee3b6dbcae8484e7f58918ac8da30f82309
+---
+ .../libs/ddmlib/src/com/android/ddmlib/Client.java |    6 ++++--
+ 1 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/ddms/libs/ddmlib/src/com/android/ddmlib/Client.java b/ddms/libs/ddmlib/src/com/android/ddmlib/Client.java
+index 5991026..d58c06f 100644
+--- a/ddms/libs/ddmlib/src/com/android/ddmlib/Client.java
++++ b/ddms/libs/ddmlib/src/com/android/ddmlib/Client.java
+@@ -255,12 +255,14 @@ public class Client {
+                     HandleProfiling.sendMPRE(this);
+                 }
+             } else {
++                int bufferSize = 256*1024*1024;
++
+                 if (canStream) {
+-                    HandleProfiling.sendMPSS(this, 8*1024*1024, 0 /*flags*/);
++                    HandleProfiling.sendMPSS(this, bufferSize, 0 /*flags*/);
+                 } else {
+                     String file = "/sdcard/" + mClientData.getClientDescription().replaceAll("\\:.*", "") +
+                     ".trace";
+-                    HandleProfiling.sendMPRS(this, file, 8*1024*1024, 0 /*flags*/);
++                    HandleProfiling.sendMPRS(this, file, bufferSize, 0 /*flags*/);
+                 }
+             }
+         } catch (IOException e) {
+-- 
+1.7.4.1
+
