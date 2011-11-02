@@ -108,8 +108,8 @@ Compiling the SmartDiet toolkit
   https://github.com/harrah/xsbt/wiki, if you want to dig deeper.
 * Fetch dependencies by running <code>update</code> in sbt console. This will take a while.
 * Assemble a runnable JAR by running <code>assembly:assembly</code> in sbt console.
-* You should see <code>target/powerprofiler-{version}.jar</code>, runnable with
-  <code>java -jar powerprofiler-{version}.jar</code>.
+* You should see <code>target/smartdiet-{version}.jar</code>, runnable with
+  <code>java -jar smartdiet-{version}.jar</code>.
 
 Getting the bytecode sources for Android SDK
 --------------------------------------------
@@ -174,7 +174,7 @@ For each program, you should specify:
 Running the constraint analysis tool
 ------------------------------------
 
-Run the analysis with <code>java -jar powerprofiler.jar --java-all</code>, for
+Run the analysis with <code>java -jar smartdiet.jar --java-all</code>, for
 more information about flags, run the jar without arguments and check the help.
 You can e.g. use <code>--csv</code> to output in CSV format.
 
@@ -358,7 +358,7 @@ Compiling SmartDiet modifications to Android platform with the custom kernel
   </pre>
 * Apply patch using <code>git am</code>
   <pre>
-  $ git am /path/to/powerprofiler/patches/android-2.2.1-r2-dalvik-logging.patch
+  $ git am /path/to/smartdiet/patches/android-2.2.1-r2-dalvik-logging.patch
   Applying: Log more clock-related variables and increase buffer size
   </pre>
 * Verify that patch got applied by running <code>git log</code>
@@ -379,7 +379,7 @@ Compiling SmartDiet modifications to Android SDK
   </pre>
 * Apply patch using <code>git am</code>
   <pre>
-  $ git am /path/to/powerprofiler/patches/android-2.2.1-r2-ddms-buffer_size_increase.patch
+  $ git am /path/to/smartdiet/patches/android-2.2.1-r2-ddms-buffer_size_increase.patch
   Applying: Increase default buffer size in ddms java application
   </pre>
 * Verify that patch got applied by running <code>git log</code>

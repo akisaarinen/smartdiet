@@ -1,4 +1,4 @@
-name := "powerprofiler"
+name := "smartdiet"
 
 version := "0.1"
 
