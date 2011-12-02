@@ -216,7 +216,7 @@ Compiling custom kernel with traffic monitor patches
 
 In order to work with the traffic monitor kernel module, you need to patch the
 kernel a bit. Patch for 2.6.32 is available under
-<code>patches/kernel-2.6.32-traffic_monitor_netlink_protocol.patch</code>,
+<code>patches/kernel-2.6.32/0001-traffic_monitor_netlink_protocol.patch</code>,
 which can be applied using <code>git am</code> or (if the hashes don't match)
 just by manually doing the same thing, because the addition is rather trivial.
 
@@ -365,7 +365,7 @@ Compiling SmartDiet modifications to Android platform with the custom kernel
   </pre>
 * Apply patch using <code>git am</code>
   <pre>
-  $ git am /path/to/smartdiet/patches/android-2.2.1-r2-dalvik-logging.patch
+  $ git am /path/to/smartdiet/patches/android-2.2.1-r2/dalvik-logging.patch
   Applying: Log more clock-related variables and increase buffer size
   </pre>
 * Verify that patch got applied by running <code>git log</code>
@@ -386,7 +386,7 @@ Compiling SmartDiet modifications to Android SDK
   </pre>
 * Apply patch using <code>git am</code>
   <pre>
-  $ git am /path/to/smartdiet/patches/android-2.2.1-r2-ddms-buffer_size_increase.patch
+  $ git am /path/to/smartdiet/patches/android-2.2.1-r2/ddms-buffer_size_increase.patch
   Applying: Increase default buffer size in ddms java application
   </pre>
 * Verify that patch got applied by running <code>git log</code>
