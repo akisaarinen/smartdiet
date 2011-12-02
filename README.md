@@ -203,22 +203,39 @@ a risk if you're careful, but still.
 Compiling a custom kernel
 -------------------------
 
-You'll need to compile your custom kernel. No guide for this is available ATM. 
-I used kernel version 2.6.32.
+You'll need to compile your custom kernel.  I used kernel version 2.6.32 and
+patches are available for that version. Modifications might be needed if
+another version is used.
 
 As a result you will have a compiled kernel which will be referred later as
 <code>/path/to/zImage</code>. It will lie under the kernel source tree
 at <code>arch/arm/boot/zImage</code>. You should test this kernel as-is, and
 then continue applying our patches for it.
 
-Compiling custom kernel with traffic monitor patches
+Compiling custom kernel with SmartDiet patches
 ----------------------------------------------------
 
 In order to work with the traffic monitor kernel module, you need to patch the
-kernel a bit. Patch for 2.6.32 is available under
-<code>patches/kernel-2.6.32/0001-traffic_monitor_netlink_protocol.patch</code>,
-which can be applied using <code>git am</code> or (if the hashes don't match)
-just by manually doing the same thing, because the addition is rather trivial.
+kernel a bit. SmartDiet kernel also includes patches to enable oprofiler and
+TaintDroid support (http://appanalysis.org/), which are not necessary to use
+SmartDiet but will make other debugging tasks easier. You can take a look into
+what's under <code>patches/kernel-2.6.32</code> and decide to only use part of
+the patches, if you wish.
+
+Patch for 2.6.32 is available under <code>patches/kernel-2.6.32/</code>.  You
+can apply them to the kernel source tree by running the following under the git
+checkout of the android kernel source tree:
+
+<pre>
+$ git am /path/to/smartdiet/patches/kernel-2.6.32/*
+Applying: Add traffic monitor protocol
+Applying: Added initial config
+Applying: Add profiling support to config
+Applying: Remove support for ext2 and ext3 from kernel to make it fit
+Applying: Add patch for oprofile and Nexus One
+Applying: yaffs2: Add xattr patches by TaintDroid guys
+Applying: Enable YAFFS2 support in .config for TaintDroid
+</pre>
 
 Compiling the traffic monitor kernel module
 -------------------------------------------

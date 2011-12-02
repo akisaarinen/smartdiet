@@ -1,0 +1,45 @@
+From 8d877eaa90791d887e25145093c70fea54f6d1ff Mon Sep 17 00:00:00 2001
+From: Aki Saarinen <aki.saarinen@aalto.fi>
+Date: Tue, 12 Apr 2011 14:49:25 +0300
+Subject: [PATCH 4/7] Add patch for oprofile and Nexus One
+
+Source: http://groups.google.com/group/android-platform/browse_thread/thread/3f17699acfbd3f04/81d79fcb3a2412a7
+---
+ arch/arm/oprofile/op_model_v7.c |   14 ++++++++++++++
+ 1 files changed, 14 insertions(+), 0 deletions(-)
+
+diff --git a/arch/arm/oprofile/op_model_v7.c b/arch/arm/oprofile/op_model_v7.c
+index f20295f..e248090 100644
+--- a/arch/arm/oprofile/op_model_v7.c
++++ b/arch/arm/oprofile/op_model_v7.c
+@@ -371,6 +371,13 @@ static int irqs[] = {
+ #ifdef CONFIG_ARCH_OMAP3
+ 	INT_34XX_BENCH_MPU_EMUL,
+ #endif
++/* Patch for nexus one,
++   https://review.source.android.com/#change,15707 */
++#ifdef CONFIG_ARCH_MSM
++#ifdef CONFIG_ARCH_MSM_SCORPION
++        INT_ARM11_PM,
++#endif
++#endif
+ };
+ 
+ static void armv7_pmnc_stop(void)
+@@ -386,6 +393,13 @@ static int armv7_pmnc_start(void)
+ {
+ 	int ret;
+ 
++	/* Patch for nexus one,
++	   https://review.source.android.com/#patch,sidebyside,15707,1,arch/arm/oprofile/op_model_v7.c */
++	if(ARRAY_SIZE(irqs) == 0) {
++            printk(KERN_ERR "oprofile: no interrupts for this CPU\n");
++            return -EINVAL;
++        }
++
+ #ifdef DEBUG
+ 	armv7_pmnc_dump_regs();
+ #endif
+-- 
+1.7.4.1
+

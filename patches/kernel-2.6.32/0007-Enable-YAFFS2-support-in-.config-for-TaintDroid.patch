@@ -1,0 +1,34 @@
+From cde5ebb7d1bbf01adf2b79651803729e06d09895 Mon Sep 17 00:00:00 2001
+From: Aki Saarinen <aki.saarinen@aalto.fi>
+Date: Thu, 4 Aug 2011 12:45:53 +0300
+Subject: [PATCH 7/7] Enable YAFFS2 support in .config for TaintDroid
+
+---
+ .config |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+diff --git a/.config b/.config
+index 0032cf1..4c98411 100644
+--- a/.config
++++ b/.config
+@@ -1,7 +1,7 @@
+ #
+ # Automatically generated make config: don't edit
+ # Linux kernel version: 2.6.32.9
+-# Tue Apr 12 09:54:09 2011
++# Thu Aug  4 12:45:49 2011
+ #
+ CONFIG_ARM=y
+ CONFIG_SYS_SUPPORTS_APM_EMULATION=y
+@@ -1560,6 +1560,8 @@ CONFIG_MISC_FILESYSTEMS=y
+ # CONFIG_EFS_FS is not set
+ CONFIG_YAFFS_FS=y
+ CONFIG_YAFFS_YAFFS1=y
++CONFIG_YAFFS_XATTR=y
++CONFIG_YAFFS_SECURITY=y
+ # CONFIG_YAFFS_9BYTE_TAGS is not set
+ # CONFIG_YAFFS_DOES_ECC is not set
+ CONFIG_YAFFS_YAFFS2=y
+-- 
+1.7.4.1
+

@@ -1,0 +1,83 @@
+From 800ca1f179f3a8a6c273a44b15ca51c94ba9a359 Mon Sep 17 00:00:00 2001
+From: Aki Saarinen <aki.saarinen@aalto.fi>
+Date: Mon, 11 Apr 2011 17:19:40 +0300
+Subject: [PATCH 2/7] Add profiling support to config
+
+---
+ .config |   17 ++++++++++++++---
+ 1 files changed, 14 insertions(+), 3 deletions(-)
+
+diff --git a/.config b/.config
+index 9572036..f0aadce 100644
+--- a/.config
++++ b/.config
+@@ -1,7 +1,7 @@
+ #
+ # Automatically generated make config: don't edit
+ # Linux kernel version: 2.6.32.9
+-# Thu Oct 28 20:37:23 2010
++# Mon Apr 11 17:19:33 2011
+ #
+ CONFIG_ARM=y
+ CONFIG_SYS_SUPPORTS_APM_EMULATION=y
+@@ -20,6 +20,7 @@ CONFIG_ARCH_HAS_CPUFREQ=y
+ CONFIG_GENERIC_HWEIGHT=y
+ CONFIG_GENERIC_CALIBRATE_DELAY=y
+ CONFIG_GENERIC_HARDIRQS_NO__DO_IRQ=y
++CONFIG_OPROFILE_ARMV7=y
+ CONFIG_VECTORS_BASE=0xffff0000
+ CONFIG_DEFCONFIG_LIST="/lib/modules/$UNAME_RELEASE/.config"
+ CONFIG_CONSTRUCTORS=y
+@@ -106,7 +107,9 @@ CONFIG_COMPAT_BRK=y
+ CONFIG_SLAB=y
+ # CONFIG_SLUB is not set
+ # CONFIG_SLOB is not set
+-# CONFIG_PROFILING is not set
++CONFIG_PROFILING=y
++CONFIG_TRACEPOINTS=y
++CONFIG_OPROFILE=m
+ CONFIG_HAVE_OPROFILE=y
+ # CONFIG_KPROBES is not set
+ CONFIG_HAVE_KPROBES=y
+@@ -664,6 +667,7 @@ CONFIG_NET_SCH_FIFO=y
+ # Network testing
+ #
+ # CONFIG_NET_PKTGEN is not set
++# CONFIG_NET_DROP_MONITOR is not set
+ # CONFIG_HAMRADIO is not set
+ # CONFIG_CAN is not set
+ # CONFIG_IRDA is not set
+@@ -1700,7 +1704,13 @@ CONFIG_DEBUG_INFO=y
+ # CONFIG_FAULT_INJECTION is not set
+ # CONFIG_LATENCYTOP is not set
+ # CONFIG_PAGE_POISONING is not set
++CONFIG_NOP_TRACER=y
+ CONFIG_HAVE_FUNCTION_TRACER=y
++CONFIG_RING_BUFFER=y
++CONFIG_EVENT_TRACING=y
++CONFIG_CONTEXT_SWITCH_TRACER=y
++CONFIG_RING_BUFFER_ALLOW_SWAP=y
++CONFIG_TRACING=y
+ CONFIG_TRACING_SUPPORT=y
+ CONFIG_FTRACE=y
+ # CONFIG_FUNCTION_TRACER is not set
+@@ -1716,6 +1726,7 @@ CONFIG_BRANCH_PROFILE_NONE=y
+ # CONFIG_KMEMTRACE is not set
+ # CONFIG_WORKQUEUE_TRACER is not set
+ # CONFIG_BLK_DEV_IO_TRACE is not set
++# CONFIG_RING_BUFFER_BENCHMARK is not set
+ # CONFIG_DYNAMIC_DEBUG is not set
+ # CONFIG_SAMPLES is not set
+ CONFIG_HAVE_ARCH_KGDB=y
+@@ -1832,7 +1843,7 @@ CONFIG_CRYPTO_DEFLATE=y
+ #
+ # CONFIG_CRYPTO_ANSI_CPRNG is not set
+ CONFIG_CRYPTO_HW=y
+-# CONFIG_BINARY_PRINTF is not set
++CONFIG_BINARY_PRINTF=y
+ 
+ #
+ # Library routines
+-- 
+1.7.4.1
+

@@ -1,0 +1,52 @@
+From ec57741465606d732a640cf86f5d61c03f493459 Mon Sep 17 00:00:00 2001
+From: Aki Saarinen <aki.saarinen@aalto.fi>
+Date: Tue, 12 Apr 2011 14:45:55 +0300
+Subject: [PATCH 3/7] Remove support for ext2 and ext3 from kernel to make it fit
+
+---
+ .config |   19 ++++---------------
+ 1 files changed, 4 insertions(+), 15 deletions(-)
+
+diff --git a/.config b/.config
+index f0aadce..0032cf1 100644
+--- a/.config
++++ b/.config
+@@ -1,7 +1,7 @@
+ #
+ # Automatically generated make config: don't edit
+ # Linux kernel version: 2.6.32.9
+-# Mon Apr 11 17:19:33 2011
++# Tue Apr 12 09:54:09 2011
+ #
+ CONFIG_ARM=y
+ CONFIG_SYS_SUPPORTS_APM_EMULATION=y
+@@ -1497,23 +1497,12 @@ CONFIG_ANDROID_LOW_MEMORY_KILLER=y
+ #
+ # File systems
+ #
+-CONFIG_EXT2_FS=y
+-CONFIG_EXT2_FS_XATTR=y
+-CONFIG_EXT2_FS_POSIX_ACL=y
+-CONFIG_EXT2_FS_SECURITY=y
+-# CONFIG_EXT2_FS_XIP is not set
+-CONFIG_EXT3_FS=y
+-# CONFIG_EXT3_DEFAULTS_TO_ORDERED is not set
+-CONFIG_EXT3_FS_XATTR=y
+-CONFIG_EXT3_FS_POSIX_ACL=y
+-CONFIG_EXT3_FS_SECURITY=y
++# CONFIG_EXT2_FS is not set
++# CONFIG_EXT3_FS is not set
+ # CONFIG_EXT4_FS is not set
+-CONFIG_JBD=y
+-# CONFIG_JBD_DEBUG is not set
+-CONFIG_FS_MBCACHE=y
+ # CONFIG_REISERFS_FS is not set
+ # CONFIG_JFS_FS is not set
+-CONFIG_FS_POSIX_ACL=y
++# CONFIG_FS_POSIX_ACL is not set
+ # CONFIG_XFS_FS is not set
+ # CONFIG_GFS2_FS is not set
+ # CONFIG_OCFS2_FS is not set
+-- 
+1.7.4.1
+

@@ -1,0 +1,1041 @@
+From 2f3d7bb41257fcd39a0a0530526d842856636e02 Mon Sep 17 00:00:00 2001
+From: Aki Saarinen <aki.saarinen@aalto.fi>
+Date: Fri, 2 Dec 2011 11:54:28 +0200
+Subject: [PATCH 6/7] yaffs2: Add xattr patches by TaintDroid guys
+
+---
+ fs/yaffs2/Kconfig          |   24 +++
+ fs/yaffs2/Makefile         |    3 +
+ fs/yaffs2/xattr.c          |  450 ++++++++++++++++++++++++++++++++++++++++++++
+ fs/yaffs2/xattr.h          |   95 ++++++++++
+ fs/yaffs2/xattr_security.c |   81 ++++++++
+ fs/yaffs2/xattr_trusted.c  |   62 ++++++
+ fs/yaffs2/xattr_user.c     |   71 +++++++
+ fs/yaffs2/yaffs_fs.c       |   14 ++
+ fs/yaffs2/yaffs_guts.c     |   70 +++++++
+ fs/yaffs2/yaffs_guts.h     |    6 +
+ 10 files changed, 876 insertions(+), 0 deletions(-)
+ create mode 100644 fs/yaffs2/xattr.c
+ create mode 100644 fs/yaffs2/xattr.h
+ create mode 100644 fs/yaffs2/xattr_security.c
+ create mode 100644 fs/yaffs2/xattr_trusted.c
+ create mode 100644 fs/yaffs2/xattr_user.c
+
+diff --git a/fs/yaffs2/Kconfig b/fs/yaffs2/Kconfig
+index 8584450..d273171 100644
+--- a/fs/yaffs2/Kconfig
++++ b/fs/yaffs2/Kconfig
+@@ -31,6 +31,30 @@ config YAFFS_YAFFS1
+ 
+ 	  If unsure, say Y.
+ 
++config YAFFS_XATTR
++	bool "YAFFS extended attributes"
++	depends on YAFFS_FS
++	default n
++	help
++	  Extended attributes are name:value pairs associated with inodes by
++	  the kernel or by users (see the attr(5) manual page, or visit
++	  <http://acl.bestbits.at/> for details).
++
++	  If unsure, say N.
++
++config YAFFS_SECURITY
++	bool "YAFFS Security Labels"
++	depends on YAFFS_XATTR
++	default n
++	help
++	  Security labels support alternative access control models
++	  implemented by security modules like SELinux.  This option
++	  enables an extended attribute handler for file security
++	  labels in the yaffs filesystem.
++
++	  If you are not using a security module that requires using
++	  extended attributes for file security labels, say N.
++
+ config YAFFS_9BYTE_TAGS
+ 	bool "Use older-style on-NAND data format with pageStatus byte"
+ 	depends on YAFFS_YAFFS1
+diff --git a/fs/yaffs2/Makefile b/fs/yaffs2/Makefile
+index 382ee61..fa7810d 100644
+--- a/fs/yaffs2/Makefile
++++ b/fs/yaffs2/Makefile
+@@ -8,3 +8,6 @@ yaffs-y := yaffs_ecc.o yaffs_fs.o yaffs_guts.o yaffs_checkptrw.o
+ yaffs-y += yaffs_packedtags1.o yaffs_packedtags2.o yaffs_nand.o yaffs_qsort.o
+ yaffs-y += yaffs_tagscompat.o yaffs_tagsvalidity.o
+ yaffs-y += yaffs_mtdif.o yaffs_mtdif1.o yaffs_mtdif2.o
++
++yaffs-$(CONFIG_YAFFS_XATTR)    += xattr.o xattr_user.o xattr_trusted.o
++yaffs-$(CONFIG_YAFFS_SECURITY) += xattr_security.o
+diff --git a/fs/yaffs2/xattr.c b/fs/yaffs2/xattr.c
+new file mode 100644
+index 0000000..36efc0e
+--- /dev/null
++++ b/fs/yaffs2/xattr.c
+@@ -0,0 +1,450 @@
++/*
++ * Extended Attribute support for YAFFS
++ *
++ * Copyright (c) 2010 The Pennsylvania State University
++ * Systems and Internet Infrastructure Security Laboratory
++ *
++ * Created by William Enck <enck@cse.psu.edu>
++ * Acknowledgements:
++ * - General xattr handler structure taken from EXT2 FS XATTR implementation
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ */
++
++/*
++ * Extended attributes are stored as files in a hidden XATTR directory.
++ * If a file has an XATTR, a new directory with the string representation
++ * of the object ID is created in the XATTR directory. A file in that
++ * directory is created for each named XATTR.
++ *
++ * yaffs_guts.c is modified to clean up these files and directories on
++ * object unlink.
++ *
++ * Locking strategy
++ * ----------------
++ *  The yaffs_fs.c module uses a gross lock on the device when accessing
++ *  files. The XATTR code uses this same lock for set, get, and list.
++ */
++
++#include <linux/version.h>
++#if (LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 19))
++#include <linux/config.h>
++#endif
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/init.h>
++#include <linux/fs.h>
++#include <linux/string.h>
++
++#include "yaffs_guts.h"
++#include "xattr.h"
++
++/* Macros defined in yaffs_fs.c that are needed here */
++#if (LINUX_VERSION_CODE > KERNEL_VERSION(2, 6, 18))
++#define yaffs_InodeToObjectLV(iptr) ((iptr)->i_private)
++#else
++#define yaffs_InodeToObjectLV(iptr) ((iptr)->u.generic_ip)
++#endif
++#define yaffs_InodeToObject(iptr) ((yaffs_Object *)(yaffs_InodeToObjectLV(iptr)))
++#define yaffs_DentryToObject(dptr) yaffs_InodeToObject((dptr)->d_inode)
++
++/* function defined in yaffs_fs.c that is needed here */
++static void yaffs_GrossLock(yaffs_Device *dev)
++{
++	T(YAFFS_TRACE_OS, ("yaffs locking %p\n", current));
++	down(&dev->grossLock);
++	T(YAFFS_TRACE_OS, ("yaffs locked %p\n", current));
++}
++
++/* function defined in yaffs_fs.c that is needed here */
++static void yaffs_GrossUnlock(yaffs_Device *dev)
++{
++	T(YAFFS_TRACE_OS, ("yaffs unlocking %p\n", current));
++	up(&dev->grossLock);
++}
++
++struct xattr_handler *yaffs_xattr_handlers[] = {
++	&yaffs_xattr_user_handler,
++	&yaffs_xattr_trusted_handler,
++#ifdef CONFIG_YAFFS_SECURITY
++	&yaffs_xattr_security_handler,
++#endif
++	NULL
++};
++
++static const char *
++yaffs_xattr_prefix(int name_index)
++{
++	switch (name_index) {
++		case YAFFS_XATTR_INDEX_USER:
++			return XATTR_USER_PREFIX;
++		case YAFFS_XATTR_INDEX_TRUSTED:
++			return XATTR_TRUSTED_PREFIX;
++		case YAFFS_XATTR_INDEX_SECURITY:
++			return XATTR_SECURITY_PREFIX;
++	}
++
++	return NULL;
++}
++
++static struct xattr_handler*
++yaffs_xattr_handler(const YCHAR *name)
++{
++	if (strncmp(name, XATTR_USER_PREFIX, XATTR_USER_PREFIX_LEN) == 0)
++		return &yaffs_xattr_user_handler;
++	if (strncmp(name, XATTR_TRUSTED_PREFIX, XATTR_TRUSTED_PREFIX_LEN) == 0)
++		return &yaffs_xattr_trusted_handler;
++#ifdef CONFIG_YAFFS_SECURITY
++	if (strncmp(name, XATTR_SECURITY_PREFIX, XATTR_SECURITY_PREFIX_LEN) == 0)
++		return &yaffs_xattr_security_handler;
++#endif
++	return NULL;
++}
++
++static int
++yaffs_xattr_name(int name_index, const char *name,
++		 char *xname, size_t xname_size)
++{
++	int total_len;
++	const char *prefix = yaffs_xattr_prefix(name_index);
++
++	total_len = strlen(prefix) + strlen(name) + 1;
++
++	if (xname_size < total_len) {
++		return -1;
++	}
++
++	snprintf(xname, xname_size, "%s%s", prefix, name);
++
++	return 0;
++}
++
++/*
++ * yaffs_xattr_get()
++ *
++ * Copy an extended attribute into the buffer provided, or compute the
++ * buffer size required. Buffer is NULL to copmute the size of the
++ * buffer required.
++ *
++ * Returns a negative error number on failure, or the number of bytes
++ * used / required on success.
++ */
++int
++yaffs_xattr_get(struct inode *inode, int name_index, const char *name,
++		void *buffer, size_t buffer_size)
++{
++	int error;
++	yaffs_Device *dev;
++	yaffs_Object *iobj = NULL; /* inode object */
++	yaffs_Object *aobj = NULL; /* xattr directory object */
++	yaffs_Object *xobj = NULL; /* xattr data object */
++	char objectStr[YAFFS_OBJECTID_STRLEN+1];
++	YCHAR xname[YAFFS_MAX_NAME_LENGTH+1];
++	int size;
++
++	iobj = yaffs_InodeToObject(inode);
++	dev = iobj->myDev; /* Assumes inode was valid */
++
++	if (name == NULL)
++		return -EINVAL;
++
++	/* Determine the directory name used in the xattr directory */
++	iobj = yaffs_GetEquivalentObject(iobj); /* TODO: necessary? */
++	snprintf(objectStr, YAFFS_OBJECTID_STRLEN+1, "%d", iobj->objectId);
++
++	/* Create the xattr name string */
++	if (yaffs_xattr_name(name_index, name,
++			     xname, YAFFS_MAX_NAME_LENGTH+1) < 0) {
++		return -EINVAL;
++	}
++
++	yaffs_GrossLock(dev);
++
++	error = -ENODATA;
++	aobj = yaffs_FindObjectByName(dev->xattrsDir, objectStr);
++	if (aobj) {
++		xobj = yaffs_FindObjectByName(aobj, xname);
++	}
++
++	if (xobj) {
++		size = xobj->variant.fileVariant.fileSize;
++
++		if (buffer == NULL) {
++			/* return the value size */
++			error = size;
++			goto cleanup;
++		}
++
++		if (buffer_size < size) {
++			error = -ERANGE;
++			goto cleanup;
++		}
++
++		/* Read the whole thing */
++		error = yaffs_ReadDataFromFile(xobj, buffer, 0, size);
++	}
++
++cleanup:
++	yaffs_GrossUnlock(dev);
++
++	return error;
++}
++
++#if 0
++/* Debugging utility */
++static void yaffs_dump_xattr_dir(yaffs_Device *dev)
++{
++	yaffs_Object *aobj = NULL; /* xattr directory object */
++	yaffs_Object *xobj = NULL; /* xattr data object */
++	char objectStr[YAFFS_OBJECTID_STRLEN+1];
++	YCHAR xname[YAFFS_MAX_NAME_LENGTH + 1];
++	struct ylist_head *i, *j;   /* list cursors */
++
++	T(YAFFS_TRACE_ALWAYS,(TSTR("yaffs_dump_xattr_dir:"TENDSTR)));
++
++	ylist_for_each(i, &dev->xattrsDir->variant.directoryVariant.children) {
++		if (!i)
++			continue;
++		aobj = ylist_entry(i, yaffs_Object, siblings);
++
++		yaffs_GetObjectName(aobj, objectStr, YAFFS_OBJECTID_STRLEN + 1);
++
++		T(YAFFS_TRACE_ALWAYS,(TSTR("- %s"TENDSTR),objectStr));
++
++		ylist_for_each(j, &aobj->variant.directoryVariant.children) {
++			if (!j)
++				continue;
++			xobj = ylist_entry(j, yaffs_Object, siblings);
++
++			yaffs_GetObjectName(xobj, xname, YAFFS_MAX_NAME_LENGTH + 1);
++
++			T(YAFFS_TRACE_ALWAYS,(TSTR("-- %s"TENDSTR),xname));
++		}
++
++	}
++}
++#endif
++
++/*
++ * yaffs_xattr_list()
++ *
++ * Copy a list of attribute names into the buffer provided, or compute the
++ * buffers size required. Buffer is NULL to compute the size of the buffer
++ * required.
++ *
++ * Returns a negative error number on failure, or the number of bytes
++ * used / required on success
++ */
++static int
++yaffs_xattr_list(struct inode *inode, char *buffer, size_t buffer_size)
++{
++	int error;
++	yaffs_Device *dev;
++	yaffs_Object *iobj = NULL; /* inode object */
++	yaffs_Object *aobj = NULL; /* xattr directory object */
++	yaffs_Object *cobj = NULL; /* cursor object */
++	struct ylist_head *cur;   /* list cursor */
++	int rest;
++	char objectStr[YAFFS_OBJECTID_STRLEN+1];
++	YCHAR xname[YAFFS_MAX_NAME_LENGTH + 1];
++
++	iobj = yaffs_InodeToObject(inode);
++	dev = iobj->myDev;
++
++	//yaffs_dump_xattr_dir(dev);
++
++	/* Determine the directory name used in the xattr directory */
++	iobj = yaffs_GetEquivalentObject(iobj); /* TODO: necessary? */
++	snprintf(objectStr, YAFFS_OBJECTID_STRLEN+1, "%d", iobj->objectId);
++
++	yaffs_GrossLock(dev);
++
++	aobj = yaffs_FindObjectByName(dev->xattrsDir, objectStr);
++	if (!aobj) {
++		/* No xattrs */
++		error = 0;
++		goto cleanup;
++	}
++
++	if (aobj->variantType != YAFFS_OBJECT_TYPE_DIRECTORY) {
++		T(YAFFS_TRACE_ERROR,
++		(TSTR("yaffs_xattr_list: xattr directory not a directory! (objectId = %d)"TENDSTR),
++			aobj->objectId));
++		error = 0;
++		goto cleanup;
++	}
++
++	rest = buffer_size;
++	ylist_for_each(cur, &aobj->variant.directoryVariant.children) {
++		struct xattr_handler *handler;
++
++		if (!cur)
++			continue;
++		cobj = ylist_entry(cur, yaffs_Object, siblings);
++
++		yaffs_GetObjectName(cobj, xname, YAFFS_MAX_NAME_LENGTH + 1);
++
++		handler = yaffs_xattr_handler(xname);
++		if (handler) {
++			size_t size = handler->list(inode, buffer, rest,
++						    xname, strlen(xname));
++			if (buffer) {
++				if (size > rest) {
++					error = -ERANGE;
++					goto cleanup;
++				}
++				buffer += size;
++			}
++			rest -= size;
++		}
++	}
++
++	error = buffer_size - rest; /* total size */
++
++cleanup:
++	yaffs_GrossUnlock(dev);
++
++	return error;
++}
++
++/*
++ * Inode operation listxattr()
++ *
++ * dentry->d_inode->i_mutex: don't care
++ */
++ssize_t
++yaffs_listxattr(struct dentry *dentry, char *buffer, size_t size)
++{
++	return yaffs_xattr_list(dentry->d_inode, buffer, size);
++}
++
++static int
++yaffs_xattr_set2(yaffs_Object *xobj, const void *value, size_t value_len)
++{
++	int error = -EIO;
++
++	/* Truncate the existing contents */
++	if (yaffs_ResizeFile(xobj, 0) == YAFFS_FAIL) {
++		error = -EIO;
++		goto out;
++	}
++
++	if (value_len == 0) {
++		/* We are done */
++		error = 0;
++		goto out;
++	}
++
++	error = yaffs_WriteDataToFile(xobj, value, 0, value_len, 1);
++
++out:
++	return error;
++}
++
++/*
++ * yaffs_xattr_set()
++ *
++ * Create, replace, or remove an extended attribute for this inode. Buffer
++ * is NULL to remove an existing extended attribute, and non-NULL to
++ * either replace an existing extended attribute, or create a new extended
++ * attribute. The flags XATTR_REPLACE and XATTR_CREATE
++ * specify that an extended attribute must exist and must not exist
++ * previous to the call, respectively.
++ *
++ * Returns 0, or a negative number on failure.
++ */
++int
++yaffs_xattr_set(struct inode *inode, int name_index, const char *name,
++		const void *value, size_t value_len, int flags)
++{
++	int error;
++	yaffs_Device *dev;
++	yaffs_Object *iobj = NULL; /* inode object */
++	yaffs_Object *aobj = NULL; /* xattr directory object */
++	yaffs_Object *xobj = NULL; /* xattr value object */
++	char objectStr[YAFFS_OBJECTID_STRLEN+1];
++	YCHAR xname[YAFFS_MAX_NAME_LENGTH + 1];
++
++	iobj = yaffs_InodeToObject(inode);
++	dev = iobj->myDev; /* Assumes inode was valid */
++
++	if (name == NULL)
++		return -EINVAL;
++	if (strlen(name) > YAFFS_MAX_NAME_LENGTH)
++		return -ERANGE;
++
++	/* Determine the directory name used in the xattr directory */
++	iobj = yaffs_GetEquivalentObject(iobj); /* TODO: necessary? */
++	snprintf(objectStr, YAFFS_OBJECTID_STRLEN+1, "%d", iobj->objectId);
++
++	/* Create the xattr name string */
++	if (yaffs_xattr_name(name_index, name,
++			     xname, YAFFS_MAX_NAME_LENGTH+1) < 0) {
++		return -EINVAL;
++	}
++
++	yaffs_GrossLock(dev);
++
++	/* See if this object already has an xattr directory associated with it */
++	aobj = yaffs_FindObjectByName(dev->xattrsDir, objectStr);
++	if (!aobj) {
++		/* Create the directory */
++		aobj = yaffs_MknodDirectory(dev->xattrsDir, objectStr, 0, 0, 0);
++	}
++
++	if (!aobj) {
++		error = -ENOMEM;
++		goto cleanup;
++	}
++
++	/* See if this xattr already exists */
++	xobj = yaffs_FindObjectByName(aobj, xname);
++
++	if (xobj) { /* The xattr exists */
++		error = -EEXIST;
++		if (flags & XATTR_CREATE)
++			goto cleanup;
++
++		if (value == NULL) {
++			/* Remove the XATTR */
++			error = yaffs_Unlink(aobj, xname);
++			goto cleanup;
++		}
++
++		error = yaffs_xattr_set2(xobj, value, value_len);
++
++	} else { /* The xattr does not exist */
++		error = -ENODATA;
++		if (flags & XATTR_REPLACE)
++			goto cleanup;
++		error = 0;
++		if (value == NULL) /* remove nonexistent attribute? */
++			goto cleanup;
++
++		xobj = yaffs_MknodFile(aobj, xname, 0, 0, 0);
++		if (!xobj) {
++			error = -ENOMEM;
++			goto cleanup;
++		}
++
++		error = yaffs_xattr_set2(xobj, value, value_len);
++	}
++
++cleanup:
++	yaffs_GrossUnlock(dev);
++
++	return error;
++}
++
++int __init
++init_yaffs_xattr(void)
++{
++	return 0;
++}
++
++void
++exit_yaffs_xattr(void)
++{
++}
+diff --git a/fs/yaffs2/xattr.h b/fs/yaffs2/xattr.h
+new file mode 100644
+index 0000000..e359d0a
+--- /dev/null
++++ b/fs/yaffs2/xattr.h
+@@ -0,0 +1,95 @@
++/*
++ * Extended Attribute support for YAFFS
++ *
++ * Copyright (c) 2010 The Pennsylvania State University
++ * Systems and Internet Infrastructure Security Laboratory
++ *
++ * Created by William Enck <enck@cse.psu.edu>
++ * Acknowledgements:
++ * - General xattr handler structure taken from EXT2 FS XATTR implementation
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ */
++
++#include <linux/xattr.h>
++
++/* Name indexes */
++#define YAFFS_XATTR_INDEX_USER			1
++#define YAFFS_XATTR_INDEX_POSIX_ACL_ACCESS	2
++#define YAFFS_XATTR_INDEX_POSIX_ACL_DEFAULT	3
++#define YAFFS_XATTR_INDEX_TRUSTED		4
++#define YAFFS_XATTR_INDEX_LUSTRE		5
++#define YAFFS_XATTR_INDEX_SECURITY		6
++
++#define YAFFS_OBJECTID_STRLEN 10  /* max length for the string version of an object ID */
++
++#ifdef CONFIG_YAFFS_XATTR
++
++extern struct xattr_handler yaffs_xattr_user_handler;
++extern struct xattr_handler yaffs_xattr_trusted_handler;
++extern struct xattr_handler yaffs_xattr_security_handler;
++
++extern ssize_t yaffs_listxattr(struct dentry *, char *, size_t);
++
++extern int yaffs_xattr_get(struct inode *, int, const char *, void *, size_t);
++extern int yaffs_xattr_set(struct inode *, int, const char *, const void *, size_t, int);
++
++extern void yaffs_xattr_delete_inode (struct inode *);
++extern void yaffs_xattr_put_super(struct super_block *);
++
++extern int init_yaffs_xattr(void);
++extern void exit_yaffs_xattr(void);
++
++extern struct xattr_handler *yaffs_xattr_handlers[];
++
++# else /* CONFIG_YAFFS_XATTR */
++
++static inline int
++yaffs_xattr_get(struct inode *inode, int name_index,
++		const char *name, const void *value, size_t size)
++{
++	return -EOPNOTSUPP;
++}
++
++static inline int
++yaffs_xattr_set(struct inode *inode, int name_index, const char *name,
++		const void *value, size_t size, int flags)
++{
++	return -EOPNOTSUPP;
++}
++
++static inline void
++yaffs_xattr_delete_inode(struct inode *inode)
++{
++}
++
++static inline void
++yaffs_xattr_put_super(struct super_block *sb)
++{
++}
++
++static inline int
++init_yaffs_xattr(void)
++{
++	return 0;
++}
++
++static inline void
++exit_yaffs_xattr(void)
++{
++}
++
++#define yaffs_xattr_handlers NULL
++
++#endif /* CONFIG_YAFFS_XATTR */
++
++#ifdef CONFIG_YAFFS_SECURITY
++extern int yaffs_init_security(struct inode *inode, struct inode *dir);
++#else
++static inline int yaffs_init_security(struct inode *inode, struct inode *dir)
++{
++	return 0;
++}
++#endif
+diff --git a/fs/yaffs2/xattr_security.c b/fs/yaffs2/xattr_security.c
+new file mode 100644
+index 0000000..a275502
+--- /dev/null
++++ b/fs/yaffs2/xattr_security.c
+@@ -0,0 +1,81 @@
++/*
++ * Extended Attribute support for YAFFS
++ *
++ * Copyright (c) 2010 The Pennsylvania State University
++ * Systems and Internet Infrastructure Security Laboratory
++ *
++ * Created by William Enck <enck@cse.psu.edu>
++ * Acknowledgements:
++ * - General xattr handler structure taken from EXT2 FS XATTR implementation
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ */
++
++#include <linux/string.h>
++#include <linux/fs.h>
++#include <linux/security.h>
++#include "xattr.h"
++
++static size_t
++yaffs_xattr_security_list(struct inode *inode, char *list, size_t list_size,
++			  const char *name, size_t name_len)
++{
++	const size_t total_len = name_len + 1;
++
++	if (list && total_len <= list_size) {
++		memcpy(list, name, name_len);
++		list[name_len] = '\0';
++	}
++	return total_len;
++}
++
++static int
++yaffs_xattr_security_get(struct inode *inode, const char *name,
++			 void *buffer, size_t size)
++{
++	if (strcmp(name, "") == 0)
++		return -EINVAL;
++	return yaffs_xattr_get(inode, YAFFS_XATTR_INDEX_SECURITY, name,
++			       buffer, size);
++}
++
++static int
++yaffs_xattr_security_set(struct inode *inode, const char *name,
++			 const void *value, size_t size, int flags)
++{
++	if (strcmp(name, "") == 0)
++		return -EINVAL;
++	return yaffs_xattr_set(inode, YAFFS_XATTR_INDEX_SECURITY, name,
++			       value, size, flags);
++}
++
++int
++yaffs_init_security(struct inode *inode, struct inode *dir)
++{
++	int err;
++	size_t len;
++	void *value;
++	char *name;
++
++	err = security_inode_init_security(inode, dir, &name, &value, &len);
++	if (err) {
++		if (err == -EOPNOTSUPP)
++			return 0;
++		return err;
++	}
++	err = yaffs_xattr_set(inode, YAFFS_XATTR_INDEX_SECURITY, name,
++			      value, len, 0);
++
++	kfree(name);
++	kfree(value);
++	return err;
++}
++
++struct xattr_handler yaffs_xattr_security_handler = {
++	.prefix = XATTR_SECURITY_PREFIX,
++	.list   = yaffs_xattr_security_list,
++	.get    = yaffs_xattr_security_get,
++	.set    = yaffs_xattr_security_set,
++};
+diff --git a/fs/yaffs2/xattr_trusted.c b/fs/yaffs2/xattr_trusted.c
+new file mode 100644
+index 0000000..247a6a3
+--- /dev/null
++++ b/fs/yaffs2/xattr_trusted.c
+@@ -0,0 +1,62 @@
++/*
++ * Extended Attribute support for YAFFS
++ *
++ * Copyright (c) 2010 The Pennsylvania State University
++ * Systems and Internet Infrastructure Security Laboratory
++ *
++ * Created by William Enck <enck@cse.psu.edu>
++ * Acknowledgements:
++ * - General xattr handler structure taken from EXT2 FS XATTR implementation
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ */
++
++#include <linux/string.h>
++#include <linux/capability.h>
++#include <linux/fs.h>
++#include "xattr.h"
++
++static size_t
++yaffs_xattr_trusted_list(struct inode *inode, char *list, size_t list_size,
++		         const char *name, size_t name_len)
++{
++	const size_t total_len = name_len + 1;
++
++	if (!capable(CAP_SYS_ADMIN))
++		return 0;
++
++	if (list && total_len <= list_size) {
++		memcpy(list, name, name_len);
++		list[name_len] = '\0';
++	}
++	return total_len;
++}
++
++static int
++yaffs_xattr_trusted_get(struct inode *inode, const char *name,
++			void *buffer, size_t size)
++{
++	if (strcmp(name, "") == 0)
++		return -EINVAL;
++	return yaffs_xattr_get(inode, YAFFS_XATTR_INDEX_TRUSTED, name,
++			       buffer, size);
++}
++
++static int
++yaffs_xattr_trusted_set(struct inode *inode, const char *name,
++			const void *value, size_t size, int flags)
++{
++	if (strcmp(name, "") == 0)
++		return -EINVAL;
++	return yaffs_xattr_set(inode, YAFFS_XATTR_INDEX_TRUSTED, name,
++			       value, size, flags);
++}
++
++struct xattr_handler yaffs_xattr_trusted_handler = {
++	.prefix = XATTR_TRUSTED_PREFIX,
++	.list   = yaffs_xattr_trusted_list,
++	.get    = yaffs_xattr_trusted_get,
++	.set    = yaffs_xattr_trusted_set,
++};
+diff --git a/fs/yaffs2/xattr_user.c b/fs/yaffs2/xattr_user.c
+new file mode 100644
+index 0000000..c4defd1
+--- /dev/null
++++ b/fs/yaffs2/xattr_user.c
+@@ -0,0 +1,71 @@
++/*
++ * Extended Attribute support for YAFFS
++ *
++ * Copyright (c) 2010 The Pennsylvania State University
++ * Systems and Internet Infrastructure Security Laboratory
++ *
++ * Created by William Enck <enck@cse.psu.edu>
++ * Acknowledgements:
++ * - General xattr handler structure taken from EXT2 FS XATTR implementation
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ */
++
++#include <linux/string.h>
++#include <linux/fs.h>
++#include "xattr.h"
++
++static size_t
++yaffs_xattr_user_list(struct inode *inode, char *list, size_t list_size,
++		      const char *name, size_t name_len)
++{
++	const size_t total_len = name_len + 1;
++
++	/* TODO: enable this check like in EXT2?
++	if (!test_op(inode->i_sb, XATTR_USER))
++		return 0;
++	*/
++
++	if (list && total_len <= list_size) {
++		memcpy(list, name, name_len);
++		list[name_len] = '\0';
++	}
++	return total_len;
++}
++
++static int
++yaffs_xattr_user_get(struct inode *inode, const char *name,
++		     void *buffer, size_t size)
++{
++	if (strcmp(name, "") == 0)
++		return -EINVAL;
++	/* TODO: enable this check like in EXT2?
++	if (!test_op(inode->i_sb, XATTR_USER))
++		return -EOPNOTSUPP;
++	*/
++	return yaffs_xattr_get(inode, YAFFS_XATTR_INDEX_USER, name,
++			       buffer, size);
++}
++
++static int
++yaffs_xattr_user_set(struct inode *inode, const char *name,
++			const void *value, size_t size, int flags)
++{
++	if (strcmp(name, "") == 0)
++		return -EINVAL;
++	/* TODO: enable this check like in EXT2?
++	if (!test_op(inode->i_sb, XATTR_USER))
++		return -EOPNOTSUPP;
++	*/
++	return yaffs_xattr_set(inode, YAFFS_XATTR_INDEX_USER, name,
++			       value, size, flags);
++}
++
++struct xattr_handler yaffs_xattr_user_handler = {
++	.prefix = XATTR_USER_PREFIX,
++	.list   = yaffs_xattr_user_list,
++	.get    = yaffs_xattr_user_get,
++	.set    = yaffs_xattr_user_set,
++};
+diff --git a/fs/yaffs2/yaffs_fs.c b/fs/yaffs2/yaffs_fs.c
+index 4c155ae..28a03a3 100644
+--- a/fs/yaffs2/yaffs_fs.c
++++ b/fs/yaffs2/yaffs_fs.c
+@@ -53,6 +53,7 @@ extern const char *yaffs_guts_c_version;
+ #include <linux/ctype.h>
+ 
+ #include "asm/div64.h"
++#include "xattr.h"
+ 
+ #if (LINUX_VERSION_CODE > KERNEL_VERSION(2, 5, 0))
+ 
+@@ -322,6 +323,12 @@ static const struct file_operations yaffs_file_operations = {
+ 
+ static const struct inode_operations yaffs_file_inode_operations = {
+ 	.setattr = yaffs_setattr,
++#ifdef CONFIG_YAFFS_XATTR
++	.setxattr	= generic_setxattr,
++	.getxattr	= generic_getxattr,
++	.listxattr	= yaffs_listxattr,
++	.removexattr	= generic_removexattr,
++#endif
+ };
+ 
+ static const struct inode_operations yaffs_symlink_inode_operations = {
+@@ -341,6 +348,12 @@ static const struct inode_operations yaffs_dir_inode_operations = {
+ 	.mknod = yaffs_mknod,
+ 	.rename = yaffs_rename,
+ 	.setattr = yaffs_setattr,
++#ifdef CONFIG_YAFFS_XATTR
++	.setxattr	= generic_setxattr,
++	.getxattr	= generic_getxattr,
++	.listxattr	= yaffs_listxattr,
++	.removexattr	= generic_removexattr,
++#endif
+ };
+ 
+ static const struct file_operations yaffs_dir_operations = {
+@@ -2004,6 +2017,7 @@ static struct super_block *yaffs_internal_read_super(int yaffsVersion,
+ 	sb->s_magic = YAFFS_MAGIC;
+ 	sb->s_op = &yaffs_super_ops;
+ 	sb->s_flags |= MS_NOATIME;
++	sb->s_xattr = yaffs_xattr_handlers;
+ 
+ 	if (!sb)
+ 		printk(KERN_INFO "yaffs: sb is NULL\n");
+diff --git a/fs/yaffs2/yaffs_guts.c b/fs/yaffs2/yaffs_guts.c
+index 968223e..d2c9946 100644
+--- a/fs/yaffs2/yaffs_guts.c
++++ b/fs/yaffs2/yaffs_guts.c
+@@ -37,6 +37,10 @@ const char *yaffs_guts_c_version =
+ 
+ #include "yaffs_ecc.h"
+ 
++#ifdef CONFIG_YAFFS_XATTR
++# include "xattr.h"
++#endif
++
+ 
+ /* Robustification (if it ever comes about...) */
+ static void yaffs_RetireBlock(yaffs_Device *dev, int blockInNAND);
+@@ -5103,6 +5107,53 @@ int yaffs_FlushFile(yaffs_Object *in, int updateTime)
+ 
+ }
+ 
++#ifdef CONFIG_YAFFS_XATTR
++static int yaffs_DeleteXattrs(yaffs_Object *obj)
++{
++	int error = YAFFS_OK;
++	yaffs_Device *dev;
++	yaffs_Object *aobj = NULL; /* xattr directory object */
++	yaffs_Object *xobj = NULL; /* xattr data object */
++	struct ylist_head *i, *n;
++	char objectStr[YAFFS_OBJECTID_STRLEN+1];
++
++
++	snprintf(objectStr, YAFFS_OBJECTID_STRLEN+1, "%d", obj->objectId);
++
++	dev = obj->myDev;
++	aobj = yaffs_FindObjectByName(dev->xattrsDir, objectStr);
++
++	if (!aobj) {
++	    /* Nothing to do */
++	    error = YAFFS_OK;
++	    goto out;
++	}
++
++	/* First delete all of the xattr value files */
++	ylist_for_each_safe(i, n, &aobj->variant.directoryVariant.children) {
++		int err;
++
++		if (!i)
++			continue;
++		xobj = ylist_entry(i, yaffs_Object, siblings);
++		err = yaffs_UnlinkObject(xobj);
++
++		if (err == YAFFS_FAIL) {
++			error = err;
++		}
++	}
++
++	/* Now delete the directory itself */
++	if (error == YAFFS_OK) {
++		/* The directory is now empty and can be unlinked */
++		error = yaffs_UnlinkObject(aobj);
++	}
++
++out:
++	return error;
++}
++#endif
++
+ static int yaffs_DoGenericObjectDeletion(yaffs_Object *in)
+ {
+ 
+@@ -5119,6 +5170,15 @@ static int yaffs_DoGenericObjectDeletion(yaffs_Object *in)
+ 	yaffs_DeleteChunk(in->myDev, in->hdrChunk, 1, __LINE__);
+ 	in->hdrChunk = 0;
+ 
++#ifdef CONFIG_YAFFS_XATTR
++	/* TODO: How to handle failure? Ignore and cleanup on mount? */
++	/* No need to worry about circular dependencies, because XATTR file
++	 * objects should never have an object ID directory in the XATTR
++	 * directory
++	 */
++	yaffs_DeleteXattrs(in);
++#endif
++
+ 	yaffs_FreeObject(in);
+ 	return YAFFS_OK;
+ 
+@@ -7271,6 +7331,11 @@ static int yaffs_CreateInitialDirectories(yaffs_Device *dev)
+ 	dev->deletedDir =
+ 	    yaffs_CreateFakeDirectory(dev, YAFFS_OBJECTID_DELETED, S_IFDIR);
+ 
++#ifdef CONFIG_YAFFS_XATTR
++	dev->xattrsDir =
++	    yaffs_CreateFakeDirectory(dev, YAFFS_OBJECTID_XATTRS, S_IFDIR);
++#endif
++
+ 	dev->rootDir =
+ 	    yaffs_CreateFakeDirectory(dev, YAFFS_OBJECTID_ROOT,
+ 				      YAFFS_ROOT_MODE | S_IFDIR);
+@@ -7278,7 +7343,12 @@ static int yaffs_CreateInitialDirectories(yaffs_Device *dev)
+ 	    yaffs_CreateFakeDirectory(dev, YAFFS_OBJECTID_LOSTNFOUND,
+ 				      YAFFS_LOSTNFOUND_MODE | S_IFDIR);
+ 
++#ifdef CONFIG_YAFFS_XATTR
++	if (dev->lostNFoundDir && dev->rootDir && dev->unlinkedDir && dev->deletedDir
++		&& dev->xattrsDir) {
++#else
+ 	if (dev->lostNFoundDir && dev->rootDir && dev->unlinkedDir && dev->deletedDir) {
++#endif
+ 		yaffs_AddObjectToDirectory(dev->rootDir, dev->lostNFoundDir);
+ 		return YAFFS_OK;
+ 	}
+diff --git a/fs/yaffs2/yaffs_guts.h b/fs/yaffs2/yaffs_guts.h
+index 1305909..4125f21 100644
+--- a/fs/yaffs2/yaffs_guts.h
++++ b/fs/yaffs2/yaffs_guts.h
+@@ -80,6 +80,9 @@
+ #define YAFFS_OBJECTID_LOSTNFOUND	2
+ #define YAFFS_OBJECTID_UNLINKED		3
+ #define YAFFS_OBJECTID_DELETED		4
++#ifdef CONFIG_YAFFS_XATTR
++# define YAFFS_OBJECTID_XATTRS		5
++#endif
+ 
+ /* Sseudo object ids for checkpointing */
+ #define YAFFS_OBJECTID_SB_HEADER	0x10
+@@ -756,6 +759,9 @@ struct yaffs_DeviceStruct {
+ 	/* Stuff for background deletion and unlinked files.*/
+ 	yaffs_Object *unlinkedDir;	/* Directory where unlinked and deleted files live. */
+ 	yaffs_Object *deletedDir;	/* Directory where deleted objects are sent to disappear. */
++#ifdef CONFIG_YAFFS_XATTR
++	yaffs_Object *xattrsDir;	/* Directory there xattrs live */
++#endif
+ 	yaffs_Object *unlinkedDeletion;	/* Current file being background deleted.*/
+ 	int nDeletedFiles;		/* Count of files awaiting deletion;*/
+ 	int nUnlinkedFiles;		/* Count of unlinked files. */
+-- 
+1.7.4.1
+
