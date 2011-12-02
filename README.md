@@ -189,68 +189,22 @@ Setting up energy analysis tool
 ===============================
 
 To start using dynamic energy profiling part of SmartDiet, you need a more
-complex procedure. You will need to root your Nexus One phone, compile a custom
-kernel, the whole Android distribution with minor SmartDiet-specific patches
-and the custom kernel. You'll also need to compile the traffic monitor kernel
-module against this same custom kernel.  The custom stuff then needs to be
-installed into the phone. This section will cover these topics.
+complex procedure. You will need to root your Nexus One phone, compile the
+Android distribution and a custom kernel with some patches. You'll also need to
+compile the traffic monitor kernel module against this same custom kernel.  The
+custom stuff then needs to be installed into the phone. This section will cover
+these topics.
 
 Note that I'm assuming you're familiar with the Android platform and know that
 there is a risk of bricking your phone, as always when installing custom
 firmware. You're doing all of this on your own risk. Shouldn't be too big
 a risk if you're careful, but still.
 
-Compiling a custom kernel
--------------------------
-
-You'll need to compile your custom kernel.  I used kernel version 2.6.32 and
-patches are available for that version. Modifications might be needed if
-another version is used.
-
-As a result you will have a compiled kernel which will be referred later as
-<code>/path/to/zImage</code>. It will lie under the kernel source tree
-at <code>arch/arm/boot/zImage</code>. You should test this kernel as-is, and
-then continue applying our patches for it.
-
-Compiling custom kernel with SmartDiet patches
-----------------------------------------------------
-
-In order to work with the traffic monitor kernel module, you need to patch the
-kernel a bit. SmartDiet kernel also includes patches to enable oprofiler and
-TaintDroid support (http://appanalysis.org/), which are not necessary to use
-SmartDiet but will make other debugging tasks easier. You can take a look into
-what's under <code>patches/kernel-2.6.32</code> and decide to only use part of
-the patches, if you wish.
-
-Patch for 2.6.32 is available under <code>patches/kernel-2.6.32/</code>.  You
-can apply them to the kernel source tree by running the following under the git
-checkout of the android kernel source tree:
-
-<pre>
-$ git am /path/to/smartdiet/patches/kernel-2.6.32/*
-Applying: Add traffic monitor protocol
-Applying: Added initial config
-Applying: Add profiling support to config
-Applying: Remove support for ext2 and ext3 from kernel to make it fit
-Applying: Add patch for oprofile and Nexus One
-Applying: yaffs2: Add xattr patches by TaintDroid guys
-Applying: Enable YAFFS2 support in .config for TaintDroid
-</pre>
-
-Compiling the traffic monitor kernel module
--------------------------------------------
-
-See the <code>trafficmonitor</code> subdirectory for more information.  This is
-a separate kernel module developed at the Aalto University School of Science
-and it can be compiled against the patched kernel sources. You should get a
-<code>ec.ko</code> file which should be put into the <code>files</code>
-subdirectory to be used by the measurement scripts later on (they will upload
-and load it into use into the phone). Note that because this is a kernel
-module, it has to be compiled against the exact kernel version you are running
-or it won't load up correctly.
-
 Compiling Android 2.2.1-r2
 -------------------------------------------------------
+
+Start by compiling the Android platform.
+
 Official instructions are available at http://source.android.com/source/initializing.html,
 these are the steps that worked for me in Ubuntu 11.04. Another useful resource is
 http://source.android.com/source/build-numbers.html for the various build numbers and
@@ -351,30 +305,144 @@ Installing custom Android distribution to Nexus One
   amsaarin.20111024.152752 test-keys
   </pre>
 
+Compiling a custom kernel
+-------------------------
+
+Next, you'll need to compile your custom kernel. I used kernel version 2.6.32
+and patches are available for that version. Modifications might be needed if
+another version is used.
+
+As a result you will have a compiled kernel which will be referred later as
+<code>/path/to/zImage</code>. It will lie under the kernel source tree
+at <code>arch/arm/boot/zImage</code>. You should test this kernel as-is, and
+then continue applying our patches for it.
+
+Short instructions for compiling the kernel:
+
+1) Clone the msm kernel repository
+
+As of now (Dec 2th, 2011) the official Android kernel source code repository is
+down because kernel.org was hacked a few months ago and Google is still in the
+process of recovering the hosting of the kernel sources. So you need to use one
+of the unofficial mirrors to get the sources, this one worked for me:
+
+<pre>
+$ git clone https://github.com/android/kernel_msm.git
+</pre>
+
+2) Checkout a new custom branch from 2.6.32 in <code>kernel_msm</code>
+
+<pre>
+$ cd kernel_msm
+$ git checkout remotes/origin/archive/android-msm-2.6.32
+$ git checkout -b smartdiet-2.6.32
+</pre>
+
+3) Get the default kernel configuration
+
+One is available at with SmartDiet as a patch:
+
+<pre>
+$ git am /path/to/smartdiet/patches/kernel-2.6.32/0002-Add-initial-config.patch
+Applying: Added initial config
+</pre>
+
+Alternatively, if you have a stock 2.2.1-r2 in your phone, you can use the
+following to get your stock configuration from the phone as well:
+
+<pre>
+$ adb pull /proc/config.gz
+$ gunzip config.gz
+</pre>
+
+4) Setup environment for kernel compiling 
+
+Do it manually or use the script provided with smartdiet:
+
+<pre>
+$ source /path/to/smartdiet/patches/env_kernel.sh
+</pre>
+
+5) Make the kernel
+
+<pre>
+$ make
+</pre>
+
+And you're done. 
+
+Compiling custom kernel with SmartDiet patches
+----------------------------------------------------
+
+In order to work with the traffic monitor kernel module, you need to patch the
+kernel a bit. SmartDiet kernel also includes patches to enable oprofiler and
+TaintDroid support (http://appanalysis.org/), which are not necessary to use
+SmartDiet but will make other debugging tasks easier. You can take a look into
+what's under <code>patches/kernel-2.6.32</code> and decide to only use part of
+the patches, if you wish.
+
+You can apply all patches to the kernel source tree by running the following
+under the git checkout of the Android kernel source tree:
+
+<pre>
+$ git am /path/to/smartdiet/patches/kernel-2.6.32/*
+Applying: Add traffic monitor protocol
+Applying: Added initial config
+Applying: Add profiling support to config
+Applying: Remove support for ext2 and ext3 from kernel to make it fit
+Applying: Add patch for oprofile and Nexus One
+Applying: yaffs2: Add xattr patches by TaintDroid guys
+Applying: Enable YAFFS2 support in .config for TaintDroid
+</pre>
+
+Compiling the traffic monitor kernel module
+-------------------------------------------
+
+See the <code>trafficmonitor</code> subdirectory for more information.  This is
+a separate kernel module developed at the Aalto University School of Science
+and it can be compiled against the patched kernel sources. You should get a
+<code>ec.ko</code> file which should be put into the <code>files</code>
+subdirectory to be used by the measurement scripts later on (they will upload
+and load it into use into the phone). Note that because this is a kernel
+module, it has to be compiled against the exact kernel version you are running
+or it won't load up correctly.
+
+
 Compiling Android with custom kernel
 ------------------------------------
 
-Next you should compile the Android with your custom kernel and check that it works. This can be done
-by running:
+Next you should compile the Android with your custom kernel and check that it
+works. 
+
+Note that standard kernel modules distributed with the Android distribution
+will be incompatible with the new kernel and won't hence load up. Most
+important one is the driver dealing with WiFi, <code>bcm4329.ko</code>, so
+you'll want to copy the new driver into the distribution before compiling it.
+Copy the one from the compiled kernel under
+<code>drivers/net/wireless/bcm4329/bcm4329.ko</code> to
+<code>device/htc/passion-common/bcm4329.ko</code> under the Android
+distribution before compiling, and it'll be shipped to the phone when flashing.
+
+Compile the distribution with your new kernel by running the following in the
+Android platform directory (not the kernel source directory):
 
 <pre>
 $ make TARGET_PREBUILT_KERNEL=/path/to/zImage
 </pre>
 
-Note that after you do this, standard kernel modules distributed with the
-Android distribution will be incompatible with the kernel and won't hence load
-up. Most important one is the driver dealing with WiFi,
-<code>bcm4329.ko</code>, so you'll need to patch that too.  Copy the one from
-the compiled kernel under <code>drivers/net/wireless/bcm4329/bcm4329.ko</code>
-to <code>device/htc/passion-common/bcm4329.ko</code> under the Android
-distribution before compiling, and it'll be shipped to the phone when flashing.
+<code>/path/to/zImage</code> refers now to the custom kernel you built earlier.
 
 Before continuing, check that everything works by booting up the phone and
-checking versions (also kernel version should now change in Settings -> About
-phone).
+checking versions (in addition to the platform version, kernel version should
+now  also change in Settings -> About phone to refer somehow into your
+machine).
 
 Compiling SmartDiet modifications to Android platform with the custom kernel
 ----------------------------------------------------------------------------
+
+This procedure will allow SmartDiet to get more information about Java threads
+under Dalvik VM because of some added loggings.
+
 * Compile stock Android 2.2.1-r2 first as instructed above
 * Go to <code>dalvik</code> subdirectory in your <code>android-2.2.1-r2</code> platform source directory.
   <pre>
@@ -396,6 +464,12 @@ Compiling SmartDiet modifications to Android platform with the custom kernel
 
 Compiling SmartDiet modifications to Android SDK
 ------------------------------------------------
+
+This procedure will increment the default buffer size that DDMS sets when
+recording a Java execution trace. This enabled you to capture longer execution
+runs, the default buffer size will overflow rather quickly and you only record
+very short runs, especially with CPU intensive apps.
+
 * Go to your <code>android-2.2.1-r2</code> platform source directory.
 * Go to <code>sdk/ddms</code> subdirectory in your <code>android-2.2.1-r2</code> platform source directory.
   <pre>
@@ -414,6 +488,9 @@ Compiling SmartDiet modifications to Android SDK
   </pre>
 * Compiled SDK is available under <code>out/host/linux-x86/sdk/</code>, to use DDMS with a bigger
   tracing buffer size limit, run it from there (<code>tools/ddms</code>).
+
+To take this new buffer size limit into use, you need to use the newly compiled
+DDMS and not the one which comes with the official SDK from Google.
 
 Using the energy profiler tool
 ==============================
