@@ -6,11 +6,6 @@ identifying constraints regarding mobile code offloading. This is a research too
 designed to highlight the issues related to mobile offloading, *not a polished set of tools
 for everyday use*.
 
-It was developed as part of a research project where our goal was to investigate the feasibility
-of mobile offloading as well as look for ways to provide insights for the application developer about the
-offloadability of existing programs. More details can be found from our paper (currently in the academic
-publishing limbo, will be linked here when it gets published).
-
 SmartDiet consists of two tools:
 
 * Constraint analysis tool to highlight offloadability issues in program source
@@ -18,7 +13,17 @@ SmartDiet consists of two tools:
 * Energy analysis tool to dynamically profile the energy consumption of an
   Android program and to virualize it in a fine-grained per-method level.
 
+Background and publications
+---------------------------
 
+SmartDiet was developed as part of a research project where our goal was to
+investigate the feasibility of mobile offloading as well as look for ways to
+provide insights for the application developer about the offloadability of
+existing programs. A technical report on SmartDiet is available in
+(arXiv)[http://arxiv.org/abs/1111.3806], and a paper based on the measurements
+done using SmartDiet was published in the (MobiArch 2012
+workshop)[http://www2.research.att.com/~rjana/mobiarch.html]. The latter paper
+is not yet available for download.
 
 Authors and license
 -------------------
