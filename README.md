@@ -20,9 +20,9 @@ SmartDiet was developed as part of a research project where our goal was to
 investigate the feasibility of mobile offloading as well as look for ways to
 provide insights for the application developer about the offloadability of
 existing programs. A technical report on SmartDiet is available in
-(arXiv)[http://arxiv.org/abs/1111.3806], and a paper based on the measurements
-done using SmartDiet was published in the (MobiArch 2012
-workshop)[http://www2.research.att.com/~rjana/mobiarch.html]. The latter paper
+[arXiv](http://arxiv.org/abs/1111.3806), and a paper based on the measurements
+done using SmartDiet was published in the [MobiArch 2012
+workshop](http://www2.research.att.com/~rjana/mobiarch.html). The latter paper
 is not yet available for download.
 
 Authors and license
